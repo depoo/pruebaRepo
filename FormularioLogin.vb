@@ -28,9 +28,17 @@ Public Class FormularioLogin
 
         Dim dbContext As New MiDbContext()
         Dim datos = dbContext.Usuario.Where(Function(u) u.usuario = user AndAlso u.pass = pass).ToList()
+
         If datos.Count() > 0 Then
-            Me.Hide()
-            FormularioPersonaNatural.Show()
+            Dim Rol As Integer = datos(0).id_Rol
+            If Rol = 1 Then
+
+                Me.Hide()
+                FormularioPersonaNatural.Show()
+            Else
+                Me.Hide()
+                FormularioIngredientes1.Show()
+            End If
         Else
             intentosFallidos += 1
             If intentosFallidos >= 3 Then
