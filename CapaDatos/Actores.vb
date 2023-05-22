@@ -8,4 +8,11 @@ Public Class Actores
     Public Property id_Tipodoc As Integer
     Public Property numeroDocumento As String
     Public Property id_sexo As Integer
+
+    Public ReadOnly Property NombreCompleto As String
+        Get
+            Return $"{nombre} {apellido}"
+        End Get
+    End Property
+
 End Class

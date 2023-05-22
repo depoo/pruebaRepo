@@ -26,10 +26,10 @@ Partial Class Nuevo_Producto
         Label1 = New Label()
         Label2 = New Label()
         GroupBox1 = New GroupBox()
-        DataGridView1 = New DataGridView()
-        TextBox1 = New TextBox()
-        TextBox2 = New TextBox()
         Button1 = New Button()
+        TextBox2 = New TextBox()
+        TextBox1 = New TextBox()
+        DataGridView1 = New DataGridView()
         GroupBox2 = New GroupBox()
         GroupBox1.SuspendLayout()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
@@ -76,29 +76,6 @@ Partial Class Nuevo_Producto
         GroupBox1.TabIndex = 3
         GroupBox1.TabStop = False
         ' 
-        ' DataGridView1
-        ' 
-        DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Location = New Point(25, 22)
-        DataGridView1.Name = "DataGridView1"
-        DataGridView1.RowTemplate.Height = 25
-        DataGridView1.Size = New Size(804, 178)
-        DataGridView1.TabIndex = 4
-        ' 
-        ' TextBox1
-        ' 
-        TextBox1.Location = New Point(223, 57)
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(186, 23)
-        TextBox1.TabIndex = 3
-        ' 
-        ' TextBox2
-        ' 
-        TextBox2.Location = New Point(457, 57)
-        TextBox2.Name = "TextBox2"
-        TextBox2.Size = New Size(186, 23)
-        TextBox2.TabIndex = 4
-        ' 
         ' Button1
         ' 
         Button1.Location = New Point(678, 19)
@@ -107,6 +84,29 @@ Partial Class Nuevo_Producto
         Button1.TabIndex = 5
         Button1.Text = "INGRESO NUEVO PRODUCTO"
         Button1.UseVisualStyleBackColor = True
+        ' 
+        ' TextBox2
+        ' 
+        TextBox2.Location = New Point(457, 57)
+        TextBox2.Name = "TextBox2"
+        TextBox2.Size = New Size(186, 23)
+        TextBox2.TabIndex = 4
+        ' 
+        ' TextBox1
+        ' 
+        TextBox1.Location = New Point(223, 57)
+        TextBox1.Name = "TextBox1"
+        TextBox1.Size = New Size(186, 23)
+        TextBox1.TabIndex = 3
+        ' 
+        ' DataGridView1
+        ' 
+        DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridView1.Location = New Point(25, 22)
+        DataGridView1.Name = "DataGridView1"
+        DataGridView1.RowTemplate.Height = 25
+        DataGridView1.Size = New Size(804, 178)
+        DataGridView1.TabIndex = 4
         ' 
         ' GroupBox2
         ' 

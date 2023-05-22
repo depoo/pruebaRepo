@@ -40,6 +40,7 @@ Partial Class FormularioPersonaNatural
         Button4 = New Button()
         Button5 = New Button()
         ComboBox2 = New ComboBox()
+        Button6 = New Button()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -161,10 +162,10 @@ Partial Class FormularioPersonaNatural
         ' DataGridView1
         ' 
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Location = New Point(343, 32)
+        DataGridView1.Location = New Point(347, 32)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.RowTemplate.Height = 25
-        DataGridView1.Size = New Size(503, 325)
+        DataGridView1.Size = New Size(609, 325)
         DataGridView1.TabIndex = 16
         ' 
         ' ComboBox1
@@ -177,7 +178,7 @@ Partial Class FormularioPersonaNatural
         ' 
         ' Button4
         ' 
-        Button4.Location = New Point(31, 347)
+        Button4.Location = New Point(131, 347)
         Button4.Name = "Button4"
         Button4.Size = New Size(83, 40)
         Button4.TabIndex = 18
@@ -186,7 +187,7 @@ Partial Class FormularioPersonaNatural
         ' 
         ' Button5
         ' 
-        Button5.Location = New Point(131, 347)
+        Button5.Location = New Point(229, 347)
         Button5.Name = "Button5"
         Button5.Size = New Size(83, 40)
         Button5.TabIndex = 19
@@ -201,12 +202,22 @@ Partial Class FormularioPersonaNatural
         ComboBox2.Size = New Size(137, 23)
         ComboBox2.TabIndex = 20
         ' 
+        ' Button6
+        ' 
+        Button6.Location = New Point(31, 347)
+        Button6.Name = "Button6"
+        Button6.Size = New Size(83, 40)
+        Button6.TabIndex = 21
+        Button6.Text = "Núm. tele."
+        Button6.UseVisualStyleBackColor = True
+        ' 
         ' FormularioPersonaNatural
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = SystemColors.ActiveCaption
-        ClientSize = New Size(882, 428)
+        ClientSize = New Size(985, 428)
+        Controls.Add(Button6)
         Controls.Add(ComboBox2)
         Controls.Add(Button5)
         Controls.Add(Button4)
@@ -250,4 +261,5 @@ Partial Class FormularioPersonaNatural
     Friend WithEvents Button4 As Button
     Friend WithEvents Button5 As Button
     Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents Button6 As Button
 End Class

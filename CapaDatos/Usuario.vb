@@ -6,4 +6,6 @@ Public Class Usuario
     Public Property usuario As String
     Public Property pass As String
     Public Property id_Rol As Integer
+    Public Property id_Actor As Integer
+
 End Class

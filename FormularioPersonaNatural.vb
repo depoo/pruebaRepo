@@ -2,39 +2,24 @@
 
 Public Class FormularioPersonaNatural
 
-    Dim IdAutor, TipoDocumento, NDocumento As Integer
-    Dim nombre, apellido, TipoSexo As String
+    Dim IdAutor, TipoDocumento As Integer
+    Dim nombre, apellido, TipoSexo, NDocumento As String
 
-    Private Sub Cargardata()
+    Private Sub cargarData()
         Try
             Dim dbContext As New MiDbContext()
-            Dim listaPersonaNatural = dbContext.Actores.
-                                                Join(dbContext.TipoDocumento,
-                                                     Function(pn) pn.id_Tipodoc,
-                                                     Function(td) td.id_TipoDoc,
-                                                     Function(pn, td) New With {
-                                                        .id_Actor = pn.id_Actor,
-                                                        .nombre = pn.nombre,
-                                                        .apellido = pn.apellido,
-                                                        .Nombre_tipoDoc = td.Nombre_tipoDoc,
-                                                        .numeroDocumento = pn.numeroDocumento,
-                                                        .id_sexo = pn.id_sexo
-                                                     }).
-                                                Join(dbContext.Sexo,
-                                                     Function(pn) pn.id_sexo,
-                                                     Function(s) s.id_Sexo,
-                                                     Function(pn, s) New With {
-                                                        .id_Actor = pn.id_Actor,
-                                                        .nombre = pn.nombre,
-                                                        .apellido = pn.apellido,
-                                                        .Nombre_tipoDoc = pn.Nombre_tipoDoc,
-                                                        .numeroDocumento = pn.numeroDocumento,
-                                                        .id_sexo = s.sexo
-                                                        }).ToList()
-
-
-
-            DataGridView1.DataSource = listaPersonaNatural
+            Dim query = From A In dbContext.Actores
+                        Join D In dbContext.TipoDocumento On A.id_Tipodoc Equals D.id_TipoDoc
+                        Join S In dbContext.Sexo On A.id_sexo Equals S.id_Sexo
+                        Select New With {
+                            .id_Actor = A.id_Actor,
+                            .nombre = A.nombre,
+                            .apellido = A.apellido,
+                            .Nombre_tipoDoc = D.Nombre_tipoDoc,
+                            .numeroDocumento = A.numeroDocumento,
+                            .tiposex = S.sexo
+                            }
+            DataGridView1.DataSource = query.ToList()
         Catch ex As Exception
             cajademensaje.Errordeobtencion()
         End Try
@@ -84,7 +69,7 @@ Public Class FormularioPersonaNatural
         DataGridView1.Columns(2).HeaderText = "Apellido"
         DataGridView1.Columns(3).HeaderText = "Tipo de documento"
         DataGridView1.Columns(4).HeaderText = "Número de documento"
-        DataGridView1.Columns(5).HeaderText = "sexo"
+        DataGridView1.Columns(5).HeaderText = "Genero"
 
     End Sub
 
@@ -192,10 +177,18 @@ Public Class FormularioPersonaNatural
             ComboBox1.Text = row.Cells("Nombre_tipoDoc").Value.ToString()
             TextBox4.Text = row.Cells("numeroDocumento").Value.ToString()
             TextBox6.Text = row.Cells("apellido").Value.ToString()
+            ComboBox2.Text = row.Cells("tiposex").Value.ToString()
             Me.Button1.Enabled = False
             Me.Button2.Enabled = True
             Me.Button3.Enabled = True
 
         End If
     End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        Me.Hide()
+        NumContactoTrabajador.Show()
+
+    End Sub
+
 End Class
