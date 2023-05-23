@@ -31,6 +31,7 @@ Public Class FormularioLogin
 
         If datos.Count() > 0 Then
             Dim Rol As Integer = datos(0).id_Rol
+            Dim idActores As Integer = datos(0).id_Actor
             If Rol = 1 Then
 
                 Me.Hide()

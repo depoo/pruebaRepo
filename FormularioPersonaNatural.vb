@@ -113,6 +113,7 @@ Public Class FormularioPersonaNatural
         End Try
     End Sub
 
+
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
 
         IdAutor = TextBox1.Text
@@ -132,7 +133,7 @@ Public Class FormularioPersonaNatural
                 personaNatural.apellido = apellido
                 dbContext.SaveChanges()
                 cajademensaje.Actualizacionderegistro()
-                Cargardata()
+                cargarData()
             Else
                 cajademensaje.Actualizacionderegistro2()
             End If
@@ -162,7 +163,7 @@ Public Class FormularioPersonaNatural
             dbContext.Actores.Add(NewPersonaNatural)
             dbContext.SaveChanges()
             cajademensaje.Creacionderegistro()
-            Cargardata()
+            cargarData()
         Catch ex As Exception
             cajademensaje.errorglobal()
         End Try
@@ -189,6 +190,10 @@ Public Class FormularioPersonaNatural
         Me.Hide()
         NumContactoTrabajador.Show()
 
+    End Sub
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        Me.Hide()
+        FormularioUsuarios.Show()
     End Sub
 
 End Class
