@@ -23,11 +23,11 @@ Partial Class FormularioIngredientes1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Label1 = New Label()
-        TextBox1 = New TextBox()
         Button1 = New Button()
         ComboBox1 = New ComboBox()
         DataGridView1 = New DataGridView()
         GroupBox1 = New GroupBox()
+        Label3 = New Label()
         Button11 = New Button()
         Button12 = New Button()
         Button8 = New Button()
@@ -51,19 +51,12 @@ Partial Class FormularioIngredientes1
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Font = New Font("Verdana", 12F, FontStyle.Italic, GraphicsUnit.Point)
-        Label1.Location = New Point(335, 19)
+        Label1.Font = New Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        Label1.Location = New Point(324, 19)
         Label1.Name = "Label1"
-        Label1.Size = New Size(96, 18)
+        Label1.Size = New Size(106, 18)
         Label1.TabIndex = 0
         Label1.Text = "VERDURAS"
-        ' 
-        ' TextBox1
-        ' 
-        TextBox1.Location = New Point(222, 60)
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(130, 23)
-        TextBox1.TabIndex = 1
         ' 
         ' Button1
         ' 
@@ -79,9 +72,9 @@ Partial Class FormularioIngredientes1
         ' ComboBox1
         ' 
         ComboBox1.FormattingEnabled = True
-        ComboBox1.Location = New Point(24, 60)
+        ComboBox1.Location = New Point(71, 60)
         ComboBox1.Name = "ComboBox1"
-        ComboBox1.Size = New Size(130, 23)
+        ComboBox1.Size = New Size(196, 23)
         ComboBox1.TabIndex = 3
         ' 
         ' DataGridView1
@@ -96,6 +89,7 @@ Partial Class FormularioIngredientes1
         ' GroupBox1
         ' 
         GroupBox1.BackColor = Color.LightSeaGreen
+        GroupBox1.Controls.Add(Label3)
         GroupBox1.Controls.Add(Button11)
         GroupBox1.Controls.Add(Button12)
         GroupBox1.Controls.Add(Button8)
@@ -104,7 +98,6 @@ Partial Class FormularioIngredientes1
         GroupBox1.Controls.Add(TextBox3)
         GroupBox1.Controls.Add(ComboBox1)
         GroupBox1.Controls.Add(DataGridView1)
-        GroupBox1.Controls.Add(TextBox1)
         GroupBox1.Controls.Add(Label1)
         GroupBox1.Location = New Point(310, 12)
         GroupBox1.Name = "GroupBox1"
@@ -112,14 +105,26 @@ Partial Class FormularioIngredientes1
         GroupBox1.TabIndex = 5
         GroupBox1.TabStop = False
         ' 
+        ' Label3
+        ' 
+        Label3.AutoSize = True
+        Label3.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        Label3.Location = New Point(116, 39)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(111, 21)
+        Label3.TabIndex = 12
+        Label3.Text = "SELECCIONAR"
+        ' 
         ' Button11
         ' 
+        Button11.BackColor = Color.Salmon
+        Button11.ForeColor = Color.Black
         Button11.Location = New Point(150, 517)
         Button11.Name = "Button11"
         Button11.Size = New Size(206, 61)
         Button11.TabIndex = 10
-        Button11.Text = "PEDIR PRODUCTO"
-        Button11.UseVisualStyleBackColor = True
+        Button11.Text = "SALIR"
+        Button11.UseVisualStyleBackColor = False
         ' 
         ' Button12
         ' 
@@ -132,7 +137,7 @@ Partial Class FormularioIngredientes1
         ' 
         ' Button8
         ' 
-        Button8.Location = New Point(416, 99)
+        Button8.Location = New Point(344, 99)
         Button8.Name = "Button8"
         Button8.Size = New Size(165, 53)
         Button8.TabIndex = 11
@@ -141,7 +146,7 @@ Partial Class FormularioIngredientes1
         ' 
         ' Button9
         ' 
-        Button9.Location = New Point(616, 99)
+        Button9.Location = New Point(544, 99)
         Button9.Name = "Button9"
         Button9.Size = New Size(165, 53)
         Button9.TabIndex = 10
@@ -150,14 +155,14 @@ Partial Class FormularioIngredientes1
         ' 
         ' TextBox2
         ' 
-        TextBox2.Location = New Point(416, 60)
+        TextBox2.Location = New Point(344, 60)
         TextBox2.Name = "TextBox2"
         TextBox2.Size = New Size(165, 23)
         TextBox2.TabIndex = 7
         ' 
         ' TextBox3
         ' 
-        TextBox3.Location = New Point(616, 60)
+        TextBox3.Location = New Point(544, 60)
         TextBox3.Name = "TextBox3"
         TextBox3.Size = New Size(165, 23)
         TextBox3.TabIndex = 6
@@ -194,9 +199,10 @@ Partial Class FormularioIngredientes1
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(108, 19)
+        Label2.Font = New Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        Label2.Location = New Point(84, 45)
         Label2.Name = "Label2"
-        Label2.Size = New Size(74, 15)
+        Label2.Size = New Size(122, 18)
         Label2.TabIndex = 5
         Label2.Text = "PRODUCTOS"
         ' 
@@ -278,7 +284,6 @@ Partial Class FormularioIngredientes1
     End Sub
 
     Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Button1 As Button
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents DataGridView1 As DataGridView
@@ -298,4 +303,5 @@ Partial Class FormularioIngredientes1
     Friend WithEvents TextBox3 As TextBox
     Friend WithEvents Button10 As Button
     Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
 End Class

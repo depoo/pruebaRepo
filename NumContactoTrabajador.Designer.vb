@@ -22,186 +22,187 @@ Partial Class NumContactoTrabajador
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Button3 = New System.Windows.Forms.Button()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SuspendLayout()
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label1.Location = New System.Drawing.Point(272, 27)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(262, 25)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Núm. telefónicos trabajador"
-        '
-        'DataGridView1
-        '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(316, 83)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowTemplate.Height = 25
-        Me.DataGridView1.Size = New System.Drawing.Size(444, 275)
-        Me.DataGridView1.TabIndex = 2
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(157, 145)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(142, 23)
-        Me.ComboBox1.TabIndex = 3
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(157, 188)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(142, 23)
-        Me.TextBox1.TabIndex = 6
-        '
-        'Button4
-        '
-        Me.Button4.Location = New System.Drawing.Point(103, 410)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(121, 44)
-        Me.Button4.TabIndex = 8
-        Me.Button4.Text = "SALIR"
-        Me.Button4.UseVisualStyleBackColor = True
-        '
-        'Button5
-        '
-        Me.Button5.Location = New System.Drawing.Point(30, 293)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(121, 44)
-        Me.Button5.TabIndex = 9
-        Me.Button5.Text = "AGREGAR"
-        Me.Button5.UseVisualStyleBackColor = True
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label2.Location = New System.Drawing.Point(30, 145)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(84, 21)
-        Me.Label2.TabIndex = 10
-        Me.Label2.Text = "Trabajador"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label3.Location = New System.Drawing.Point(30, 190)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(114, 21)
-        Me.Label3.TabIndex = 11
-        Me.Label3.Text = "Núm. Contacto"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label4.Location = New System.Drawing.Point(30, 243)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(77, 21)
-        Me.Label4.TabIndex = 12
-        Me.Label4.Text = "Operador"
-        '
-        'ComboBox2
-        '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(157, 241)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(142, 23)
-        Me.ComboBox2.TabIndex = 13
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(30, 353)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(121, 44)
-        Me.Button1.TabIndex = 14
-        Me.Button1.Text = "MODIFICAR"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(169, 353)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(121, 44)
-        Me.Button2.TabIndex = 15
-        Me.Button2.Text = "ELIMINAR"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label5.Location = New System.Drawing.Point(30, 98)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(87, 21)
-        Me.Label5.TabIndex = 17
-        Me.Label5.Text = "Id. telefono"
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(157, 100)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(142, 23)
-        Me.TextBox2.TabIndex = 16
-        '
-        'Button3
-        '
-        Me.Button3.Location = New System.Drawing.Point(169, 293)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(121, 44)
-        Me.Button3.TabIndex = 18
-        Me.Button3.Text = "LIMPIAR"
-        Me.Button3.UseVisualStyleBackColor = True
-        '
-        'NumContactoTrabajador
-        '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.LightBlue
-        Me.ClientSize = New System.Drawing.Size(800, 459)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.ComboBox2)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Button5)
-        Me.Controls.Add(Me.Button4)
-        Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.ComboBox1)
-        Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.Label1)
-        Me.Name = "NumContactoTrabajador"
-        Me.Text = "NumContactoTrabajador"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ResumeLayout(False)
-        Me.PerformLayout()
-
+        Label1 = New Label()
+        DataGridView1 = New DataGridView()
+        BackgroundWorker1 = New ComponentModel.BackgroundWorker()
+        ComboBox1 = New ComboBox()
+        TextBox1 = New TextBox()
+        Button4 = New Button()
+        Button5 = New Button()
+        Label2 = New Label()
+        Label3 = New Label()
+        Label4 = New Label()
+        ComboBox2 = New ComboBox()
+        Button1 = New Button()
+        Button2 = New Button()
+        Label5 = New Label()
+        TextBox2 = New TextBox()
+        Button3 = New Button()
+        CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
+        SuspendLayout()
+        ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.Font = New Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        Label1.Location = New Point(245, 26)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(254, 18)
+        Label1.TabIndex = 0
+        Label1.Text = "Núm. telefónicos trabajador"
+        ' 
+        ' DataGridView1
+        ' 
+        DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridView1.Location = New Point(321, 83)
+        DataGridView1.Name = "DataGridView1"
+        DataGridView1.RowTemplate.Height = 25
+        DataGridView1.Size = New Size(459, 364)
+        DataGridView1.TabIndex = 2
+        ' 
+        ' ComboBox1
+        ' 
+        ComboBox1.FormattingEnabled = True
+        ComboBox1.Location = New Point(157, 145)
+        ComboBox1.Name = "ComboBox1"
+        ComboBox1.Size = New Size(142, 23)
+        ComboBox1.TabIndex = 3
+        ' 
+        ' TextBox1
+        ' 
+        TextBox1.Location = New Point(157, 188)
+        TextBox1.Name = "TextBox1"
+        TextBox1.Size = New Size(142, 23)
+        TextBox1.TabIndex = 6
+        ' 
+        ' Button4
+        ' 
+        Button4.BackColor = Color.Salmon
+        Button4.Location = New Point(103, 410)
+        Button4.Name = "Button4"
+        Button4.Size = New Size(121, 44)
+        Button4.TabIndex = 8
+        Button4.Text = "SALIR"
+        Button4.UseVisualStyleBackColor = False
+        ' 
+        ' Button5
+        ' 
+        Button5.BackColor = Color.DarkSeaGreen
+        Button5.Location = New Point(30, 293)
+        Button5.Name = "Button5"
+        Button5.Size = New Size(121, 44)
+        Button5.TabIndex = 9
+        Button5.Text = "AGREGAR"
+        Button5.UseVisualStyleBackColor = False
+        ' 
+        ' Label2
+        ' 
+        Label2.AutoSize = True
+        Label2.Font = New Font("Verdana", 12F, FontStyle.Italic, GraphicsUnit.Point)
+        Label2.Location = New Point(30, 145)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(97, 18)
+        Label2.TabIndex = 10
+        Label2.Text = "Trabajador"
+        ' 
+        ' Label3
+        ' 
+        Label3.AutoSize = True
+        Label3.Font = New Font("Verdana", 12F, FontStyle.Italic, GraphicsUnit.Point)
+        Label3.Location = New Point(30, 190)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(125, 18)
+        Label3.TabIndex = 11
+        Label3.Text = "Núm.Contacto"
+        ' 
+        ' Label4
+        ' 
+        Label4.AutoSize = True
+        Label4.Font = New Font("Verdana", 12F, FontStyle.Italic, GraphicsUnit.Point)
+        Label4.Location = New Point(30, 243)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(83, 18)
+        Label4.TabIndex = 12
+        Label4.Text = "Operador"
+        ' 
+        ' ComboBox2
+        ' 
+        ComboBox2.FormattingEnabled = True
+        ComboBox2.Location = New Point(157, 241)
+        ComboBox2.Name = "ComboBox2"
+        ComboBox2.Size = New Size(142, 23)
+        ComboBox2.TabIndex = 13
+        ' 
+        ' Button1
+        ' 
+        Button1.Location = New Point(30, 353)
+        Button1.Name = "Button1"
+        Button1.Size = New Size(121, 44)
+        Button1.TabIndex = 14
+        Button1.Text = "MODIFICAR"
+        Button1.UseVisualStyleBackColor = True
+        ' 
+        ' Button2
+        ' 
+        Button2.Location = New Point(169, 353)
+        Button2.Name = "Button2"
+        Button2.Size = New Size(121, 44)
+        Button2.TabIndex = 15
+        Button2.Text = "ELIMINAR"
+        Button2.UseVisualStyleBackColor = True
+        ' 
+        ' Label5
+        ' 
+        Label5.AutoSize = True
+        Label5.Font = New Font("Verdana", 12F, FontStyle.Italic, GraphicsUnit.Point)
+        Label5.Location = New Point(30, 98)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(106, 18)
+        Label5.TabIndex = 17
+        Label5.Text = "Id. telefono"
+        ' 
+        ' TextBox2
+        ' 
+        TextBox2.Location = New Point(157, 100)
+        TextBox2.Name = "TextBox2"
+        TextBox2.Size = New Size(142, 23)
+        TextBox2.TabIndex = 16
+        ' 
+        ' Button3
+        ' 
+        Button3.Location = New Point(169, 293)
+        Button3.Name = "Button3"
+        Button3.Size = New Size(121, 44)
+        Button3.TabIndex = 18
+        Button3.Text = "LIMPIAR"
+        Button3.UseVisualStyleBackColor = True
+        ' 
+        ' NumContactoTrabajador
+        ' 
+        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleMode = AutoScaleMode.Font
+        BackColor = Color.LightBlue
+        ClientSize = New Size(800, 473)
+        Controls.Add(Button3)
+        Controls.Add(Label5)
+        Controls.Add(TextBox2)
+        Controls.Add(Button2)
+        Controls.Add(Button1)
+        Controls.Add(ComboBox2)
+        Controls.Add(Label4)
+        Controls.Add(Label3)
+        Controls.Add(Label2)
+        Controls.Add(Button5)
+        Controls.Add(Button4)
+        Controls.Add(TextBox1)
+        Controls.Add(ComboBox1)
+        Controls.Add(DataGridView1)
+        Controls.Add(Label1)
+        Name = "NumContactoTrabajador"
+        Text = "NumContactoTrabajador"
+        CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
+        ResumeLayout(False)
+        PerformLayout()
     End Sub
 
     Friend WithEvents Label1 As Label

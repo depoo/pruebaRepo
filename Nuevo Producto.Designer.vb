@@ -26,6 +26,7 @@ Partial Class Nuevo_Producto
         Label1 = New Label()
         Label2 = New Label()
         GroupBox1 = New GroupBox()
+        Button2 = New Button()
         Button1 = New Button()
         TextBox2 = New TextBox()
         TextBox1 = New TextBox()
@@ -56,7 +57,7 @@ Partial Class Nuevo_Producto
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(490, 19)
+        Label2.Location = New Point(482, 19)
         Label2.Name = "Label2"
         Label2.Size = New Size(129, 15)
         Label2.TabIndex = 2
@@ -64,6 +65,7 @@ Partial Class Nuevo_Producto
         ' 
         ' GroupBox1
         ' 
+        GroupBox1.Controls.Add(Button2)
         GroupBox1.Controls.Add(Button1)
         GroupBox1.Controls.Add(TextBox2)
         GroupBox1.Controls.Add(TextBox1)
@@ -76,18 +78,29 @@ Partial Class Nuevo_Producto
         GroupBox1.TabIndex = 3
         GroupBox1.TabStop = False
         ' 
+        ' Button2
+        ' 
+        Button2.BackColor = Color.Salmon
+        Button2.Location = New Point(753, 22)
+        Button2.Name = "Button2"
+        Button2.Size = New Size(82, 61)
+        Button2.TabIndex = 6
+        Button2.Text = "SALIR"
+        Button2.UseVisualStyleBackColor = False
+        ' 
         ' Button1
         ' 
-        Button1.Location = New Point(678, 19)
+        Button1.BackColor = Color.DarkSeaGreen
+        Button1.Location = New Point(649, 22)
         Button1.Name = "Button1"
-        Button1.Size = New Size(151, 84)
+        Button1.Size = New Size(82, 61)
         Button1.TabIndex = 5
         Button1.Text = "INGRESO NUEVO PRODUCTO"
-        Button1.UseVisualStyleBackColor = True
+        Button1.UseVisualStyleBackColor = False
         ' 
         ' TextBox2
         ' 
-        TextBox2.Location = New Point(457, 57)
+        TextBox2.Location = New Point(449, 57)
         TextBox2.Name = "TextBox2"
         TextBox2.Size = New Size(186, 23)
         TextBox2.TabIndex = 4
@@ -121,6 +134,7 @@ Partial Class Nuevo_Producto
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
+        BackColor = Color.Thistle
         ClientSize = New Size(882, 358)
         Controls.Add(GroupBox2)
         Controls.Add(GroupBox1)
@@ -142,4 +156,5 @@ Partial Class Nuevo_Producto
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents Button2 As Button
 End Class

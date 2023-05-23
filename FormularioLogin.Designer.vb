@@ -34,12 +34,12 @@ Partial Class FormularioLogin
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Font = New Font("Verdana", 24F, FontStyle.Italic, GraphicsUnit.Point)
-        Label1.Location = New Point(290, 28)
+        Label1.Font = New Font("Verdana", 20.25F, FontStyle.Bold, GraphicsUnit.Point)
+        Label1.Location = New Point(269, 21)
         Label1.Name = "Label1"
-        Label1.Size = New Size(103, 38)
+        Label1.Size = New Size(207, 64)
         Label1.TabIndex = 0
-        Label1.Text = "Login"
+        Label1.Text = "Restaurante " & vbCrLf & "  La Florida"
         ' 
         ' Button1
         ' 
@@ -48,7 +48,7 @@ Partial Class FormularioLogin
         Button1.Name = "Button1"
         Button1.Size = New Size(112, 42)
         Button1.TabIndex = 1
-        Button1.Text = "Ingresar"
+        Button1.Text = "INGRESAR"
         Button1.UseVisualStyleBackColor = True
         ' 
         ' TextBox1
@@ -65,9 +65,9 @@ Partial Class FormularioLogin
         Label2.Font = New Font("Verdana", 12F, FontStyle.Italic, GraphicsUnit.Point)
         Label2.Location = New Point(136, 110)
         Label2.Name = "Label2"
-        Label2.Size = New Size(70, 18)
+        Label2.Size = New Size(85, 18)
         Label2.TabIndex = 3
-        Label2.Text = "Usuario"
+        Label2.Text = "USUARIO"
         ' 
         ' Label3
         ' 
@@ -75,9 +75,9 @@ Partial Class FormularioLogin
         Label3.Font = New Font("Verdana", 12F, FontStyle.Italic, GraphicsUnit.Point)
         Label3.Location = New Point(136, 158)
         Label3.Name = "Label3"
-        Label3.Size = New Size(101, 18)
+        Label3.Size = New Size(120, 18)
         Label3.TabIndex = 4
-        Label3.Text = "Contraseña"
+        Label3.Text = "CONTRASEÑA"
         ' 
         ' TextBox2
         ' 
@@ -94,14 +94,14 @@ Partial Class FormularioLogin
         Button2.Name = "Button2"
         Button2.Size = New Size(112, 42)
         Button2.TabIndex = 6
-        Button2.Text = "Limpiar"
+        Button2.Text = "LIMPIAR"
         Button2.UseVisualStyleBackColor = True
         ' 
-        ' FormularioLogin1
+        ' FormularioLogin
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        BackColor = SystemColors.ActiveCaption
+        BackColor = Color.DarkSeaGreen
         ClientSize = New Size(706, 317)
         Controls.Add(Button2)
         Controls.Add(TextBox2)
@@ -111,7 +111,7 @@ Partial Class FormularioLogin
         Controls.Add(Button1)
         Controls.Add(Label1)
         Margin = New Padding(3, 2, 3, 2)
-        Name = "FormularioLogin1"
+        Name = "FormularioLogin"
         Text = "Login"
         ResumeLayout(False)
         PerformLayout()
