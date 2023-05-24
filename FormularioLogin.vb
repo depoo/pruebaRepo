@@ -33,7 +33,6 @@ Public Class FormularioLogin
             Dim Rol As Integer = datos(0).id_Rol
             Dim idActores As Integer = datos(0).id_Actor
             If Rol = 1 Then
-
                 Me.Hide()
                 FormularioPersonaNatural.Show()
             Else
@@ -41,6 +40,7 @@ Public Class FormularioLogin
                 FormularioIngredientes1.Show()
             End If
         Else
+
             intentosFallidos += 1
             If intentosFallidos >= 3 Then
                 bloqueadoHasta = DateTime.Now.AddSeconds(15)
@@ -54,6 +54,8 @@ Public Class FormularioLogin
             Else
                 cajademensaje.Credencialesincorrectas()
             End If
+
         End If
+
     End Sub
 End Class
