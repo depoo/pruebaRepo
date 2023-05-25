@@ -3,16 +3,15 @@
     Private Sub cargarData(DATO As Integer)
         Try
             Dim dbContext As New MiDbContext()
-            Dim query = From P In dbContext.Productos
-                        Join C In dbContext.Categorias On P.id_Categoria Equals C.id_Categoria
-                        Join U In dbContext.UnidadMedida On P.id_Unidad Equals U.id_Unidad
-                        Where P.id_Categoria = DATO
+            Dim query = From A In dbContext.Almacen
+                        Join P In dbContext.Productos On A.id_Producto Equals P.id_Producto
+                        Join C In dbContext.Categorias On A.id_Caegoria Equals C.id_Categoria
+                        Join U In dbContext.UnidadMedida On A.id_Unidad Equals U.id_Unidad
+                        Where A.id_Caegoria = DATO
                         Select New With {
-                            .id_Producto = P.id_Producto,
-                            .nombre_Producto = P.nombre_Producto,
-                            .categoria = C.categoria,
-                            .unidad = U.unidad,
-                            .siglas = U.siglas
+                            .ID = A.id_Almacen,
+                            .NOBRE = P.nombre_Producto,
+                            .CANTIDAD = A.Cantidad
                             }
             DataGridView1.DataSource = query.ToList()
         Catch ex As Exception
@@ -23,15 +22,14 @@
     Private Sub cargarData2()
         Try
             Dim dbContext As New MiDbContext()
-            Dim query = From P In dbContext.Productos
-                        Join C In dbContext.Categorias On P.id_Categoria Equals C.id_Categoria
-                        Join U In dbContext.UnidadMedida On P.id_Unidad Equals U.id_Unidad
+            Dim query = From A In dbContext.Almacen
+                        Join P In dbContext.Productos On A.id_Producto Equals P.id_Producto
+                        Join C In dbContext.Categorias On A.id_Caegoria Equals C.id_Categoria
+                        Join U In dbContext.UnidadMedida On A.id_Unidad Equals U.id_Unidad
                         Select New With {
-                            .id_Producto = P.id_Producto,
-                            .nombre_Producto = P.nombre_Producto,
-                            .categoria = C.categoria,
-                            .unidad = U.unidad,
-                            .siglas = U.siglas
+                            .ID = A.id_Almacen,
+                            .NOBRE = P.nombre_Producto,
+                            .CANTIDAD = A.Cantidad
                             }
             DataGridView1.DataSource = query.ToList()
         Catch ex As Exception
