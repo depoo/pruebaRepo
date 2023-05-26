@@ -112,7 +112,6 @@ Public Class FormularioUsuarios
             Dim dbContext As New MiDbContext()
             Dim asignarRol = dbContext.Usuario.Find(idUsuario)
             If asignarRol IsNot Nothing Then
-                asignarRol.id_Usuario = idUsuario
                 asignarRol.id_Actor = Actor
                 asignarRol.usuario = userName
                 asignarRol.pass = password
