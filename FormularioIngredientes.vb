@@ -4,10 +4,10 @@
         Try
             Dim dbContext As New MiDbContext()
             Dim query = From A In dbContext.Almacen
-                        Join P In dbContext.Productos On A.id_Producto Equals P.id_Producto
-                        Join C In dbContext.Categorias On A.id_Caegoria Equals C.id_Categoria
+                        Join P In dbContext.Productos On A.id_Productos Equals P.id_Producto
+                        Join C In dbContext.Categorias On A.id_Categoria Equals C.id_Categoria
                         Join U In dbContext.UnidadMedida On A.id_Unidad Equals U.id_Unidad
-                        Where A.id_Caegoria = DATO
+                        Where A.id_Categoria = DATO
                         Select New With {
                             .ID = A.id_Almacen,
                             .NOBRE = P.nombre_Producto,
@@ -23,8 +23,8 @@
         Try
             Dim dbContext As New MiDbContext()
             Dim query = From A In dbContext.Almacen
-                        Join P In dbContext.Productos On A.id_Producto Equals P.id_Producto
-                        Join C In dbContext.Categorias On A.id_Caegoria Equals C.id_Categoria
+                        Join P In dbContext.Productos On A.id_Productos Equals P.id_Producto
+                        Join C In dbContext.Categorias On A.id_Categoria Equals C.id_Categoria
                         Join U In dbContext.UnidadMedida On A.id_Unidad Equals U.id_Unidad
                         Select New With {
                             .ID = A.id_Almacen,
