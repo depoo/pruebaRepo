@@ -170,6 +170,7 @@ Public Class FormularioPersonaNatural
 
     End Sub
 
+
     Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
         If e.RowIndex >= 0 Then
             Dim row As DataGridViewRow = DataGridView1.Rows(e.RowIndex)
@@ -194,6 +195,10 @@ Public Class FormularioPersonaNatural
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
         Me.Hide()
         FormularioUsuarios.Show()
+    End Sub
+    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+        Me.Hide()
+        FormularioProveedor.Show()
     End Sub
 
     Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click

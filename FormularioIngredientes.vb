@@ -89,11 +89,6 @@
 
     End Sub
 
-    Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
-
-        Nuevo_Producto.Show()
-
-    End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
 
@@ -113,6 +108,11 @@
     End Sub
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+
+    End Sub
+    Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
+
+        Nuevo_Producto.Show()
 
     End Sub
 End Class

@@ -84,10 +84,10 @@ Public Class FormularioUsuarios
             Dim dbContext As New MiDbContext()
             Dim nuevaAsignacion As New Usuario() With
             {
-    .id_Actor = Actor,
-    .usuario = userName,
-    .pass = password,
-    .id_Rol = Rol
+                .id_Actor = Actor,
+                .usuario = userName,
+                .pass = password,
+                .id_Rol = Rol
             }
             dbContext.Usuario.Add(nuevaAsignacion)
             dbContext.SaveChanges()

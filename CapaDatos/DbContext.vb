@@ -19,5 +19,6 @@ Public Class MiDbContext
     Public Property Productos As DbSet(Of Productos)
     Public Property Almacen As DbSet(Of Almacen)
     Public Property Movimientos As DbSet(Of Movimientos)
+    Public Property Proveedor As DbSet(Of Proveedor)
 
 End Class
