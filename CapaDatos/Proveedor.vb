@@ -3,6 +3,6 @@
 Public Class Proveedor
     <Key>
     Public Property id_Proveedor As Integer
-    Public Property id_Actor As String
+    Public Property id_Actor As Integer
 
 End Class
