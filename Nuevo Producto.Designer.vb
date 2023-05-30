@@ -28,7 +28,6 @@ Partial Class Nuevo_Producto
         GroupBox1 = New GroupBox()
         Button2 = New Button()
         Button1 = New Button()
-        TextBox2 = New TextBox()
         TextBox1 = New TextBox()
         DataGridView1 = New DataGridView()
         GroupBox2 = New GroupBox()
@@ -40,7 +39,7 @@ Partial Class Nuevo_Producto
         ' ComboBox1
         ' 
         ComboBox1.FormattingEnabled = True
-        ComboBox1.Location = New Point(25, 57)
+        ComboBox1.Location = New Point(276, 57)
         ComboBox1.Name = "ComboBox1"
         ComboBox1.Size = New Size(132, 23)
         ComboBox1.TabIndex = 0
@@ -48,40 +47,41 @@ Partial Class Nuevo_Producto
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(266, 19)
+        Label1.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        Label1.Location = New Point(55, 19)
         Label1.Name = "Label1"
-        Label1.Size = New Size(110, 15)
+        Label1.Size = New Size(150, 21)
         Label1.TabIndex = 1
         Label1.Text = "NUEVO PRODUCTO"
         ' 
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(482, 19)
+        Label2.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        Label2.Location = New Point(296, 19)
         Label2.Name = "Label2"
-        Label2.Size = New Size(129, 15)
+        Label2.Size = New Size(87, 21)
         Label2.TabIndex = 2
-        Label2.Text = "CANTIDAD PRODUCTO"
+        Label2.Text = "Proveedor"
         ' 
         ' GroupBox1
         ' 
         GroupBox1.Controls.Add(Button2)
         GroupBox1.Controls.Add(Button1)
-        GroupBox1.Controls.Add(TextBox2)
         GroupBox1.Controls.Add(TextBox1)
         GroupBox1.Controls.Add(ComboBox1)
         GroupBox1.Controls.Add(Label2)
         GroupBox1.Controls.Add(Label1)
         GroupBox1.Location = New Point(12, 12)
         GroupBox1.Name = "GroupBox1"
-        GroupBox1.Size = New Size(858, 112)
+        GroupBox1.Size = New Size(677, 112)
         GroupBox1.TabIndex = 3
         GroupBox1.TabStop = False
         ' 
         ' Button2
         ' 
         Button2.BackColor = Color.Salmon
-        Button2.Location = New Point(753, 22)
+        Button2.Location = New Point(567, 22)
         Button2.Name = "Button2"
         Button2.Size = New Size(82, 61)
         Button2.TabIndex = 6
@@ -91,23 +91,16 @@ Partial Class Nuevo_Producto
         ' Button1
         ' 
         Button1.BackColor = Color.DarkSeaGreen
-        Button1.Location = New Point(649, 22)
+        Button1.Location = New Point(463, 22)
         Button1.Name = "Button1"
         Button1.Size = New Size(82, 61)
         Button1.TabIndex = 5
         Button1.Text = "INGRESO NUEVO PRODUCTO"
         Button1.UseVisualStyleBackColor = False
         ' 
-        ' TextBox2
-        ' 
-        TextBox2.Location = New Point(449, 57)
-        TextBox2.Name = "TextBox2"
-        TextBox2.Size = New Size(186, 23)
-        TextBox2.TabIndex = 4
-        ' 
         ' TextBox1
         ' 
-        TextBox1.Location = New Point(223, 57)
+        TextBox1.Location = New Point(37, 57)
         TextBox1.Name = "TextBox1"
         TextBox1.Size = New Size(186, 23)
         TextBox1.TabIndex = 3
@@ -115,10 +108,10 @@ Partial Class Nuevo_Producto
         ' DataGridView1
         ' 
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Location = New Point(25, 22)
+        DataGridView1.Location = New Point(55, 22)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.RowTemplate.Height = 25
-        DataGridView1.Size = New Size(804, 178)
+        DataGridView1.Size = New Size(393, 178)
         DataGridView1.TabIndex = 4
         ' 
         ' GroupBox2
@@ -126,7 +119,7 @@ Partial Class Nuevo_Producto
         GroupBox2.Controls.Add(DataGridView1)
         GroupBox2.Location = New Point(12, 130)
         GroupBox2.Name = "GroupBox2"
-        GroupBox2.Size = New Size(858, 216)
+        GroupBox2.Size = New Size(677, 216)
         GroupBox2.TabIndex = 5
         GroupBox2.TabStop = False
         ' 
@@ -135,7 +128,7 @@ Partial Class Nuevo_Producto
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.Thistle
-        ClientSize = New Size(882, 358)
+        ClientSize = New Size(704, 358)
         Controls.Add(GroupBox2)
         Controls.Add(GroupBox1)
         Name = "Nuevo_Producto"
@@ -153,7 +146,6 @@ Partial Class Nuevo_Producto
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents Button1 As Button
-    Friend WithEvents TextBox2 As TextBox
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents Button2 As Button

@@ -27,12 +27,11 @@ Partial Class FormularioIngredientes1
         ComboBox1 = New ComboBox()
         DataGridView1 = New DataGridView()
         GroupBox1 = New GroupBox()
-        Label3 = New Label()
+        TextBox1 = New TextBox()
         Button11 = New Button()
         Button12 = New Button()
         Button8 = New Button()
         Button9 = New Button()
-        TextBox2 = New TextBox()
         TextBox3 = New TextBox()
         GroupBox2 = New GroupBox()
         Button10 = New Button()
@@ -72,7 +71,7 @@ Partial Class FormularioIngredientes1
         ' ComboBox1
         ' 
         ComboBox1.FormattingEnabled = True
-        ComboBox1.Location = New Point(71, 60)
+        ComboBox1.Location = New Point(86, 61)
         ComboBox1.Name = "ComboBox1"
         ComboBox1.Size = New Size(196, 23)
         ComboBox1.TabIndex = 3
@@ -89,12 +88,11 @@ Partial Class FormularioIngredientes1
         ' GroupBox1
         ' 
         GroupBox1.BackColor = Color.LightSeaGreen
-        GroupBox1.Controls.Add(Label3)
+        GroupBox1.Controls.Add(TextBox1)
         GroupBox1.Controls.Add(Button11)
         GroupBox1.Controls.Add(Button12)
         GroupBox1.Controls.Add(Button8)
         GroupBox1.Controls.Add(Button9)
-        GroupBox1.Controls.Add(TextBox2)
         GroupBox1.Controls.Add(TextBox3)
         GroupBox1.Controls.Add(ComboBox1)
         GroupBox1.Controls.Add(DataGridView1)
@@ -105,15 +103,12 @@ Partial Class FormularioIngredientes1
         GroupBox1.TabIndex = 5
         GroupBox1.TabStop = False
         ' 
-        ' Label3
+        ' TextBox1
         ' 
-        Label3.AutoSize = True
-        Label3.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        Label3.Location = New Point(116, 39)
-        Label3.Name = "Label3"
-        Label3.Size = New Size(111, 21)
-        Label3.TabIndex = 12
-        Label3.Text = "SELECCIONAR"
+        TextBox1.Location = New Point(523, 61)
+        TextBox1.Name = "TextBox1"
+        TextBox1.Size = New Size(165, 23)
+        TextBox1.TabIndex = 12
         ' 
         ' Button11
         ' 
@@ -137,7 +132,7 @@ Partial Class FormularioIngredientes1
         ' 
         ' Button8
         ' 
-        Button8.Location = New Point(344, 99)
+        Button8.Location = New Point(323, 100)
         Button8.Name = "Button8"
         Button8.Size = New Size(165, 53)
         Button8.TabIndex = 11
@@ -146,23 +141,16 @@ Partial Class FormularioIngredientes1
         ' 
         ' Button9
         ' 
-        Button9.Location = New Point(544, 99)
+        Button9.Location = New Point(523, 100)
         Button9.Name = "Button9"
         Button9.Size = New Size(165, 53)
         Button9.TabIndex = 10
         Button9.Text = "SALIDA"
         Button9.UseVisualStyleBackColor = True
         ' 
-        ' TextBox2
-        ' 
-        TextBox2.Location = New Point(344, 60)
-        TextBox2.Name = "TextBox2"
-        TextBox2.Size = New Size(165, 23)
-        TextBox2.TabIndex = 7
-        ' 
         ' TextBox3
         ' 
-        TextBox3.Location = New Point(544, 60)
+        TextBox3.Location = New Point(323, 61)
         TextBox3.Name = "TextBox3"
         TextBox3.Size = New Size(165, 23)
         TextBox3.TabIndex = 6
@@ -299,9 +287,8 @@ Partial Class FormularioIngredientes1
     Friend WithEvents Button12 As Button
     Friend WithEvents Button8 As Button
     Friend WithEvents Button9 As Button
-    Friend WithEvents TextBox2 As TextBox
     Friend WithEvents TextBox3 As TextBox
     Friend WithEvents Button10 As Button
     Friend WithEvents Label2 As Label
-    Friend WithEvents Label3 As Label
+    Friend WithEvents TextBox1 As TextBox
 End Class
