@@ -7,4 +7,10 @@ Public Class Almacen
     Public Property id_Categoria As Integer
     Public Property Cantidad As Integer
     Public Property id_Unidad As Integer
+
+    Public ReadOnly Property cantidadProducto As String
+        Get
+            Return $"{Cantidad} {id_Unidad}"
+        End Get
+    End Property
 End Class

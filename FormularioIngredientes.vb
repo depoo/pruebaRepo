@@ -11,7 +11,8 @@
                         Select New With {
                             .ID = A.id_Almacen,
                             .NOBRE = P.nombre_Producto,
-                            .CANTIDAD = A.Cantidad
+                            .CANTIDAD = A.Cantidad,
+                            .Unidad = U.unidad
                             }
             DataGridView1.DataSource = query.ToList()
         Catch ex As Exception
@@ -29,7 +30,8 @@
                         Select New With {
                             .ID = A.id_Almacen,
                             .NOBRE = P.nombre_Producto,
-                            .CANTIDAD = A.Cantidad
+                            .CANTIDAD = A.Cantidad,
+                            .Unidad = U.unidad
                             }
             DataGridView1.DataSource = query.ToList()
         Catch ex As Exception
