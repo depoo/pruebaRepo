@@ -27,6 +27,7 @@ Partial Class FormularioIngredientes1
         ComboBox1 = New ComboBox()
         DataGridView1 = New DataGridView()
         GroupBox1 = New GroupBox()
+        Button13 = New Button()
         TextBox1 = New TextBox()
         Button11 = New Button()
         Button12 = New Button()
@@ -88,6 +89,7 @@ Partial Class FormularioIngredientes1
         ' GroupBox1
         ' 
         GroupBox1.BackColor = Color.LightSeaGreen
+        GroupBox1.Controls.Add(Button13)
         GroupBox1.Controls.Add(TextBox1)
         GroupBox1.Controls.Add(Button11)
         GroupBox1.Controls.Add(Button12)
@@ -103,6 +105,15 @@ Partial Class FormularioIngredientes1
         GroupBox1.TabIndex = 5
         GroupBox1.TabStop = False
         ' 
+        ' Button13
+        ' 
+        Button13.Location = New Point(335, 517)
+        Button13.Name = "Button13"
+        Button13.Size = New Size(206, 61)
+        Button13.TabIndex = 13
+        Button13.Text = "GENERAR EXCEL"
+        Button13.UseVisualStyleBackColor = True
+        ' 
         ' TextBox1
         ' 
         TextBox1.Location = New Point(523, 61)
@@ -114,7 +125,7 @@ Partial Class FormularioIngredientes1
         ' 
         Button11.BackColor = Color.Salmon
         Button11.ForeColor = Color.Black
-        Button11.Location = New Point(150, 517)
+        Button11.Location = New Point(86, 517)
         Button11.Name = "Button11"
         Button11.Size = New Size(206, 61)
         Button11.TabIndex = 10
@@ -123,7 +134,7 @@ Partial Class FormularioIngredientes1
         ' 
         ' Button12
         ' 
-        Button12.Location = New Point(457, 517)
+        Button12.Location = New Point(575, 517)
         Button12.Name = "Button12"
         Button12.Size = New Size(206, 61)
         Button12.TabIndex = 11
@@ -291,4 +302,5 @@ Partial Class FormularioIngredientes1
     Friend WithEvents Button10 As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Button13 As Button
 End Class

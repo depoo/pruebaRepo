@@ -1,10 +1,15 @@
-﻿Imports System.Reflection.Metadata
+﻿Imports System.IO
+Imports System.Reflection.Metadata
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement
+Imports iTextSharp.text
+Imports iTextSharp.text.pdf
+Imports OfficeOpenXml
 
 Public Class FormularioIngredientes1
 
     Dim Valor As Integer
     Dim Id As Integer
+    Dim excelPackage As ExcelPackage
 
     Private Sub cargarData(DATO As Integer)
         Try
@@ -181,4 +186,73 @@ Public Class FormularioIngredientes1
             cajademensaje.errorglobal()
         End Try
     End Sub
+
+    Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
+        Dim saveDialog As New SaveFileDialog()
+        saveDialog.Filter = "Archivos PDF|*.pdf"
+        saveDialog.Title = "Guardar PDF"
+        If saveDialog.ShowDialog() = DialogResult.OK Then
+            Dim filePath As String = saveDialog.FileName
+
+            Dim doc As New iTextSharp.text.Document()
+            Dim writer As PdfWriter = PdfWriter.GetInstance(doc, New FileStream(filePath, FileMode.Create))
+            doc.Open()
+
+            Dim table As New PdfPTable(DataGridView1.Columns.Count)
+
+            For Each column As DataGridViewColumn In DataGridView1.Columns
+                Dim cell As New PdfPCell(New Phrase(column.HeaderText))
+                table.AddCell(cell)
+            Next
+
+            For Each row As DataGridViewRow In DataGridView1.Rows
+                For Each cell As DataGridViewCell In row.Cells
+                    Dim cellValue As String = If(cell.Value IsNot Nothing, cell.Value.ToString(), "")
+                    Dim pdfCell As New PdfPCell(New Phrase(cellValue))
+                    table.AddCell(pdfCell)
+                Next
+            Next
+
+            doc.Add(table)
+            doc.Close()
+
+            MessageBox.Show("PDF generado exitosamente.", "Generar PDF", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+    End Sub
+
+    Private Sub Button13_Click(sender As Object, e As EventArgs) Handles Button13.Click
+        ExcelPackage.LicenseContext = LicenseContext.NonCommercial
+        ' Crear un nuevo archivo de Excel
+        ExcelPackage = New ExcelPackage()
+
+        ' Agregar una hoja de trabajo al archivo de Excel
+        Dim worksheet As ExcelWorksheet = excelPackage.Workbook.Worksheets.Add("Datos")
+
+        ' Obtener los datos del DataGridView
+        Dim rowCount As Integer = DataGridView1.Rows.Count
+        Dim columnCount As Integer = DataGridView1.Columns.Count
+
+        ' Escribir los encabezados de columna en el archivo de Excel
+        For c As Integer = 0 To columnCount - 1
+            worksheet.Cells(1, c + 1).Value = DataGridView1.Columns(c).HeaderText
+        Next
+
+        ' Escribir los datos del DataGridView en el archivo de Excel
+        For r As Integer = 0 To rowCount - 1
+            For c As Integer = 0 To columnCount - 1
+                worksheet.Cells(r + 2, c + 1).Value = DataGridView1.Rows(r).Cells(c).Value
+            Next
+        Next
+
+        ' Guardar el archivo de Excel
+        Dim saveFileDialog As New SaveFileDialog()
+        saveFileDialog.Filter = "Archivos de Excel|*.xlsx"
+        saveFileDialog.Title = "Guardar archivo de Excel"
+        If saveFileDialog.ShowDialog() = DialogResult.OK Then
+            Dim excelFile As New FileInfo(saveFileDialog.FileName)
+            excelPackage.SaveAs(excelFile)
+            MessageBox.Show("Archivo de Excel generado exitosamente.")
+        End If
+    End Sub
+
 End Class
