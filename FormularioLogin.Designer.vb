@@ -82,7 +82,7 @@ Partial Class FormularioLogin
         ' PictureBox1
         ' 
         PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
-        PictureBox1.Location = New Point(98, 19)
+        PictureBox1.Location = New Point(92, 19)
         PictureBox1.Name = "PictureBox1"
         PictureBox1.Size = New Size(97, 83)
         PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
@@ -94,7 +94,7 @@ Partial Class FormularioLogin
         Label1.AutoSize = True
         Label1.Font = New Font("FSP DEMO - Visby CF Heavy", 20.2499981F, FontStyle.Bold, GraphicsUnit.Point)
         Label1.ForeColor = Color.Black
-        Label1.Location = New Point(70, 114)
+        Label1.Location = New Point(64, 114)
         Label1.Name = "Label1"
         Label1.Size = New Size(164, 42)
         Label1.TabIndex = 8
