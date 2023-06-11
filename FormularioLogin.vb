@@ -7,11 +7,6 @@ Public Class FormularioLogin
     Dim user, pass As String
     Dim bloqueadoHasta As DateTime
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        TextBox1.Clear()
-        TextBox2.Clear()
-    End Sub
-
     Private Sub TextBox2_TextChanged(sender As Object, e As EventArgs) Handles TextBox2.TextChanged
         TextBox2.PasswordChar = "*"
     End Sub
@@ -45,6 +40,9 @@ Public Class FormularioLogin
             If intentosFallidos >= 3 Then
                 bloqueadoHasta = DateTime.Now.AddSeconds(15)
                 intentosFallidos = 0
+                TextBox1.Clear()
+                TextBox2.Clear()
+                TextBox1.Focus()
                 cajademensaje.Limitedeintentos()
                 Button1.Enabled = False
                 While bloqueadoHasta > DateTime.Now
@@ -57,5 +55,15 @@ Public Class FormularioLogin
 
         End If
 
+    End Sub
+
+    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
+        TextBox1.Clear()
+        TextBox2.Clear()
+        TextBox1.Focus()
+    End Sub
+
+    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
+        Application.Exit()
     End Sub
 End Class
