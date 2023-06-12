@@ -31,7 +31,7 @@ Public Class FormularioLogin
             Dim idActores As Integer = datos(0).id_Actor
             If Rol = 1 Then
                 Me.Hide()
-                FormularioPersonaNatural.Show()
+                Dashboard.Show()
             Else
                 Me.Hide()
                 FormularioIngredientes1.Show()
@@ -90,7 +90,7 @@ Public Class FormularioLogin
                 Dim idActores As Integer = datos(0).id_Actor
                 If Rol = 1 Then
                     Me.Hide()
-                    FormularioPersonaNatural.Show()
+                    Dashboard.Show()
                 Else
                     Me.Hide()
                     FormularioIngredientes1.Show()
