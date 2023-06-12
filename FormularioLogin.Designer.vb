@@ -43,6 +43,7 @@ Partial Class FormularioLogin
         ' Button1
         ' 
         Button1.BackColor = Color.FromArgb(CByte(0), CByte(117), CByte(214))
+        Button1.Cursor = Cursors.Hand
         Button1.FlatAppearance.BorderSize = 0
         Button1.FlatStyle = FlatStyle.Flat
         Button1.Font = New Font("Bahnschrift", 14.25F, FontStyle.Bold, GraphicsUnit.Point)
@@ -57,19 +58,18 @@ Partial Class FormularioLogin
         ' 
         ' TextBox1
         ' 
-        TextBox1.BackColor = Color.LightGray
+        TextBox1.BackColor = Color.WhiteSmoke
         TextBox1.BorderStyle = BorderStyle.None
         TextBox1.Font = New Font("Lucida Sans Typewriter", 11.25F, FontStyle.Bold, GraphicsUnit.Point)
-        TextBox1.Location = New Point(59, 186)
+        TextBox1.Location = New Point(59, 190)
         TextBox1.Margin = New Padding(3, 2, 3, 2)
-        TextBox1.Multiline = True
         TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(205, 23)
+        TextBox1.Size = New Size(205, 18)
         TextBox1.TabIndex = 2
         ' 
         ' TextBox2
         ' 
-        TextBox2.BackColor = Color.LightGray
+        TextBox2.BackColor = Color.WhiteSmoke
         TextBox2.BorderStyle = BorderStyle.None
         TextBox2.Font = New Font("Lucida Sans Typewriter", 11.25F, FontStyle.Bold, GraphicsUnit.Point)
         TextBox2.Location = New Point(59, 251)
@@ -139,6 +139,7 @@ Partial Class FormularioLogin
         ' Label2
         ' 
         Label2.AutoSize = True
+        Label2.Cursor = Cursors.Hand
         Label2.Font = New Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point)
         Label2.ForeColor = Color.MediumPurple
         Label2.Location = New Point(163, 314)
@@ -151,6 +152,7 @@ Partial Class FormularioLogin
         ' 
         Label3.AutoSize = True
         Label3.BackColor = Color.Transparent
+        Label3.Cursor = Cursors.Hand
         Label3.Font = New Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point)
         Label3.ForeColor = Color.FromArgb(CByte(0), CByte(117), CByte(214))
         Label3.Location = New Point(121, 392)
@@ -161,7 +163,7 @@ Partial Class FormularioLogin
         ' 
         ' Panel3
         ' 
-        Panel3.BackColor = Color.WhiteSmoke
+        Panel3.BackColor = Color.FromArgb(CByte(0), CByte(117), CByte(214))
         Panel3.Location = New Point(122, 409)
         Panel3.Name = "Panel3"
         Panel3.Size = New Size(50, 2)

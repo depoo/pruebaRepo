@@ -1,4 +1,6 @@
-﻿Imports System.Threading
+﻿Imports System.Drawing.Drawing2D
+Imports System.Runtime.InteropServices
+Imports System.Threading
 Imports System.Timers
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 Public Class FormularioLogin
@@ -66,4 +68,54 @@ Public Class FormularioLogin
     Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
         Application.Exit()
     End Sub
+
+    Private Sub TextBox2_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles TextBox2.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            ' Realiza la acción deseada aquí, como ejecutar el código del botón.
+
+            user = TextBox1.Text
+            pass = TextBox2.Text
+
+            If user = "" Or pass = "" Then
+                cajademensaje.Casillasvacias()
+                TextBox1.Focus()
+                Exit Sub
+            End If
+
+            Dim dbContext As New MiDbContext()
+            Dim datos = dbContext.Usuario.Where(Function(u) u.usuario = user AndAlso u.pass = pass).ToList()
+
+            If datos.Count() > 0 Then
+                Dim Rol As Integer = datos(0).id_Rol
+                Dim idActores As Integer = datos(0).id_Actor
+                If Rol = 1 Then
+                    Me.Hide()
+                    FormularioPersonaNatural.Show()
+                Else
+                    Me.Hide()
+                    FormularioIngredientes1.Show()
+                End If
+            Else
+
+                intentosFallidos += 1
+                If intentosFallidos >= 3 Then
+                    bloqueadoHasta = DateTime.Now.AddSeconds(15)
+                    intentosFallidos = 0
+                    cajademensaje.Limitedeintentos()
+                    Button1.Enabled = False
+                    While bloqueadoHasta > DateTime.Now
+                        Application.DoEvents()
+                    End While
+                    Button1.Enabled = True
+                Else
+                    cajademensaje.Credencialesincorrectas()
+                    TextBox1.Clear()
+                    TextBox2.Clear()
+                    TextBox1.Focus()
+                End If
+
+            End If
+        End If
+    End Sub
+
 End Class
