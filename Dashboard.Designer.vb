@@ -264,7 +264,7 @@ Partial Class Dashboard
         ' 
         lblFormTitle.AutoSize = True
         lblFormTitle.Font = New Font("Segoe UI", 12.0F, FontStyle.Bold, GraphicsUnit.Point)
-        lblFormTitle.Location = New Point(19, 22)
+        lblFormTitle.Location = New Point(19, 19)
         lblFormTitle.Name = "lblFormTitle"
         lblFormTitle.Size = New Size(78, 21)
         lblFormTitle.TabIndex = 0
