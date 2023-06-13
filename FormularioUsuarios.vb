@@ -52,11 +52,12 @@ Public Class FormularioUsuarios
     End Sub
 
     Private Sub FormularioUsuarios_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.FormBorderStyle = FormBorderStyle.FixedDialog
-        Me.StartPosition = FormStartPosition.CenterScreen
-        Me.MaximizeBox = False
-        Me.MinimizeBox = False
-        Me.ControlBox = False
+        'Se comento esta parte del codigo para que no se muestre los boderdes de este formulario en el panel del dashboard
+        'Me.FormBorderStyle = FormBorderStyle.FixedDialog
+        'Me.StartPosition = FormStartPosition.CenterScreen
+        'Me.MaximizeBox = False
+        'Me.MinimizeBox = False
+        'Me.ControlBox = False
         cargarDataUsuario()
         cargarData2()
         cargarData3()

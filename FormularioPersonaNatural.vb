@@ -52,16 +52,16 @@ Public Class FormularioPersonaNatural
     End Sub
 
     Private Sub PersonaNatural_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-        Me.FormBorderStyle = FormBorderStyle.FixedDialog
-        Me.StartPosition = FormStartPosition.CenterScreen
-        Me.MaximizeBox = False
-        Me.MinimizeBox = False
-        Me.ControlBox = False
-        Me.Button2.Enabled = False
-        Me.Button3.Enabled = False
-        Me.TextBox1.Enabled = False
-        Cargardata()
+        'Se comento esta parte del codigo para que no se muestre los boderdes de este formulario en el panel del dashboard
+        'Me.FormBorderStyle = FormBorderStyle.FixedDialog
+        'Me.StartPosition = FormStartPosition.CenterScreen
+        'Me.MaximizeBox = False
+        'Me.MinimizeBox = False
+        'Me.ControlBox = False
+        'Me.Button2.Enabled = False
+        'Me.Button3.Enabled = False
+        'Me.TextBox1.Enabled = False
+        cargarData()
         Cargardata2()
         Cargardata3()
         DataGridView1.Columns(0).HeaderText = "ID"

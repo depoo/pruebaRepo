@@ -24,25 +24,32 @@ Partial Class Dashboard
     Private Sub InitializeComponent()
         Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(Dashboard))
         PanelMenu = New Panel()
+        btnSalir = New FontAwesome.Sharp.IconButton()
         btnProveedor = New FontAwesome.Sharp.IconButton()
         btnRol = New FontAwesome.Sharp.IconButton()
         btnTelefono = New FontAwesome.Sharp.IconButton()
         btnPersonas = New FontAwesome.Sharp.IconButton()
         btnPrincipal = New FontAwesome.Sharp.IconButton()
         Panel2 = New Panel()
-        PictureBox1 = New PictureBox()
-        Panel3 = New Panel()
+        imgHome = New PictureBox()
+        PanelTitleBar = New Panel()
+        btnMinimizar = New FontAwesome.Sharp.IconButton()
+        btnMaximizar = New FontAwesome.Sharp.IconButton()
         lblFormTitle = New Label()
         PanelDesktop = New Panel()
+        PictureBox1 = New PictureBox()
         PanelMenu.SuspendLayout()
         Panel2.SuspendLayout()
+        CType(imgHome, ComponentModel.ISupportInitialize).BeginInit()
+        PanelTitleBar.SuspendLayout()
+        PanelDesktop.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
-        Panel3.SuspendLayout()
         SuspendLayout()
         ' 
         ' PanelMenu
         ' 
         PanelMenu.BackColor = SystemColors.ActiveCaption
+        PanelMenu.Controls.Add(btnSalir)
         PanelMenu.Controls.Add(btnProveedor)
         PanelMenu.Controls.Add(btnRol)
         PanelMenu.Controls.Add(btnTelefono)
@@ -52,8 +59,30 @@ Partial Class Dashboard
         PanelMenu.Dock = DockStyle.Left
         PanelMenu.Location = New Point(0, 0)
         PanelMenu.Name = "PanelMenu"
-        PanelMenu.Size = New Size(182, 577)
+        PanelMenu.Size = New Size(182, 561)
         PanelMenu.TabIndex = 0
+        ' 
+        ' btnSalir
+        ' 
+        btnSalir.Dock = DockStyle.Bottom
+        btnSalir.FlatAppearance.BorderSize = 0
+        btnSalir.FlatStyle = FlatStyle.Flat
+        btnSalir.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point)
+        btnSalir.ForeColor = Color.DimGray
+        btnSalir.IconChar = FontAwesome.Sharp.IconChar.ArrowRightFromBracket
+        btnSalir.IconColor = Color.DimGray
+        btnSalir.IconFont = FontAwesome.Sharp.IconFont.Auto
+        btnSalir.IconSize = 32
+        btnSalir.ImageAlign = ContentAlignment.MiddleLeft
+        btnSalir.Location = New Point(0, 501)
+        btnSalir.Name = "btnSalir"
+        btnSalir.Padding = New Padding(10, 0, 0, 0)
+        btnSalir.Size = New Size(182, 60)
+        btnSalir.TabIndex = 2
+        btnSalir.Text = "Salir"
+        btnSalir.TextAlign = ContentAlignment.MiddleLeft
+        btnSalir.TextImageRelation = TextImageRelation.ImageBeforeText
+        btnSalir.UseVisualStyleBackColor = True
         ' 
         ' btnProveedor
         ' 
@@ -172,79 +201,130 @@ Partial Class Dashboard
         ' 
         ' Panel2
         ' 
-        Panel2.Controls.Add(PictureBox1)
+        Panel2.Controls.Add(imgHome)
         Panel2.Dock = DockStyle.Top
         Panel2.Location = New Point(0, 0)
         Panel2.Name = "Panel2"
         Panel2.Size = New Size(182, 100)
         Panel2.TabIndex = 0
         ' 
-        ' PictureBox1
+        ' imgHome
         ' 
-        PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
-        PictureBox1.Location = New Point(25, 14)
-        PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(133, 72)
-        PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox1.TabIndex = 0
-        PictureBox1.TabStop = False
+        imgHome.Image = CType(resources.GetObject("imgHome.Image"), Image)
+        imgHome.Location = New Point(25, 14)
+        imgHome.Name = "imgHome"
+        imgHome.Size = New Size(133, 72)
+        imgHome.SizeMode = PictureBoxSizeMode.Zoom
+        imgHome.TabIndex = 0
+        imgHome.TabStop = False
         ' 
-        ' Panel3
+        ' PanelTitleBar
         ' 
-        Panel3.BackColor = SystemColors.Desktop
-        Panel3.Controls.Add(lblFormTitle)
-        Panel3.Dock = DockStyle.Top
-        Panel3.Location = New Point(182, 0)
-        Panel3.Name = "Panel3"
-        Panel3.Size = New Size(805, 59)
-        Panel3.TabIndex = 1
+        PanelTitleBar.BackColor = SystemColors.Desktop
+        PanelTitleBar.Controls.Add(btnMinimizar)
+        PanelTitleBar.Controls.Add(btnMaximizar)
+        PanelTitleBar.Controls.Add(lblFormTitle)
+        PanelTitleBar.Dock = DockStyle.Top
+        PanelTitleBar.Location = New Point(182, 0)
+        PanelTitleBar.Name = "PanelTitleBar"
+        PanelTitleBar.Size = New Size(902, 59)
+        PanelTitleBar.TabIndex = 1
+        ' 
+        ' btnMinimizar
+        ' 
+        btnMinimizar.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        btnMinimizar.FlatAppearance.BorderSize = 0
+        btnMinimizar.FlatStyle = FlatStyle.Flat
+        btnMinimizar.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize
+        btnMinimizar.IconColor = Color.FromArgb(CByte(236), CByte(242), CByte(255))
+        btnMinimizar.IconFont = FontAwesome.Sharp.IconFont.Auto
+        btnMinimizar.IconSize = 22
+        btnMinimizar.Location = New Point(846, 5)
+        btnMinimizar.Name = "btnMinimizar"
+        btnMinimizar.Size = New Size(23, 23)
+        btnMinimizar.TabIndex = 2
+        btnMinimizar.UseVisualStyleBackColor = True
+        ' 
+        ' btnMaximizar
+        ' 
+        btnMaximizar.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        btnMaximizar.FlatAppearance.BorderSize = 0
+        btnMaximizar.FlatStyle = FlatStyle.Flat
+        btnMaximizar.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize
+        btnMaximizar.IconColor = Color.FromArgb(CByte(236), CByte(242), CByte(255))
+        btnMaximizar.IconFont = FontAwesome.Sharp.IconFont.Auto
+        btnMaximizar.IconSize = 22
+        btnMaximizar.Location = New Point(871, 5)
+        btnMaximizar.Name = "btnMaximizar"
+        btnMaximizar.Size = New Size(23, 23)
+        btnMaximizar.TabIndex = 1
+        btnMaximizar.UseVisualStyleBackColor = True
         ' 
         ' lblFormTitle
         ' 
         lblFormTitle.AutoSize = True
-        lblFormTitle.Font = New Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point)
+        lblFormTitle.Font = New Font("Segoe UI", 12.0F, FontStyle.Bold, GraphicsUnit.Point)
         lblFormTitle.Location = New Point(19, 22)
         lblFormTitle.Name = "lblFormTitle"
-        lblFormTitle.Size = New Size(62, 17)
+        lblFormTitle.Size = New Size(78, 21)
         lblFormTitle.TabIndex = 0
         lblFormTitle.Text = "Principal"
         ' 
         ' PanelDesktop
         ' 
+        PanelDesktop.Controls.Add(PictureBox1)
         PanelDesktop.Dock = DockStyle.Fill
         PanelDesktop.Location = New Point(182, 59)
         PanelDesktop.Name = "PanelDesktop"
-        PanelDesktop.Size = New Size(805, 518)
+        PanelDesktop.Size = New Size(902, 502)
         PanelDesktop.TabIndex = 2
+        ' 
+        ' PictureBox1
+        ' 
+        PictureBox1.Anchor = AnchorStyles.None
+        PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
+        PictureBox1.Location = New Point(210, 115)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(482, 289)
+        PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox1.TabIndex = 1
+        PictureBox1.TabStop = False
         ' 
         ' Dashboard
         ' 
         AutoScaleDimensions = New SizeF(7.0F, 15.0F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(987, 577)
+        ClientSize = New Size(1084, 561)
         Controls.Add(PanelDesktop)
-        Controls.Add(Panel3)
+        Controls.Add(PanelTitleBar)
         Controls.Add(PanelMenu)
+        MinimumSize = New Size(1100, 600)
         Name = "Dashboard"
         StartPosition = FormStartPosition.CenterScreen
         Text = "Dashboard"
         PanelMenu.ResumeLayout(False)
         Panel2.ResumeLayout(False)
+        CType(imgHome, ComponentModel.ISupportInitialize).EndInit()
+        PanelTitleBar.ResumeLayout(False)
+        PanelTitleBar.PerformLayout()
+        PanelDesktop.ResumeLayout(False)
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
-        Panel3.ResumeLayout(False)
-        Panel3.PerformLayout()
         ResumeLayout(False)
     End Sub
 
     Friend WithEvents PanelMenu As Panel
     Friend WithEvents btnPrincipal As FontAwesome.Sharp.IconButton
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents imgHome As PictureBox
     Friend WithEvents btnProveedor As FontAwesome.Sharp.IconButton
     Friend WithEvents btnRol As FontAwesome.Sharp.IconButton
     Friend WithEvents btnTelefono As FontAwesome.Sharp.IconButton
     Friend WithEvents btnPersonas As FontAwesome.Sharp.IconButton
-    Friend WithEvents Panel3 As Panel
+    Friend WithEvents PanelTitleBar As Panel
     Friend WithEvents lblFormTitle As Label
     Friend WithEvents PanelDesktop As Panel
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents btnSalir As FontAwesome.Sharp.IconButton
+    Friend WithEvents btnMaximizar As FontAwesome.Sharp.IconButton
+    Friend WithEvents btnMinimizar As FontAwesome.Sharp.IconButton
 End Class
