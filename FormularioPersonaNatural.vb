@@ -88,25 +88,6 @@ Public Class FormularioPersonaNatural
         Me.Button3.Enabled = False
 
     End Sub
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-
-        IdAutor = TextBox1.Text
-        Try
-            Dim dbContext As New MiDbContext()
-            Dim personaNatural = dbContext.Actores.Find(IdAutor)
-            If personaNatural IsNot Nothing Then
-                dbContext.Actores.Remove(personaNatural)
-                dbContext.SaveChanges()
-                cajademensaje.Eliminarregistro()
-                cargarData()
-            Else
-                cajademensaje.Eliminarregistro2()
-            End If
-        Catch ex As Exception
-            cajademensaje.errorglobal()
-        End Try
-    End Sub
-
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
 
@@ -222,6 +203,7 @@ Public Class FormularioPersonaNatural
             Dim dbContext As New MiDbContext()
             Dim personaNatural = dbContext.Actores.Find(IdAutor)
             If personaNatural IsNot Nothing Then
+                personaNatural.id_Actor = IdAutor
                 personaNatural.nombre = nombre
                 personaNatural.id_Tipodoc = TipoDocumento
                 personaNatural.numeroDocumento = NDocumento
@@ -251,9 +233,9 @@ Public Class FormularioPersonaNatural
     End Sub
 
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
-        IdAutor = TextBox1.Text
-        Try
-            If MessageBox.Show("ESTAS SEGURO DE ELIMINAR ESTE REGISTRO", "ELIMINAR REGISTRO", MessageBoxButtons.YesNo) = DialogResult.Yes Then
+        Dim IdAutor As Integer
+        If Integer.TryParse(TextBox1.Text, IdAutor) Then
+            Try
                 Dim dbContext As New MiDbContext()
                 Dim personaNatural = dbContext.Actores.Find(IdAutor)
                 If personaNatural IsNot Nothing Then
@@ -264,9 +246,12 @@ Public Class FormularioPersonaNatural
                 Else
                     cajademensaje.Eliminarregistro2()
                 End If
-            End If
-        Catch ex As Exception
+            Catch ex As Exception
+                cajademensaje.errorglobal()
+            End Try
+        Else
+            ' Mostrar mensaje de error indicando que el valor en TextBox1 no es un número válido
             cajademensaje.errorglobal()
-        End Try
+        End If
     End Sub
 End Class
