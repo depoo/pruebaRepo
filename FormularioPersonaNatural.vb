@@ -5,7 +5,7 @@ Public Class FormularioPersonaNatural
     Dim IdAutor, TipoDocumento As Integer
     Dim nombre, apellido, TipoSexo, NDocumento As String
 
-    Private Sub cargarData()
+    Private Sub CargarData()
         Try
             Dim dbContext As New MiDbContext()
             Dim query = From A In dbContext.Actores
@@ -61,7 +61,7 @@ Public Class FormularioPersonaNatural
         Me.Button2.Enabled = False
         Me.Button3.Enabled = False
         Me.TextBox1.Enabled = False
-        Cargardata()
+        CargarData()
         Cargardata2()
         Cargardata3()
         DataGridView1.Columns(0).HeaderText = "ID"
@@ -104,7 +104,7 @@ Public Class FormularioPersonaNatural
                 dbContext.Actores.Remove(personaNatural)
                 dbContext.SaveChanges()
                 cajademensaje.Eliminarregistro()
-                Cargardata()
+                CargarData()
             Else
                 cajademensaje.Eliminarregistro2()
             End If
@@ -133,7 +133,7 @@ Public Class FormularioPersonaNatural
                 personaNatural.apellido = apellido
                 dbContext.SaveChanges()
                 cajademensaje.Actualizacionderegistro()
-                cargarData()
+                CargarData()
             Else
                 cajademensaje.Actualizacionderegistro2()
             End If
@@ -163,7 +163,7 @@ Public Class FormularioPersonaNatural
             dbContext.Actores.Add(NewPersonaNatural)
             dbContext.SaveChanges()
             cajademensaje.Creacionderegistro()
-            cargarData()
+            CargarData()
         Catch ex As Exception
             cajademensaje.errorglobal()
         End Try
