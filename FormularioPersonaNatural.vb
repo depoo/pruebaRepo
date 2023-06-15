@@ -5,7 +5,7 @@ Public Class FormularioPersonaNatural
     Dim IdAutor, TipoDocumento As Integer
     Dim nombre, apellido, TipoSexo, NDocumento As String
 
-    Private Sub cargarData()
+    Private Sub Cargardata()
         Try
             Dim dbContext As New MiDbContext()
             Dim query = From A In dbContext.Actores
@@ -63,7 +63,7 @@ Public Class FormularioPersonaNatural
         Me.TextBox1.Enabled = False
         Me.btnModificar.Enabled = False
         'Me.btnLimpiar.Enabled = False
-        cargarData()
+        Cargardata()
         Cargardata2()
         Cargardata3()
         DataGridView1.Columns(0).HeaderText = "ID"
@@ -108,7 +108,7 @@ Public Class FormularioPersonaNatural
                 personaNatural.apellido = apellido
                 dbContext.SaveChanges()
                 cajademensaje.Actualizacionderegistro()
-                cargarData()
+                Cargardata()
             Else
                 cajademensaje.Actualizacionderegistro2()
             End If
@@ -138,7 +138,7 @@ Public Class FormularioPersonaNatural
             dbContext.Actores.Add(NewPersonaNatural)
             dbContext.SaveChanges()
             cajademensaje.Creacionderegistro()
-            cargarData()
+            Cargardata()
         Catch ex As Exception
             cajademensaje.errorglobal()
         End Try
@@ -185,7 +185,7 @@ Public Class FormularioPersonaNatural
             dbContext.Actores.Add(NewPersonaNatural)
             dbContext.SaveChanges()
             cajademensaje.Creacionderegistro()
-            cargarData()
+            Cargardata()
         Catch ex As Exception
             cajademensaje.errorglobal()
         End Try
@@ -211,7 +211,7 @@ Public Class FormularioPersonaNatural
                 personaNatural.apellido = apellido
                 dbContext.SaveChanges()
                 cajademensaje.Actualizacionderegistro()
-                cargarData()
+                Cargardata()
             Else
                 cajademensaje.Actualizacionderegistro2()
             End If
