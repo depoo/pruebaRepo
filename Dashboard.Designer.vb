@@ -48,7 +48,7 @@ Partial Class Dashboard
         ' 
         ' PanelMenu
         ' 
-        PanelMenu.BackColor = SystemColors.ActiveCaption
+        PanelMenu.BackColor = Color.FromArgb(CByte(87), CByte(103), CByte(241))
         PanelMenu.Controls.Add(btnSalir)
         PanelMenu.Controls.Add(btnProveedor)
         PanelMenu.Controls.Add(btnRol)
@@ -68,9 +68,9 @@ Partial Class Dashboard
         btnSalir.FlatAppearance.BorderSize = 0
         btnSalir.FlatStyle = FlatStyle.Flat
         btnSalir.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point)
-        btnSalir.ForeColor = Color.DimGray
+        btnSalir.ForeColor = Color.White
         btnSalir.IconChar = FontAwesome.Sharp.IconChar.ArrowRightFromBracket
-        btnSalir.IconColor = Color.DimGray
+        btnSalir.IconColor = Color.White
         btnSalir.IconFont = FontAwesome.Sharp.IconFont.Auto
         btnSalir.IconSize = 32
         btnSalir.ImageAlign = ContentAlignment.MiddleLeft
@@ -90,10 +90,10 @@ Partial Class Dashboard
         btnProveedor.Dock = DockStyle.Top
         btnProveedor.FlatAppearance.BorderSize = 0
         btnProveedor.FlatStyle = FlatStyle.Flat
-        btnProveedor.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point)
-        btnProveedor.ForeColor = Color.DimGray
+        btnProveedor.Font = New Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point)
+        btnProveedor.ForeColor = Color.White
         btnProveedor.IconChar = FontAwesome.Sharp.IconChar.TruckFast
-        btnProveedor.IconColor = Color.DimGray
+        btnProveedor.IconColor = Color.White
         btnProveedor.IconFont = FontAwesome.Sharp.IconFont.Auto
         btnProveedor.IconSize = 32
         btnProveedor.ImageAlign = ContentAlignment.MiddleLeft
@@ -113,10 +113,10 @@ Partial Class Dashboard
         btnRol.Dock = DockStyle.Top
         btnRol.FlatAppearance.BorderSize = 0
         btnRol.FlatStyle = FlatStyle.Flat
-        btnRol.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point)
-        btnRol.ForeColor = Color.DimGray
+        btnRol.Font = New Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point)
+        btnRol.ForeColor = Color.White
         btnRol.IconChar = FontAwesome.Sharp.IconChar.UsersCog
-        btnRol.IconColor = Color.DimGray
+        btnRol.IconColor = Color.White
         btnRol.IconFont = FontAwesome.Sharp.IconFont.Auto
         btnRol.IconSize = 32
         btnRol.ImageAlign = ContentAlignment.MiddleLeft
@@ -136,10 +136,10 @@ Partial Class Dashboard
         btnTelefono.Dock = DockStyle.Top
         btnTelefono.FlatAppearance.BorderSize = 0
         btnTelefono.FlatStyle = FlatStyle.Flat
-        btnTelefono.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point)
-        btnTelefono.ForeColor = Color.DimGray
+        btnTelefono.Font = New Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point)
+        btnTelefono.ForeColor = Color.White
         btnTelefono.IconChar = FontAwesome.Sharp.IconChar.Phone
-        btnTelefono.IconColor = Color.DimGray
+        btnTelefono.IconColor = Color.White
         btnTelefono.IconFont = FontAwesome.Sharp.IconFont.Auto
         btnTelefono.IconSize = 32
         btnTelefono.ImageAlign = ContentAlignment.MiddleLeft
@@ -148,7 +148,7 @@ Partial Class Dashboard
         btnTelefono.Padding = New Padding(10, 0, 0, 0)
         btnTelefono.Size = New Size(182, 60)
         btnTelefono.TabIndex = 3
-        btnTelefono.Text = "Numero Telefono"
+        btnTelefono.Text = "Número Telefono"
         btnTelefono.TextAlign = ContentAlignment.MiddleLeft
         btnTelefono.TextImageRelation = TextImageRelation.ImageBeforeText
         btnTelefono.UseVisualStyleBackColor = True
@@ -159,10 +159,10 @@ Partial Class Dashboard
         btnPersonas.Dock = DockStyle.Top
         btnPersonas.FlatAppearance.BorderSize = 0
         btnPersonas.FlatStyle = FlatStyle.Flat
-        btnPersonas.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point)
-        btnPersonas.ForeColor = Color.DimGray
+        btnPersonas.Font = New Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point)
+        btnPersonas.ForeColor = Color.White
         btnPersonas.IconChar = FontAwesome.Sharp.IconChar.Users
-        btnPersonas.IconColor = Color.DimGray
+        btnPersonas.IconColor = Color.White
         btnPersonas.IconFont = FontAwesome.Sharp.IconFont.Auto
         btnPersonas.IconSize = 32
         btnPersonas.ImageAlign = ContentAlignment.MiddleLeft
@@ -182,10 +182,10 @@ Partial Class Dashboard
         btnPrincipal.Dock = DockStyle.Top
         btnPrincipal.FlatAppearance.BorderSize = 0
         btnPrincipal.FlatStyle = FlatStyle.Flat
-        btnPrincipal.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point)
-        btnPrincipal.ForeColor = Color.DimGray
+        btnPrincipal.Font = New Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point)
+        btnPrincipal.ForeColor = Color.White
         btnPrincipal.IconChar = FontAwesome.Sharp.IconChar.HomeLg
-        btnPrincipal.IconColor = Color.DimGray
+        btnPrincipal.IconColor = Color.White
         btnPrincipal.IconFont = FontAwesome.Sharp.IconFont.Auto
         btnPrincipal.IconSize = 32
         btnPrincipal.ImageAlign = ContentAlignment.MiddleLeft
@@ -201,6 +201,7 @@ Partial Class Dashboard
         ' 
         ' Panel2
         ' 
+        Panel2.BackColor = Color.FromArgb(CByte(87), CByte(103), CByte(241))
         Panel2.Controls.Add(imgHome)
         Panel2.Dock = DockStyle.Top
         Panel2.Location = New Point(0, 0)
@@ -210,6 +211,7 @@ Partial Class Dashboard
         ' 
         ' imgHome
         ' 
+        imgHome.BackColor = Color.FromArgb(CByte(87), CByte(103), CByte(241))
         imgHome.Image = CType(resources.GetObject("imgHome.Image"), Image)
         imgHome.Location = New Point(25, 14)
         imgHome.Name = "imgHome"
@@ -220,7 +222,7 @@ Partial Class Dashboard
         ' 
         ' PanelTitleBar
         ' 
-        PanelTitleBar.BackColor = SystemColors.Desktop
+        PanelTitleBar.BackColor = Color.White
         PanelTitleBar.Controls.Add(btnMinimizar)
         PanelTitleBar.Controls.Add(btnMaximizar)
         PanelTitleBar.Controls.Add(lblFormTitle)
@@ -233,45 +235,50 @@ Partial Class Dashboard
         ' btnMinimizar
         ' 
         btnMinimizar.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        btnMinimizar.BackColor = Color.Transparent
         btnMinimizar.FlatAppearance.BorderSize = 0
         btnMinimizar.FlatStyle = FlatStyle.Flat
         btnMinimizar.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize
-        btnMinimizar.IconColor = Color.FromArgb(CByte(236), CByte(242), CByte(255))
+        btnMinimizar.IconColor = Color.FromArgb(CByte(50), CByte(59), CByte(68))
         btnMinimizar.IconFont = FontAwesome.Sharp.IconFont.Auto
         btnMinimizar.IconSize = 22
         btnMinimizar.Location = New Point(846, 5)
         btnMinimizar.Name = "btnMinimizar"
         btnMinimizar.Size = New Size(23, 23)
         btnMinimizar.TabIndex = 2
-        btnMinimizar.UseVisualStyleBackColor = True
+        btnMinimizar.UseVisualStyleBackColor = False
         ' 
         ' btnMaximizar
         ' 
         btnMaximizar.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        btnMaximizar.BackColor = Color.Transparent
         btnMaximizar.FlatAppearance.BorderSize = 0
         btnMaximizar.FlatStyle = FlatStyle.Flat
         btnMaximizar.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize
-        btnMaximizar.IconColor = Color.FromArgb(CByte(236), CByte(242), CByte(255))
+        btnMaximizar.IconColor = Color.FromArgb(CByte(50), CByte(59), CByte(68))
         btnMaximizar.IconFont = FontAwesome.Sharp.IconFont.Auto
         btnMaximizar.IconSize = 22
         btnMaximizar.Location = New Point(871, 5)
         btnMaximizar.Name = "btnMaximizar"
         btnMaximizar.Size = New Size(23, 23)
         btnMaximizar.TabIndex = 1
-        btnMaximizar.UseVisualStyleBackColor = True
+        btnMaximizar.UseVisualStyleBackColor = False
         ' 
         ' lblFormTitle
         ' 
         lblFormTitle.AutoSize = True
-        lblFormTitle.Font = New Font("Segoe UI", 12.0F, FontStyle.Bold, GraphicsUnit.Point)
+        lblFormTitle.BackColor = Color.FromArgb(CByte(241), CByte(246), CByte(255))
+        lblFormTitle.Font = New Font("Century Gothic", 12.75F, FontStyle.Bold, GraphicsUnit.Point)
+        lblFormTitle.ForeColor = Color.FromArgb(CByte(87), CByte(103), CByte(241))
         lblFormTitle.Location = New Point(19, 19)
         lblFormTitle.Name = "lblFormTitle"
-        lblFormTitle.Size = New Size(78, 21)
+        lblFormTitle.Size = New Size(79, 19)
         lblFormTitle.TabIndex = 0
         lblFormTitle.Text = "Principal"
         ' 
         ' PanelDesktop
         ' 
+        PanelDesktop.BackColor = Color.FromArgb(CByte(241), CByte(246), CByte(255))
         PanelDesktop.Controls.Add(PictureBox1)
         PanelDesktop.Dock = DockStyle.Fill
         PanelDesktop.Location = New Point(182, 59)

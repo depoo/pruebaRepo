@@ -22,7 +22,6 @@ Partial Class NumContactoTrabajador
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Label1 = New Label()
         DataGridView1 = New DataGridView()
         BackgroundWorker1 = New ComponentModel.BackgroundWorker()
         ComboBox1 = New ComboBox()
@@ -40,16 +39,6 @@ Partial Class NumContactoTrabajador
         Button3 = New Button()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
-        ' 
-        ' Label1
-        ' 
-        Label1.AutoSize = True
-        Label1.Font = New Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        Label1.Location = New Point(245, 26)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(254, 18)
-        Label1.TabIndex = 0
-        Label1.Text = "Núm. telefónicos trabajador"
         ' 
         ' DataGridView1
         ' 
@@ -197,15 +186,12 @@ Partial Class NumContactoTrabajador
         Controls.Add(TextBox1)
         Controls.Add(ComboBox1)
         Controls.Add(DataGridView1)
-        Controls.Add(Label1)
         Name = "NumContactoTrabajador"
-        Text = "NumContactoTrabajador"
+        Text = "Número Telefono"
         CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
-
-    Friend WithEvents Label1 As Label
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
     Friend WithEvents ComboBox1 As ComboBox

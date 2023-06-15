@@ -28,7 +28,7 @@ Public Class Dashboard
         If senderBtn IsNot Nothing Then
             'Button
             currentBtn = CType(senderBtn, IconButton)
-            currentBtn.BackColor = Color.FromArgb(37, 36, 81)
+            'currentBtn.BackColor = Color.FromArgb(37, 36, 81)
             currentBtn.ForeColor = customColor
             currentBtn.IconColor = customColor
             currentBtn.TextAlign = ContentAlignment.MiddleCenter
@@ -43,7 +43,7 @@ Public Class Dashboard
     End Sub
     Private Sub DisableButton()
         If currentBtn IsNot Nothing Then
-            currentBtn.BackColor = Color.FromArgb(37, 36, 81)
+            'currentBtn.BackColor = Color.FromArgb(37, 36, 81)
             currentBtn.ForeColor = Color.Gainsboro
             currentBtn.IconColor = Color.Gainsboro
             currentBtn.TextAlign = ContentAlignment.MiddleLeft
@@ -80,22 +80,22 @@ Public Class Dashboard
     End Sub
 
     Private Sub btnRol_Click(sender As Object, e As EventArgs) Handles btnRol.Click
-        ActivateButton(sender, RGBColors.color4)
+        ActivateButton(sender, RGBColors.color7)
         OpenChildForm(New FormularioUsuarios)
     End Sub
 
     Private Sub btnTelefono_Click(sender As Object, e As EventArgs) Handles btnTelefono.Click
-        ActivateButton(sender, RGBColors.color3)
+        ActivateButton(sender, RGBColors.color7)
         OpenChildForm(New NumContactoTrabajador)
     End Sub
 
     Private Sub btnPersonas_Click(sender As Object, e As EventArgs) Handles btnPersonas.Click
-        ActivateButton(sender, RGBColors.color2)
+        ActivateButton(sender, RGBColors.color7)
         OpenChildForm(New FormularioPersonaNatural)
     End Sub
 
     Private Sub btnProveedor_Click(sender As Object, e As EventArgs) Handles btnProveedor.Click
-        ActivateButton(sender, RGBColors.color6)
+        ActivateButton(sender, RGBColors.color7)
         OpenChildForm(New FormularioProveedor)
     End Sub
 
@@ -118,12 +118,12 @@ Public Class Dashboard
     <DllImport("user32.DLL", EntryPoint:="SendMessage")>
     Private Shared Sub SendMessage(ByVal hWnd As System.IntPtr, ByVal wMsg As Integer, ByVal wParam As Integer, ByVal lParam As Integer)
     End Sub
-
+    ' este codigo sirve para hacer click en la barra del panel 
     Private Sub PanelTitleBar_MouseDown(sender As Object, e As MouseEventArgs) Handles PanelTitleBar.MouseDown
         ReleaseCapture()
         SendMessage(Me.Handle, &H112&, &HF012&, 0)
     End Sub
-
+    'sirve para reajustar el programa en cualquier lado de la pantalla
     Private Sub Dashboard_Resize(sender As Object, e As EventArgs) Handles MyBase.Resize
         If WindowState = FormWindowState.Maximized Then
             FormBorderStyle = FormBorderStyle.None
@@ -131,11 +131,11 @@ Public Class Dashboard
             FormBorderStyle = FormBorderStyle.Sizable
         End If
     End Sub
-
+    'Este codigo sirve para cerrar el programa
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
         Application.Exit()
     End Sub
-
+    'sirve para maximizar la ventana
     Private Sub btnMaximizar_Click(sender As Object, e As EventArgs) Handles btnMaximizar.Click
         If WindowState = FormWindowState.Normal Then
             WindowState = FormWindowState.Maximized
@@ -143,7 +143,7 @@ Public Class Dashboard
             WindowState = FormWindowState.Normal
         End If
     End Sub
-
+    'sirve para minimizar la ventana
     Private Sub btnMinimizar_Click(sender As Object, e As EventArgs) Handles btnMinimizar.Click
         WindowState = FormWindowState.Minimized
     End Sub

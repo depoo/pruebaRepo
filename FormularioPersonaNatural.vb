@@ -60,7 +60,9 @@ Public Class FormularioPersonaNatural
         'Me.ControlBox = False
         'Me.Button2.Enabled = False
         'Me.Button3.Enabled = False
-        'Me.TextBox1.Enabled = False
+        Me.TextBox1.Enabled = False
+        Me.btnModificar.Enabled = False
+        'Me.btnLimpiar.Enabled = False
         cargarData()
         Cargardata2()
         Cargardata3()
@@ -86,14 +88,6 @@ Public Class FormularioPersonaNatural
         Me.Button3.Enabled = False
 
     End Sub
-
-    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
-
-        Me.Hide()
-        FormularioLogin.Show()
-
-    End Sub
-
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
 
         IdAutor = TextBox1.Text
@@ -104,7 +98,7 @@ Public Class FormularioPersonaNatural
                 dbContext.Actores.Remove(personaNatural)
                 dbContext.SaveChanges()
                 cajademensaje.Eliminarregistro()
-                Cargardata()
+                cargarData()
             Else
                 cajademensaje.Eliminarregistro2()
             End If
@@ -180,28 +174,99 @@ Public Class FormularioPersonaNatural
             TextBox4.Text = row.Cells("numeroDocumento").Value.ToString()
             TextBox6.Text = row.Cells("apellido").Value.ToString()
             ComboBox2.Text = row.Cells("tiposex").Value.ToString()
-            Me.Button1.Enabled = False
-            Me.Button2.Enabled = True
-            Me.Button3.Enabled = True
+            'Me.Button1.Enabled = False
+            'Me.Button2.Enabled = True
+            'Me.Button3.Enabled = True
+            Me.btnAgregar.Enabled = False
+            Me.btnModificar.Enabled = True
+            Me.btnEliminar.Enabled = True
 
         End If
     End Sub
 
-    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
-        Me.Hide()
-        NumContactoTrabajador.Show()
+    Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
+        IdAutor = 1
+        TipoDocumento = ComboBox1.SelectedValue
+        TipoSexo = ComboBox2.SelectedValue
+        NDocumento = TextBox4.Text
+        nombre = TextBox3.Text
+        apellido = TextBox6.Text
+        Try
+            Dim dbContext As New MiDbContext()
+            Dim NewPersonaNatural As New Actores() With
+            {
+                .nombre = nombre,
+                .id_Tipodoc = TipoDocumento,
+                .numeroDocumento = NDocumento,
+                .id_sexo = TipoSexo,
+                .apellido = apellido
+            }
+            dbContext.Actores.Add(NewPersonaNatural)
+            dbContext.SaveChanges()
+            cajademensaje.Creacionderegistro()
+            cargarData()
+        Catch ex As Exception
+            cajademensaje.errorglobal()
+        End Try
 
     End Sub
-    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
-        Me.Hide()
-        FormularioUsuarios.Show()
-    End Sub
-    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
-        Me.Hide()
-        FormularioProveedor.Show()
+
+    Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
+        IdAutor = TextBox1.Text
+        TipoDocumento = ComboBox1.SelectedValue
+        TipoSexo = ComboBox2.SelectedValue
+        NDocumento = TextBox4.Text
+        nombre = TextBox3.Text
+        apellido = TextBox6.Text
+        Try
+            Dim dbContext As New MiDbContext()
+            Dim personaNatural = dbContext.Actores.Find(IdAutor)
+            If personaNatural IsNot Nothing Then
+                personaNatural.nombre = nombre
+                personaNatural.id_Tipodoc = TipoDocumento
+                personaNatural.numeroDocumento = NDocumento
+                personaNatural.id_sexo = TipoSexo
+                personaNatural.apellido = apellido
+                dbContext.SaveChanges()
+                cajademensaje.Actualizacionderegistro()
+                cargarData()
+            Else
+                cajademensaje.Actualizacionderegistro2()
+            End If
+        Catch ex As Exception
+            cajademensaje.errorglobal()
+        End Try
     End Sub
 
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+    Private Sub btnLimpiar_Click(sender As Object, e As EventArgs) Handles btnLimpiar.Click
+        TextBox1.Clear()
+        ComboBox1.Text = ""
+        ComboBox2.Text = ""
+        TextBox4.Clear()
+        TextBox3.Clear()
+        TextBox6.Clear()
+        Me.btnAgregar.Enabled = True
+        Me.btnModificar.Enabled = False
+        Me.btnEliminar.Enabled = False
+    End Sub
 
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+        IdAutor = TextBox1.Text
+        Try
+            If MessageBox.Show("ESTAS SEGURO DE ELIMINAR ESTE REGISTRO", "ELIMINAR REGISTRO", MessageBoxButtons.YesNo) = DialogResult.Yes Then
+                Dim dbContext As New MiDbContext()
+                Dim personaNatural = dbContext.Actores.Find(IdAutor)
+                If personaNatural IsNot Nothing Then
+                    dbContext.Actores.Remove(personaNatural)
+                    dbContext.SaveChanges()
+                    cajademensaje.Eliminarregistro()
+                    cargarData()
+                Else
+                    cajademensaje.Eliminarregistro2()
+                End If
+            End If
+        Catch ex As Exception
+            cajademensaje.errorglobal()
+        End Try
     End Sub
 End Class

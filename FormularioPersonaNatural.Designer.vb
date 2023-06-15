@@ -38,28 +38,31 @@ Partial Class FormularioPersonaNatural
         DataGridView1 = New DataGridView()
         ComboBox1 = New ComboBox()
         Button4 = New Button()
-        Button5 = New Button()
         ComboBox2 = New ComboBox()
-        Button6 = New Button()
-        Button7 = New Button()
-        Button8 = New Button()
+        btnAgregar = New FontAwesome.Sharp.IconButton()
+        btnModificar = New FontAwesome.Sharp.IconButton()
+        btnLimpiar = New FontAwesome.Sharp.IconButton()
+        btnEliminar = New FontAwesome.Sharp.IconButton()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Font = New Font("Verdana", 12F, FontStyle.Italic, GraphicsUnit.Point)
+        Label1.Font = New Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point)
+        Label1.ForeColor = Color.FromArgb(CByte(51), CByte(59), CByte(82))
         Label1.Location = New Point(31, 37)
         Label1.Name = "Label1"
-        Label1.Size = New Size(137, 18)
+        Label1.Size = New Size(22, 18)
         Label1.TabIndex = 0
-        Label1.Text = "IDTRABAJADOR"
+        Label1.Text = "Id"
         ' 
         ' Button1
         ' 
-        Button1.BackColor = Color.DarkSeaGreen
-        Button1.Location = New Point(31, 301)
+        Button1.BackColor = Color.FromArgb(CByte(76), CByte(175), CByte(80))
+        Button1.Font = New Font("Bahnschrift", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
+        Button1.ForeColor = Color.White
+        Button1.Location = New Point(31, 361)
         Button1.Name = "Button1"
         Button1.Size = New Size(83, 40)
         Button1.TabIndex = 1
@@ -68,7 +71,7 @@ Partial Class FormularioPersonaNatural
         ' 
         ' TextBox1
         ' 
-        TextBox1.Location = New Point(175, 32)
+        TextBox1.Location = New Point(163, 33)
         TextBox1.Name = "TextBox1"
         TextBox1.Size = New Size(137, 23)
         TextBox1.TabIndex = 2
@@ -76,33 +79,35 @@ Partial Class FormularioPersonaNatural
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Font = New Font("Verdana", 12F, FontStyle.Italic, GraphicsUnit.Point)
-        Label2.Location = New Point(31, 84)
+        Label2.Font = New Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point)
+        Label2.ForeColor = Color.FromArgb(CByte(51), CByte(59), CByte(82))
+        Label2.Location = New Point(31, 79)
         Label2.Name = "Label2"
-        Label2.Size = New Size(78, 18)
+        Label2.Size = New Size(68, 18)
         Label2.TabIndex = 3
-        Label2.Text = "NOMBRE"
+        Label2.Text = "Nombre"
         ' 
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Font = New Font("Verdana", 12F, FontStyle.Italic, GraphicsUnit.Point)
-        Label3.Location = New Point(31, 167)
+        Label3.Font = New Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point)
+        Label3.ForeColor = Color.FromArgb(CByte(51), CByte(59), CByte(82))
+        Label3.Location = New Point(31, 165)
         Label3.Name = "Label3"
-        Label3.Size = New Size(143, 18)
+        Label3.Size = New Size(129, 18)
         Label3.TabIndex = 6
-        Label3.Text = "TIPODocumento"
+        Label3.Text = "Tipo Documento"
         ' 
         ' TextBox3
         ' 
-        TextBox3.Location = New Point(175, 79)
+        TextBox3.Location = New Point(163, 75)
         TextBox3.Name = "TextBox3"
         TextBox3.Size = New Size(137, 23)
         TextBox3.TabIndex = 7
         ' 
         ' TextBox4
         ' 
-        TextBox4.Location = New Point(175, 209)
+        TextBox4.Location = New Point(163, 202)
         TextBox4.Name = "TextBox4"
         TextBox4.Size = New Size(137, 23)
         TextBox4.TabIndex = 8
@@ -110,140 +115,174 @@ Partial Class FormularioPersonaNatural
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Font = New Font("Verdana", 12F, FontStyle.Italic, GraphicsUnit.Point)
-        Label4.Location = New Point(31, 214)
+        Label4.Font = New Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point)
+        Label4.ForeColor = Color.FromArgb(CByte(51), CByte(59), CByte(82))
+        Label4.Location = New Point(31, 206)
         Label4.Name = "Label4"
-        Label4.Size = New Size(122, 18)
+        Label4.Size = New Size(116, 18)
         Label4.TabIndex = 9
-        Label4.Text = "N°Documento"
+        Label4.Text = "N° Documento"
         ' 
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Font = New Font("Verdana", 12F, FontStyle.Italic, GraphicsUnit.Point)
-        Label5.Location = New Point(31, 261)
+        Label5.Font = New Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point)
+        Label5.ForeColor = Color.FromArgb(CByte(51), CByte(59), CByte(82))
+        Label5.Location = New Point(31, 244)
         Label5.Name = "Label5"
-        Label5.Size = New Size(76, 18)
+        Label5.Size = New Size(65, 18)
         Label5.TabIndex = 10
-        Label5.Text = "GÉNERO"
+        Label5.Text = "Género"
         ' 
         ' Label6
         ' 
         Label6.AutoSize = True
-        Label6.Font = New Font("Verdana", 12F, FontStyle.Italic, GraphicsUnit.Point)
-        Label6.Location = New Point(31, 126)
+        Label6.Font = New Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point)
+        Label6.ForeColor = Color.FromArgb(CByte(51), CByte(59), CByte(82))
+        Label6.Location = New Point(31, 125)
         Label6.Name = "Label6"
-        Label6.Size = New Size(90, 18)
+        Label6.Size = New Size(71, 18)
         Label6.TabIndex = 11
-        Label6.Text = "APELLIDO"
+        Label6.Text = "Apellido"
         ' 
         ' TextBox6
         ' 
-        TextBox6.Location = New Point(175, 121)
+        TextBox6.Location = New Point(163, 121)
         TextBox6.Name = "TextBox6"
         TextBox6.Size = New Size(137, 23)
         TextBox6.TabIndex = 13
         ' 
         ' Button2
         ' 
-        Button2.Location = New Point(131, 301)
+        Button2.BackColor = Color.FromArgb(CByte(255), CByte(202), CByte(44))
+        Button2.Font = New Font("Bahnschrift", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
+        Button2.Location = New Point(131, 361)
         Button2.Name = "Button2"
         Button2.Size = New Size(83, 40)
         Button2.TabIndex = 14
         Button2.Text = "MODIFICAR"
-        Button2.UseVisualStyleBackColor = True
+        Button2.UseVisualStyleBackColor = False
         ' 
         ' Button3
         ' 
-        Button3.Location = New Point(229, 301)
+        Button3.BackColor = Color.FromArgb(CByte(255), CByte(72), CByte(106))
+        Button3.Font = New Font("Bahnschrift", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
+        Button3.ForeColor = Color.White
+        Button3.Location = New Point(229, 361)
         Button3.Name = "Button3"
         Button3.Size = New Size(83, 40)
         Button3.TabIndex = 15
         Button3.Text = "ELIMINAR"
-        Button3.UseVisualStyleBackColor = True
+        Button3.UseVisualStyleBackColor = False
         ' 
         ' DataGridView1
         ' 
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Location = New Point(347, 32)
+        DataGridView1.Location = New Point(485, 37)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.RowTemplate.Height = 25
-        DataGridView1.Size = New Size(614, 401)
+        DataGridView1.Size = New Size(438, 158)
         DataGridView1.TabIndex = 16
         ' 
         ' ComboBox1
         ' 
         ComboBox1.FormattingEnabled = True
-        ComboBox1.Location = New Point(175, 162)
+        ComboBox1.Location = New Point(163, 161)
         ComboBox1.Name = "ComboBox1"
         ComboBox1.Size = New Size(137, 23)
         ComboBox1.TabIndex = 17
         ' 
         ' Button4
         ' 
-        Button4.Location = New Point(131, 347)
+        Button4.BackColor = Color.FromArgb(CByte(3), CByte(139), CByte(197))
+        Button4.Font = New Font("Bahnschrift", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
+        Button4.ForeColor = Color.White
+        Button4.Location = New Point(318, 361)
         Button4.Name = "Button4"
         Button4.Size = New Size(83, 40)
         Button4.TabIndex = 18
         Button4.Text = "LIMPIAR"
-        Button4.UseVisualStyleBackColor = True
-        ' 
-        ' Button5
-        ' 
-        Button5.BackColor = Color.Salmon
-        Button5.Location = New Point(229, 347)
-        Button5.Name = "Button5"
-        Button5.Size = New Size(83, 40)
-        Button5.TabIndex = 19
-        Button5.Text = "SALIR"
-        Button5.UseVisualStyleBackColor = False
+        Button4.UseVisualStyleBackColor = False
         ' 
         ' ComboBox2
         ' 
         ComboBox2.FormattingEnabled = True
-        ComboBox2.Location = New Point(175, 256)
+        ComboBox2.Location = New Point(163, 240)
         ComboBox2.Name = "ComboBox2"
         ComboBox2.Size = New Size(137, 23)
         ComboBox2.TabIndex = 20
         ' 
-        ' Button6
+        ' btnAgregar
         ' 
-        Button6.Location = New Point(31, 347)
-        Button6.Name = "Button6"
-        Button6.Size = New Size(83, 40)
-        Button6.TabIndex = 21
-        Button6.Text = "NÚM.TELF."
-        Button6.UseVisualStyleBackColor = True
+        btnAgregar.BackColor = Color.FromArgb(CByte(76), CByte(175), CByte(80))
+        btnAgregar.FlatAppearance.BorderSize = 0
+        btnAgregar.FlatStyle = FlatStyle.Flat
+        btnAgregar.IconChar = FontAwesome.Sharp.IconChar.UserPlus
+        btnAgregar.IconColor = Color.White
+        btnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto
+        btnAgregar.IconSize = 32
+        btnAgregar.Location = New Point(31, 295)
+        btnAgregar.Name = "btnAgregar"
+        btnAgregar.Size = New Size(47, 47)
+        btnAgregar.TabIndex = 21
+        btnAgregar.UseVisualStyleBackColor = False
         ' 
-        ' Button7
+        ' btnModificar
         ' 
-        Button7.Location = New Point(31, 393)
-        Button7.Name = "Button7"
-        Button7.Size = New Size(83, 40)
-        Button7.TabIndex = 22
-        Button7.Text = "ASIG. ROL"
-        Button7.UseVisualStyleBackColor = True
+        btnModificar.BackColor = Color.FromArgb(CByte(255), CByte(202), CByte(44))
+        btnModificar.FlatAppearance.BorderSize = 0
+        btnModificar.FlatStyle = FlatStyle.Flat
+        btnModificar.IconChar = FontAwesome.Sharp.IconChar.UserEdit
+        btnModificar.IconColor = Color.FromArgb(CByte(51), CByte(59), CByte(82))
+        btnModificar.IconFont = FontAwesome.Sharp.IconFont.Auto
+        btnModificar.IconSize = 32
+        btnModificar.Location = New Point(84, 295)
+        btnModificar.Name = "btnModificar"
+        btnModificar.Size = New Size(47, 47)
+        btnModificar.TabIndex = 22
+        btnModificar.UseVisualStyleBackColor = False
         ' 
-        ' Button8
+        ' btnLimpiar
         ' 
-        Button8.Location = New Point(131, 393)
-        Button8.Name = "Button8"
-        Button8.Size = New Size(83, 40)
-        Button8.TabIndex = 23
-        Button8.Text = "Proveedor"
-        Button8.UseVisualStyleBackColor = True
+        btnLimpiar.BackColor = Color.FromArgb(CByte(3), CByte(139), CByte(197))
+        btnLimpiar.FlatAppearance.BorderSize = 0
+        btnLimpiar.FlatStyle = FlatStyle.Flat
+        btnLimpiar.IconChar = FontAwesome.Sharp.IconChar.Broom
+        btnLimpiar.IconColor = Color.White
+        btnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto
+        btnLimpiar.IconSize = 32
+        btnLimpiar.Location = New Point(137, 295)
+        btnLimpiar.Name = "btnLimpiar"
+        btnLimpiar.Size = New Size(47, 47)
+        btnLimpiar.TabIndex = 23
+        btnLimpiar.UseVisualStyleBackColor = False
+        ' 
+        ' btnEliminar
+        ' 
+        btnEliminar.BackColor = Color.FromArgb(CByte(255), CByte(72), CByte(106))
+        btnEliminar.FlatAppearance.BorderSize = 0
+        btnEliminar.FlatStyle = FlatStyle.Flat
+        btnEliminar.IconChar = FontAwesome.Sharp.IconChar.Trash
+        btnEliminar.IconColor = Color.White
+        btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto
+        btnEliminar.IconSize = 32
+        btnEliminar.Location = New Point(190, 295)
+        btnEliminar.Name = "btnEliminar"
+        btnEliminar.Size = New Size(47, 47)
+        btnEliminar.TabIndex = 24
+        btnEliminar.UseVisualStyleBackColor = False
         ' 
         ' FormularioPersonaNatural
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
         AutoScaleMode = AutoScaleMode.Font
-        BackColor = Color.Wheat
+        BackColor = Color.FromArgb(CByte(241), CByte(246), CByte(255))
         ClientSize = New Size(985, 460)
-        Controls.Add(Button8)
-        Controls.Add(Button7)
-        Controls.Add(Button6)
+        Controls.Add(btnEliminar)
+        Controls.Add(btnLimpiar)
+        Controls.Add(btnModificar)
+        Controls.Add(btnAgregar)
         Controls.Add(ComboBox2)
-        Controls.Add(Button5)
         Controls.Add(Button4)
         Controls.Add(ComboBox1)
         Controls.Add(DataGridView1)
@@ -261,7 +300,7 @@ Partial Class FormularioPersonaNatural
         Controls.Add(Button1)
         Controls.Add(Label1)
         Name = "FormularioPersonaNatural"
-        Text = "PersonaNatural"
+        Text = "Registrar Personas"
         CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
@@ -283,9 +322,9 @@ Partial Class FormularioPersonaNatural
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents Button4 As Button
-    Friend WithEvents Button5 As Button
     Friend WithEvents ComboBox2 As ComboBox
-    Friend WithEvents Button6 As Button
-    Friend WithEvents Button7 As Button
-    Friend WithEvents Button8 As Button
+    Friend WithEvents btnAgregar As FontAwesome.Sharp.IconButton
+    Friend WithEvents btnModificar As FontAwesome.Sharp.IconButton
+    Friend WithEvents btnLimpiar As FontAwesome.Sharp.IconButton
+    Friend WithEvents btnEliminar As FontAwesome.Sharp.IconButton
 End Class

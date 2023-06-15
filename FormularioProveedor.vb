@@ -100,9 +100,4 @@ Public Class FormularioProveedor
             cajademensaje.errorglobal()
         End Try
     End Sub
-
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        Me.Close()
-        FormularioPersonaNatural.Show()
-    End Sub
 End Class
