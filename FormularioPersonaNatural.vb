@@ -233,25 +233,20 @@ Public Class FormularioPersonaNatural
     End Sub
 
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
-        Dim IdAutor As Integer
-        If Integer.TryParse(TextBox1.Text, IdAutor) Then
-            Try
-                Dim dbContext As New MiDbContext()
-                Dim personaNatural = dbContext.Actores.Find(IdAutor)
-                If personaNatural IsNot Nothing Then
-                    dbContext.Actores.Remove(personaNatural)
-                    dbContext.SaveChanges()
-                    cajademensaje.Eliminarregistro()
-                    cargarData()
-                Else
-                    cajademensaje.Eliminarregistro2()
-                End If
-            Catch ex As Exception
-                cajademensaje.errorglobal()
-            End Try
-        Else
-            ' Mostrar mensaje de error indicando que el valor en TextBox1 no es un número válido
+        IdAutor = TextBox1.Text
+        Try
+            Dim dbContext As New MiDbContext()
+            Dim personaNatural = dbContext.Actores.Find(IdAutor)
+            If personaNatural IsNot Nothing Then
+                dbContext.Actores.Remove(personaNatural)
+                dbContext.SaveChanges()
+                cajademensaje.Eliminarregistro()
+                Cargardata()
+            Else
+                cajademensaje.Eliminarregistro2()
+            End If
+        Catch ex As Exception
             cajademensaje.errorglobal()
-        End If
+        End Try
     End Sub
 End Class
