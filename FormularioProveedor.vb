@@ -42,6 +42,9 @@ Public Class FormularioProveedor
         DataGridView1.Columns(0).HeaderText = "ID"
         DataGridView1.Columns(1).HeaderText = "Proveedor"
         TextBox1.Enabled = False
+
+        btnEliminar.Enabled = False
+        btnLimpiar.Enabled = False
     End Sub
 
     Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
@@ -50,13 +53,14 @@ Public Class FormularioProveedor
             TextBox1.Text = row.Cells("idProveedor").Value.ToString()
             ComboBox2.Text = row.Cells("idActor").Value.ToString()
 
-            Me.Button3.Enabled = True
-            Me.Button1.Enabled = False
+            Me.btnEliminar.Enabled = True
+            Me.btnAgregar.Enabled = False
+            btnLimpiar.Enabled = True
             Me.TextBox1.Enabled = False
         End If
     End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    'Botones
+    Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
         idProveedor = 1
         Actor = ComboBox2.SelectedValue
         Try
@@ -74,14 +78,15 @@ Public Class FormularioProveedor
         End Try
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub btnLimpiar_Click(sender As Object, e As EventArgs) Handles btnLimpiar.Click
         TextBox1.Clear()
         ComboBox2.Text = ""
 
-        Button1.Enabled = True
-        Button3.Enabled = False
+        btnAgregar.Enabled = True
+        btnEliminar.Enabled = False
     End Sub
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
         idProveedor = TextBox1.Text
         Try
             If MessageBox.Show("ESTAS SEGURO DE ELIMINAR ESTE REGISTRO", "ELIMINAR REGISTRO", MessageBoxButtons.YesNo) = DialogResult.Yes Then

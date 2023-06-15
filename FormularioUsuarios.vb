@@ -69,12 +69,29 @@ Public Class FormularioUsuarios
         DataGridView1.Columns(4).HeaderText = "Rol"
 
 
-
+        btnModificar.Enabled = False
+        btnLimpiar.Enabled = False
+        btnEliminar.Enabled = False
         TextBox3.Enabled = False
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+        If e.RowIndex >= 0 Then
+            Dim row As DataGridViewRow = DataGridView1.Rows(e.RowIndex)
+            TextBox3.Text = row.Cells("ID").Value.ToString()
+            ComboBox1.Text = row.Cells("Nombre").Value.ToString()
+            TextBox1.Text = row.Cells("Username").Value.ToString()
+            TextBox2.Text = row.Cells("Password").Value.ToString()
+            ComboBox2.Text = row.Cells("Rol").Value.ToString()
+
+            Me.btnAgregar.Enabled = False
+            Me.btnModificar.Enabled = True
+            Me.btnEliminar.Enabled = True
+            Me.btnLimpiar.Enabled = True
+        End If
+    End Sub
+    Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
         idUsuario = 1
         Actor = ComboBox1.SelectedValue
         userName = TextBox1.Text
@@ -99,10 +116,9 @@ Public Class FormularioUsuarios
         Catch ex As Exception
             cajademensaje.errorglobal()
         End Try
-
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
         idUsuario = TextBox3.Text
         Actor = ComboBox1.SelectedValue
         userName = TextBox1.Text
@@ -128,27 +144,19 @@ Public Class FormularioUsuarios
         End Try
     End Sub
 
-    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
-        If e.RowIndex >= 0 Then
-            Dim row As DataGridViewRow = DataGridView1.Rows(e.RowIndex)
-            TextBox3.Text = row.Cells("ID").Value.ToString()
-            ComboBox1.Text = row.Cells("Nombre").Value.ToString()
-            TextBox1.Text = row.Cells("Username").Value.ToString()
-            TextBox2.Text = row.Cells("Password").Value.ToString()
-            ComboBox2.Text = row.Cells("Rol").Value.ToString()
-            Button1.Enabled = False
-            Button2.Enabled = True
-            Button3.Enabled = True
-            Button4.Enabled = True
-        End If
+    Private Sub btnLimpiar_Click(sender As Object, e As EventArgs) Handles btnLimpiar.Click
+        TextBox1.Clear()
+        TextBox2.Clear()
+        TextBox3.Clear()
+        ComboBox1.Text = ""
+        ComboBox2.Text = ""
+
+        btnAgregar.Enabled = True
+        btnModificar.Enabled = False
+        btnEliminar.Enabled = False
     End Sub
 
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        Me.Hide()
-        FormularioPersonaNatural.Show()
-    End Sub
-
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
         idUsuario = TextBox3.Text
         Try
             Dim dbContext As New MiDbContext()
@@ -164,27 +172,5 @@ Public Class FormularioUsuarios
         Catch ex As Exception
             cajademensaje.errorglobal()
         End Try
-    End Sub
-
-    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
-
-        TextBox1.Clear()
-        TextBox2.Clear()
-        TextBox3.Clear()
-        ComboBox1.Text = ""
-        ComboBox2.Text = ""
-
-        Button1.Enabled = True
-        Button2.Enabled = False
-        Button3.Enabled = False
-
-    End Sub
-
-    Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
-
-    End Sub
-
-    Private Sub TextBox3_TextChanged(sender As Object, e As EventArgs) Handles TextBox3.TextChanged
-
     End Sub
 End Class

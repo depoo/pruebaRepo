@@ -60,17 +60,26 @@ Public Class NumContactoTrabajador
         DataGridView1.Columns(1).HeaderText = "Trabajador"
         DataGridView1.Columns(2).HeaderText = "Operador telf"
         DataGridView1.Columns(3).HeaderText = "Telefono"
-        Button1.Enabled = False
-        Button2.Enabled = False
         TextBox2.Enabled = False
-    End Sub
 
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        Me.Hide()
-        FormularioPersonaNatural.Show()
+        btnModificar.Enabled = False
+        btnEliminar.Enabled = False
     End Sub
+    Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
+        If e.RowIndex >= 0 Then
+            Dim row As DataGridViewRow = DataGridView1.Rows(e.RowIndex)
+            TextBox2.Text = row.Cells("ID").Value.ToString()
+            TextBox1.Text = row.Cells("NUMERO").Value.ToString()
+            ComboBox1.Text = row.Cells("NOMBRE").Value.ToString()
+            ComboBox2.Text = row.Cells("OPERADOR").Value.ToString()
+            TextBox2.Enabled = False
 
-    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+            btnModificar.Enabled = True
+            btnEliminar.Enabled = True
+            btnAgregar.Enabled = False
+        End If
+    End Sub
+    Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
         id_cel = 1
         operador = ComboBox2.SelectedValue
         trabajador = ComboBox1.SelectedValue
@@ -93,21 +102,7 @@ Public Class NumContactoTrabajador
         End Try
     End Sub
 
-    Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
-        If e.RowIndex >= 0 Then
-            Dim row As DataGridViewRow = DataGridView1.Rows(e.RowIndex)
-            TextBox2.Text = row.Cells("ID").Value.ToString()
-            TextBox1.Text = row.Cells("NUMERO").Value.ToString()
-            ComboBox1.Text = row.Cells("NOMBRE").Value.ToString()
-            ComboBox2.Text = row.Cells("OPERADOR").Value.ToString()
-            Button1.Enabled = True
-            Button2.Enabled = True
-            Button5.Enabled = False
-            TextBox2.Enabled = False
-        End If
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
         id_cel = TextBox2.Text
         operador = ComboBox2.SelectedValue
         trabajador = ComboBox1.SelectedValue
@@ -131,8 +126,18 @@ Public Class NumContactoTrabajador
         End Try
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub btnLimpiar_Click(sender As Object, e As EventArgs) Handles btnLimpiar.Click
+        ComboBox1.Text = ""
+        ComboBox2.Text = ""
+        TextBox2.Clear()
+        TextBox1.Clear()
 
+        btnAgregar.Enabled = True
+        btnModificar.Enabled = False
+        btnEliminar.Enabled = False
+    End Sub
+
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
         id_cel = TextBox2.Text
         Try
             Dim dbContext As New MiDbContext()
@@ -148,21 +153,6 @@ Public Class NumContactoTrabajador
         Catch ex As Exception
             cajademensaje.errorglobal()
         End Try
-
-    End Sub
-
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-
-        ComboBox1.Text = ""
-        ComboBox2.Text = ""
-        TextBox2.Clear()
-        TextBox1.Clear()
-        Button1.Enabled = False
-        Button2.Enabled = False
-        Button5.Enabled = True
-    End Sub
-    Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click
-
     End Sub
 End Class
 

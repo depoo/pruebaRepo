@@ -62,7 +62,8 @@ Public Class FormularioPersonaNatural
         'Me.Button3.Enabled = False
         Me.TextBox1.Enabled = False
         Me.btnModificar.Enabled = False
-        'Me.btnLimpiar.Enabled = False
+        Me.btnLimpiar.Enabled = False
+        Me.btnEliminar.Enabled = False
         Cargardata()
         Cargardata2()
         Cargardata3()
@@ -75,77 +76,6 @@ Public Class FormularioPersonaNatural
 
     End Sub
 
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-
-        TextBox1.Clear()
-        ComboBox1.Text = ""
-        ComboBox2.Text = ""
-        TextBox4.Clear()
-        TextBox3.Clear()
-        TextBox6.Clear()
-        Me.Button1.Enabled = True
-        Me.Button2.Enabled = False
-        Me.Button3.Enabled = False
-
-    End Sub
-
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-
-        IdAutor = TextBox1.Text
-        TipoDocumento = ComboBox1.SelectedValue
-        TipoSexo = ComboBox2.SelectedValue
-        NDocumento = TextBox4.Text
-        nombre = TextBox3.Text
-        apellido = TextBox6.Text
-        Try
-            Dim dbContext As New MiDbContext()
-            Dim personaNatural = dbContext.Actores.Find(IdAutor)
-            If personaNatural IsNot Nothing Then
-                personaNatural.nombre = nombre
-                personaNatural.id_Tipodoc = TipoDocumento
-                personaNatural.numeroDocumento = NDocumento
-                personaNatural.id_sexo = TipoSexo
-                personaNatural.apellido = apellido
-                dbContext.SaveChanges()
-                cajademensaje.Actualizacionderegistro()
-                Cargardata()
-            Else
-                cajademensaje.Actualizacionderegistro2()
-            End If
-        Catch ex As Exception
-            cajademensaje.errorglobal()
-        End Try
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-
-        IdAutor = 1
-        TipoDocumento = ComboBox1.SelectedValue
-        TipoSexo = ComboBox2.SelectedValue
-        NDocumento = TextBox4.Text
-        nombre = TextBox3.Text
-        apellido = TextBox6.Text
-        Try
-            Dim dbContext As New MiDbContext()
-            Dim NewPersonaNatural As New Actores() With
-            {
-                .nombre = nombre,
-                .id_Tipodoc = TipoDocumento,
-                .numeroDocumento = NDocumento,
-                .id_sexo = TipoSexo,
-                .apellido = apellido
-            }
-            dbContext.Actores.Add(NewPersonaNatural)
-            dbContext.SaveChanges()
-            cajademensaje.Creacionderegistro()
-            Cargardata()
-        Catch ex As Exception
-            cajademensaje.errorglobal()
-        End Try
-
-    End Sub
-
-
     Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
         If e.RowIndex >= 0 Then
             Dim row As DataGridViewRow = DataGridView1.Rows(e.RowIndex)
@@ -155,13 +85,10 @@ Public Class FormularioPersonaNatural
             TextBox4.Text = row.Cells("numeroDocumento").Value.ToString()
             TextBox6.Text = row.Cells("apellido").Value.ToString()
             ComboBox2.Text = row.Cells("tiposex").Value.ToString()
-            'Me.Button1.Enabled = False
-            'Me.Button2.Enabled = True
-            'Me.Button3.Enabled = True
             Me.btnAgregar.Enabled = False
             Me.btnModificar.Enabled = True
+            Me.btnLimpiar.Enabled = True
             Me.btnEliminar.Enabled = True
-
         End If
     End Sub
 
