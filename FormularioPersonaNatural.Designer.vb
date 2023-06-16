@@ -22,6 +22,9 @@ Partial Class FormularioPersonaNatural
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Label1 = New Label()
         TextBox1 = New TextBox()
         Label2 = New Label()
@@ -58,7 +61,7 @@ Partial Class FormularioPersonaNatural
         TextBox1.BorderStyle = BorderStyle.FixedSingle
         TextBox1.Location = New Point(160, 45)
         TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(137, 23)
+        TextBox1.Size = New Size(121, 23)
         TextBox1.TabIndex = 2
         ' 
         ' Label2
@@ -88,7 +91,7 @@ Partial Class FormularioPersonaNatural
         TextBox3.BorderStyle = BorderStyle.FixedSingle
         TextBox3.Location = New Point(160, 87)
         TextBox3.Name = "TextBox3"
-        TextBox3.Size = New Size(137, 23)
+        TextBox3.Size = New Size(121, 23)
         TextBox3.TabIndex = 7
         ' 
         ' TextBox4
@@ -96,7 +99,7 @@ Partial Class FormularioPersonaNatural
         TextBox4.BorderStyle = BorderStyle.FixedSingle
         TextBox4.Location = New Point(160, 214)
         TextBox4.Name = "TextBox4"
-        TextBox4.Size = New Size(137, 23)
+        TextBox4.Size = New Size(121, 23)
         TextBox4.TabIndex = 8
         ' 
         ' Label4
@@ -137,16 +140,51 @@ Partial Class FormularioPersonaNatural
         TextBox6.BorderStyle = BorderStyle.FixedSingle
         TextBox6.Location = New Point(160, 133)
         TextBox6.Name = "TextBox6"
-        TextBox6.Size = New Size(137, 23)
+        TextBox6.Size = New Size(121, 23)
         TextBox6.TabIndex = 13
         ' 
         ' DataGridView1
         ' 
-        DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Location = New Point(322, 38)
+        DataGridView1.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
+        DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        DataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
+        DataGridView1.BackgroundColor = Color.FromArgb(CByte(221), CByte(230), CByte(237))
+        DataGridView1.BorderStyle = BorderStyle.None
+        DataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal
+        DataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = Color.FromArgb(CByte(73), CByte(81), CByte(101))
+        DataGridViewCellStyle1.Font = New Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
+        DataGridViewCellStyle1.ForeColor = Color.White
+        DataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = DataGridViewTriState.True
+        DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridView1.ColumnHeadersHeight = 43
+        DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        DataGridView1.EnableHeadersVisualStyles = False
+        DataGridView1.GridColor = Color.Black
+        DataGridView1.Location = New Point(302, 38)
         DataGridView1.Name = "DataGridView1"
+        DataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = SystemColors.Control
+        DataGridViewCellStyle2.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point)
+        DataGridViewCellStyle2.ForeColor = SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = DataGridViewTriState.True
+        DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridView1.RowHeadersVisible = False
+        DataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle3.BackColor = Color.FromArgb(CByte(221), CByte(230), CByte(237))
+        DataGridViewCellStyle3.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point)
+        DataGridViewCellStyle3.ForeColor = Color.FromArgb(CByte(43), CByte(39), CByte(48))
+        DataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(CByte(25), CByte(167), CByte(206))
+        DataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(CByte(43), CByte(39), CByte(48))
+        DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle3
         DataGridView1.RowTemplate.Height = 25
-        DataGridView1.Size = New Size(537, 386)
+        DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+        DataGridView1.Size = New Size(558, 386)
         DataGridView1.TabIndex = 16
         ' 
         ' ComboBox1
@@ -155,7 +193,7 @@ Partial Class FormularioPersonaNatural
         ComboBox1.FormattingEnabled = True
         ComboBox1.Location = New Point(160, 173)
         ComboBox1.Name = "ComboBox1"
-        ComboBox1.Size = New Size(137, 23)
+        ComboBox1.Size = New Size(121, 23)
         ComboBox1.TabIndex = 17
         ' 
         ' ComboBox2
@@ -164,7 +202,7 @@ Partial Class FormularioPersonaNatural
         ComboBox2.FormattingEnabled = True
         ComboBox2.Location = New Point(160, 252)
         ComboBox2.Name = "ComboBox2"
-        ComboBox2.Size = New Size(137, 23)
+        ComboBox2.Size = New Size(121, 23)
         ComboBox2.TabIndex = 20
         ' 
         ' btnAgregar

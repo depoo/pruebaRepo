@@ -125,7 +125,7 @@ Partial Class Dashboard
         btnRol.Padding = New Padding(10, 0, 0, 0)
         btnRol.Size = New Size(182, 60)
         btnRol.TabIndex = 4
-        btnRol.Text = "Rol"
+        btnRol.Text = "Asignar Rol"
         btnRol.TextAlign = ContentAlignment.MiddleLeft
         btnRol.TextImageRelation = TextImageRelation.ImageBeforeText
         btnRol.UseVisualStyleBackColor = True
@@ -299,7 +299,7 @@ Partial Class Dashboard
         ' 
         ' Dashboard
         ' 
-        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1084, 561)
         Controls.Add(PanelDesktop)
