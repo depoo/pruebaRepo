@@ -91,7 +91,7 @@ Partial Class FormularioUsuarios
         TextBox1.BorderStyle = BorderStyle.FixedSingle
         TextBox1.Location = New Point(129, 136)
         TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(146, 23)
+        TextBox1.Size = New Size(144, 23)
         TextBox1.TabIndex = 5
         ' 
         ' TextBox2
@@ -99,7 +99,7 @@ Partial Class FormularioUsuarios
         TextBox2.BorderStyle = BorderStyle.FixedSingle
         TextBox2.Location = New Point(129, 182)
         TextBox2.Name = "TextBox2"
-        TextBox2.Size = New Size(146, 23)
+        TextBox2.Size = New Size(144, 23)
         TextBox2.TabIndex = 6
         ' 
         ' ComboBox1
@@ -108,7 +108,7 @@ Partial Class FormularioUsuarios
         ComboBox1.FormattingEnabled = True
         ComboBox1.Location = New Point(129, 91)
         ComboBox1.Name = "ComboBox1"
-        ComboBox1.Size = New Size(146, 23)
+        ComboBox1.Size = New Size(144, 23)
         ComboBox1.TabIndex = 7
         ' 
         ' ComboBox2
@@ -117,13 +117,14 @@ Partial Class FormularioUsuarios
         ComboBox2.FormattingEnabled = True
         ComboBox2.Location = New Point(129, 221)
         ComboBox2.Name = "ComboBox2"
-        ComboBox2.Size = New Size(146, 23)
+        ComboBox2.Size = New Size(144, 23)
         ComboBox2.TabIndex = 8
         ' 
         ' DataGridView1
         ' 
         DataGridView1.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        DataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
         DataGridView1.BackgroundColor = Color.FromArgb(CByte(221), CByte(230), CByte(237))
         DataGridView1.BorderStyle = BorderStyle.None
         DataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal
@@ -132,7 +133,7 @@ Partial Class FormularioUsuarios
         DataGridViewCellStyle1.BackColor = Color.FromArgb(CByte(73), CByte(81), CByte(101))
         DataGridViewCellStyle1.Font = New Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
         DataGridViewCellStyle1.ForeColor = Color.White
-        DataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(CByte(87), CByte(103), CByte(241))
         DataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText
         DataGridViewCellStyle1.WrapMode = DataGridViewTriState.True
         DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
@@ -140,7 +141,7 @@ Partial Class FormularioUsuarios
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         DataGridView1.EnableHeadersVisualStyles = False
         DataGridView1.GridColor = Color.FromArgb(CByte(55), CByte(66), CByte(89))
-        DataGridView1.Location = New Point(294, 46)
+        DataGridView1.Location = New Point(302, 38)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.RowHeadersVisible = False
         DataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter
@@ -151,6 +152,7 @@ Partial Class FormularioUsuarios
         DataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(CByte(43), CByte(39), CByte(48))
         DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle2
         DataGridView1.RowTemplate.Height = 25
+        DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect
         DataGridView1.Size = New Size(544, 363)
         DataGridView1.TabIndex = 9
         ' 
@@ -170,7 +172,7 @@ Partial Class FormularioUsuarios
         TextBox3.BorderStyle = BorderStyle.FixedSingle
         TextBox3.Location = New Point(129, 52)
         TextBox3.Name = "TextBox3"
-        TextBox3.Size = New Size(146, 23)
+        TextBox3.Size = New Size(144, 23)
         TextBox3.TabIndex = 15
         ' 
         ' btnEliminar

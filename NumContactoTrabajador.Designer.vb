@@ -46,6 +46,7 @@ Partial Class NumContactoTrabajador
         ' 
         DataGridView1.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        DataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
         DataGridView1.BackgroundColor = Color.FromArgb(CByte(221), CByte(230), CByte(237))
         DataGridView1.BorderStyle = BorderStyle.None
         DataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal
@@ -54,7 +55,7 @@ Partial Class NumContactoTrabajador
         DataGridViewCellStyle1.BackColor = Color.FromArgb(CByte(73), CByte(81), CByte(101))
         DataGridViewCellStyle1.Font = New Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
         DataGridViewCellStyle1.ForeColor = Color.White
-        DataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(CByte(87), CByte(103), CByte(241))
         DataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText
         DataGridViewCellStyle1.WrapMode = DataGridViewTriState.True
         DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
@@ -62,7 +63,7 @@ Partial Class NumContactoTrabajador
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         DataGridView1.EnableHeadersVisualStyles = False
         DataGridView1.GridColor = Color.FromArgb(CByte(55), CByte(66), CByte(89))
-        DataGridView1.Location = New Point(312, 49)
+        DataGridView1.Location = New Point(302, 38)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single
         DataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter
@@ -92,7 +93,7 @@ Partial Class NumContactoTrabajador
         ComboBox1.FormattingEnabled = True
         ComboBox1.Location = New Point(154, 102)
         ComboBox1.Name = "ComboBox1"
-        ComboBox1.Size = New Size(142, 23)
+        ComboBox1.Size = New Size(131, 23)
         ComboBox1.TabIndex = 3
         ' 
         ' TextBox1
@@ -100,7 +101,7 @@ Partial Class NumContactoTrabajador
         TextBox1.BorderStyle = BorderStyle.FixedSingle
         TextBox1.Location = New Point(154, 145)
         TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(142, 23)
+        TextBox1.Size = New Size(131, 23)
         TextBox1.TabIndex = 6
         ' 
         ' Label2
@@ -142,7 +143,7 @@ Partial Class NumContactoTrabajador
         ComboBox2.FormattingEnabled = True
         ComboBox2.Location = New Point(154, 198)
         ComboBox2.Name = "ComboBox2"
-        ComboBox2.Size = New Size(142, 23)
+        ComboBox2.Size = New Size(131, 23)
         ComboBox2.TabIndex = 13
         ' 
         ' Label5
@@ -161,7 +162,7 @@ Partial Class NumContactoTrabajador
         TextBox2.BorderStyle = BorderStyle.FixedSingle
         TextBox2.Location = New Point(154, 57)
         TextBox2.Name = "TextBox2"
-        TextBox2.Size = New Size(142, 23)
+        TextBox2.Size = New Size(131, 23)
         TextBox2.TabIndex = 16
         ' 
         ' btnEliminar
