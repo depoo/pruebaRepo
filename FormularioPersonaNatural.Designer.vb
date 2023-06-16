@@ -163,7 +163,7 @@ Partial Class FormularioPersonaNatural
         DataGridView1.ColumnHeadersHeight = 43
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         DataGridView1.EnableHeadersVisualStyles = False
-        DataGridView1.GridColor = Color.Black
+        DataGridView1.GridColor = Color.FromArgb(CByte(55), CByte(66), CByte(89))
         DataGridView1.Location = New Point(302, 38)
         DataGridView1.Name = "DataGridView1"
         DataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter
@@ -215,7 +215,7 @@ Partial Class FormularioPersonaNatural
         btnAgregar.IconColor = Color.White
         btnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto
         btnAgregar.IconSize = 32
-        btnAgregar.Location = New Point(48, 307)
+        btnAgregar.Location = New Point(38, 304)
         btnAgregar.Name = "btnAgregar"
         btnAgregar.Size = New Size(47, 47)
         btnAgregar.TabIndex = 21
@@ -231,7 +231,7 @@ Partial Class FormularioPersonaNatural
         btnModificar.IconColor = Color.FromArgb(CByte(51), CByte(59), CByte(82))
         btnModificar.IconFont = FontAwesome.Sharp.IconFont.Auto
         btnModificar.IconSize = 32
-        btnModificar.Location = New Point(101, 307)
+        btnModificar.Location = New Point(99, 304)
         btnModificar.Name = "btnModificar"
         btnModificar.Size = New Size(47, 47)
         btnModificar.TabIndex = 22
@@ -247,7 +247,7 @@ Partial Class FormularioPersonaNatural
         btnLimpiar.IconColor = Color.White
         btnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto
         btnLimpiar.IconSize = 32
-        btnLimpiar.Location = New Point(154, 307)
+        btnLimpiar.Location = New Point(160, 304)
         btnLimpiar.Name = "btnLimpiar"
         btnLimpiar.Size = New Size(47, 47)
         btnLimpiar.TabIndex = 23
@@ -263,7 +263,7 @@ Partial Class FormularioPersonaNatural
         btnEliminar.IconColor = Color.White
         btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto
         btnEliminar.IconSize = 32
-        btnEliminar.Location = New Point(207, 307)
+        btnEliminar.Location = New Point(221, 304)
         btnEliminar.Name = "btnEliminar"
         btnEliminar.Size = New Size(47, 47)
         btnEliminar.TabIndex = 24

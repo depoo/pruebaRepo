@@ -22,6 +22,8 @@ Partial Class FormularioUsuarios
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Label2 = New Label()
         Label3 = New Label()
         Label4 = New Label()
@@ -45,7 +47,7 @@ Partial Class FormularioUsuarios
         Label2.AutoSize = True
         Label2.Font = New Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point)
         Label2.ForeColor = Color.FromArgb(CByte(51), CByte(59), CByte(82))
-        Label2.Location = New Point(27, 89)
+        Label2.Location = New Point(27, 94)
         Label2.Name = "Label2"
         Label2.Size = New Size(88, 18)
         Label2.TabIndex = 1
@@ -56,7 +58,7 @@ Partial Class FormularioUsuarios
         Label3.AutoSize = True
         Label3.Font = New Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point)
         Label3.ForeColor = Color.FromArgb(CByte(51), CByte(59), CByte(82))
-        Label3.Location = New Point(27, 131)
+        Label3.Location = New Point(27, 136)
         Label3.Name = "Label3"
         Label3.Size = New Size(62, 18)
         Label3.TabIndex = 2
@@ -67,7 +69,7 @@ Partial Class FormularioUsuarios
         Label4.AutoSize = True
         Label4.Font = New Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point)
         Label4.ForeColor = Color.FromArgb(CByte(51), CByte(59), CByte(82))
-        Label4.Location = New Point(27, 175)
+        Label4.Location = New Point(27, 180)
         Label4.Name = "Label4"
         Label4.Size = New Size(93, 18)
         Label4.TabIndex = 3
@@ -78,7 +80,7 @@ Partial Class FormularioUsuarios
         Label5.AutoSize = True
         Label5.Font = New Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point)
         Label5.ForeColor = Color.FromArgb(CByte(51), CByte(59), CByte(82))
-        Label5.Location = New Point(27, 216)
+        Label5.Location = New Point(27, 221)
         Label5.Name = "Label5"
         Label5.Size = New Size(31, 18)
         Label5.TabIndex = 4
@@ -87,7 +89,7 @@ Partial Class FormularioUsuarios
         ' TextBox1
         ' 
         TextBox1.BorderStyle = BorderStyle.FixedSingle
-        TextBox1.Location = New Point(129, 131)
+        TextBox1.Location = New Point(129, 136)
         TextBox1.Name = "TextBox1"
         TextBox1.Size = New Size(146, 23)
         TextBox1.TabIndex = 5
@@ -95,7 +97,7 @@ Partial Class FormularioUsuarios
         ' TextBox2
         ' 
         TextBox2.BorderStyle = BorderStyle.FixedSingle
-        TextBox2.Location = New Point(129, 177)
+        TextBox2.Location = New Point(129, 182)
         TextBox2.Name = "TextBox2"
         TextBox2.Size = New Size(146, 23)
         TextBox2.TabIndex = 6
@@ -104,7 +106,7 @@ Partial Class FormularioUsuarios
         ' 
         ComboBox1.FlatStyle = FlatStyle.System
         ComboBox1.FormattingEnabled = True
-        ComboBox1.Location = New Point(129, 86)
+        ComboBox1.Location = New Point(129, 91)
         ComboBox1.Name = "ComboBox1"
         ComboBox1.Size = New Size(146, 23)
         ComboBox1.TabIndex = 7
@@ -113,16 +115,41 @@ Partial Class FormularioUsuarios
         ' 
         ComboBox2.FlatStyle = FlatStyle.System
         ComboBox2.FormattingEnabled = True
-        ComboBox2.Location = New Point(129, 216)
+        ComboBox2.Location = New Point(129, 221)
         ComboBox2.Name = "ComboBox2"
         ComboBox2.Size = New Size(146, 23)
         ComboBox2.TabIndex = 8
         ' 
         ' DataGridView1
         ' 
-        DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridView1.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
+        DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        DataGridView1.BackgroundColor = Color.FromArgb(CByte(221), CByte(230), CByte(237))
+        DataGridView1.BorderStyle = BorderStyle.None
+        DataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal
+        DataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = Color.FromArgb(CByte(73), CByte(81), CByte(101))
+        DataGridViewCellStyle1.Font = New Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
+        DataGridViewCellStyle1.ForeColor = Color.White
+        DataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = DataGridViewTriState.True
+        DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridView1.ColumnHeadersHeight = 43
+        DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        DataGridView1.EnableHeadersVisualStyles = False
+        DataGridView1.GridColor = Color.FromArgb(CByte(55), CByte(66), CByte(89))
         DataGridView1.Location = New Point(294, 46)
         DataGridView1.Name = "DataGridView1"
+        DataGridView1.RowHeadersVisible = False
+        DataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = Color.FromArgb(CByte(221), CByte(230), CByte(237))
+        DataGridViewCellStyle2.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point)
+        DataGridViewCellStyle2.ForeColor = Color.FromArgb(CByte(43), CByte(39), CByte(48))
+        DataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(CByte(25), CByte(167), CByte(206))
+        DataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(CByte(43), CByte(39), CByte(48))
+        DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle2
         DataGridView1.RowTemplate.Height = 25
         DataGridView1.Size = New Size(544, 363)
         DataGridView1.TabIndex = 9
@@ -132,7 +159,7 @@ Partial Class FormularioUsuarios
         Label6.AutoSize = True
         Label6.Font = New Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point)
         Label6.ForeColor = Color.FromArgb(CByte(51), CByte(59), CByte(82))
-        Label6.Location = New Point(27, 46)
+        Label6.Location = New Point(27, 51)
         Label6.Name = "Label6"
         Label6.Size = New Size(80, 18)
         Label6.TabIndex = 14
@@ -141,7 +168,7 @@ Partial Class FormularioUsuarios
         ' TextBox3
         ' 
         TextBox3.BorderStyle = BorderStyle.FixedSingle
-        TextBox3.Location = New Point(129, 47)
+        TextBox3.Location = New Point(129, 52)
         TextBox3.Name = "TextBox3"
         TextBox3.Size = New Size(146, 23)
         TextBox3.TabIndex = 15
@@ -156,7 +183,7 @@ Partial Class FormularioUsuarios
         btnEliminar.IconColor = Color.White
         btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto
         btnEliminar.IconSize = 32
-        btnEliminar.Location = New Point(201, 281)
+        btnEliminar.Location = New Point(216, 299)
         btnEliminar.Name = "btnEliminar"
         btnEliminar.Size = New Size(47, 47)
         btnEliminar.TabIndex = 28
@@ -172,7 +199,7 @@ Partial Class FormularioUsuarios
         btnLimpiar.IconColor = Color.White
         btnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto
         btnLimpiar.IconSize = 32
-        btnLimpiar.Location = New Point(148, 281)
+        btnLimpiar.Location = New Point(155, 299)
         btnLimpiar.Name = "btnLimpiar"
         btnLimpiar.Size = New Size(47, 47)
         btnLimpiar.TabIndex = 27
@@ -188,7 +215,7 @@ Partial Class FormularioUsuarios
         btnModificar.IconColor = Color.FromArgb(CByte(51), CByte(59), CByte(82))
         btnModificar.IconFont = FontAwesome.Sharp.IconFont.Auto
         btnModificar.IconSize = 32
-        btnModificar.Location = New Point(95, 281)
+        btnModificar.Location = New Point(94, 299)
         btnModificar.Name = "btnModificar"
         btnModificar.Size = New Size(47, 47)
         btnModificar.TabIndex = 26
@@ -204,7 +231,7 @@ Partial Class FormularioUsuarios
         btnAgregar.IconColor = Color.White
         btnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto
         btnAgregar.IconSize = 32
-        btnAgregar.Location = New Point(42, 281)
+        btnAgregar.Location = New Point(33, 299)
         btnAgregar.Name = "btnAgregar"
         btnAgregar.Size = New Size(47, 47)
         btnAgregar.TabIndex = 25
