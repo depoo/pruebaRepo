@@ -12,7 +12,7 @@ Public Class FormularioPersonaNatural
                         Join D In dbContext.TipoDocumento On A.id_Tipodoc Equals D.id_TipoDoc
                         Join S In dbContext.Sexo On A.id_sexo Equals S.id_Sexo
                         Select New With {
-                            .id_Actor = A.id_Actor,
+                            .ID = A.id_Actor,
                             .nombre = A.nombre,
                             .apellido = A.apellido,
                             .Nombre_tipoDoc = D.Nombre_tipoDoc,
@@ -79,7 +79,7 @@ Public Class FormularioPersonaNatural
     Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
         If e.RowIndex >= 0 Then
             Dim row As DataGridViewRow = DataGridView1.Rows(e.RowIndex)
-            TextBox1.Text = row.Cells("id_Actor").Value.ToString()
+            TextBox1.Text = row.Cells("ID").Value.ToString()
             TextBox3.Text = row.Cells("nombre").Value.ToString()
             ComboBox1.Text = row.Cells("Nombre_tipoDoc").Value.ToString()
             TextBox4.Text = row.Cells("numeroDocumento").Value.ToString()

@@ -89,9 +89,9 @@ Public Class FormularioProveedor
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
         idProveedor = TextBox1.Text
         Try
+            Dim dbContext As New MiDbContext()
+            Dim Proveedor = dbContext.Proveedor.Find(idProveedor)
             If MessageBox.Show("ESTAS SEGURO DE ELIMINAR ESTE REGISTRO", "ELIMINAR REGISTRO", MessageBoxButtons.YesNo) = DialogResult.Yes Then
-                Dim dbContext As New MiDbContext()
-                Dim Proveedor = dbContext.Proveedor.Find(idProveedor)
                 If Proveedor IsNot Nothing Then
                     dbContext.Proveedor.Remove(Proveedor)
                     dbContext.SaveChanges()
