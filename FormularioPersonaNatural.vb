@@ -73,6 +73,8 @@ Public Class FormularioPersonaNatural
         DataGridView1.Columns(3).HeaderText = "Tipo de documento"
         DataGridView1.Columns(4).HeaderText = "Número de documento"
         DataGridView1.Columns(5).HeaderText = "Genero"
+        'Limpia al cargar el sistema los inputs se limpian
+        LimpiarCampos()
 
     End Sub
 
@@ -90,6 +92,15 @@ Public Class FormularioPersonaNatural
             Me.btnLimpiar.Enabled = True
             Me.btnEliminar.Enabled = True
         End If
+    End Sub
+    ' Funcion que sirve para Limpiar los campos de entrada
+    Private Sub LimpiarCampos()
+        TextBox1.Clear()
+        ComboBox1.Text = ""
+        ComboBox2.Text = ""
+        TextBox4.Clear()
+        TextBox3.Clear()
+        TextBox6.Clear()
     End Sub
 
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
@@ -113,6 +124,8 @@ Public Class FormularioPersonaNatural
             dbContext.SaveChanges()
             cajademensaje.Creacionderegistro()
             Cargardata()
+            ' Al agregar un nuevo registro se limpia los inputs
+            LimpiarCampos()
         Catch ex As Exception
             cajademensaje.errorglobal()
         End Try
@@ -139,6 +152,8 @@ Public Class FormularioPersonaNatural
                 dbContext.SaveChanges()
                 cajademensaje.Actualizacionderegistro()
                 Cargardata()
+                ' Al agregar un nuevo registro se limpia los inputs
+                LimpiarCampos()
             Else
                 cajademensaje.Actualizacionderegistro2()
             End If
@@ -154,11 +169,12 @@ Public Class FormularioPersonaNatural
         TextBox4.Clear()
         TextBox3.Clear()
         TextBox6.Clear()
-        Me.btnAgregar.Enabled = True
-        Me.btnModificar.Enabled = False
-        Me.btnEliminar.Enabled = False
-    End Sub
 
+        btnAgregar.Enabled = True
+        btnModificar.Enabled = False
+        btnEliminar.Enabled = False
+        btnLimpiar.Enabled = False
+    End Sub
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
         IdAutor = TextBox1.Text
         Try
@@ -169,6 +185,8 @@ Public Class FormularioPersonaNatural
                 dbContext.SaveChanges()
                 cajademensaje.Eliminarregistro()
                 Cargardata()
+                ' Al agregar un nuevo registro se limpia los inputs
+                LimpiarCampos()
             Else
                 cajademensaje.Eliminarregistro2()
             End If
@@ -176,4 +194,5 @@ Public Class FormularioPersonaNatural
             cajademensaje.errorglobal()
         End Try
     End Sub
+
 End Class

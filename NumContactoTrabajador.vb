@@ -54,8 +54,7 @@ Public Class NumContactoTrabajador
         cargarDataTelefono()
         cargarDatacombobox1()
         cargarDatacombobox2()
-        ComboBox1.Text = ""
-        ComboBox2.Text = ""
+
         DataGridView1.Columns(0).HeaderText = "ID"
         DataGridView1.Columns(1).HeaderText = "Trabajador"
         DataGridView1.Columns(2).HeaderText = "Operador telf"
@@ -64,6 +63,10 @@ Public Class NumContactoTrabajador
 
         btnModificar.Enabled = False
         btnEliminar.Enabled = False
+        btnLimpiar.Enabled = False
+
+        'Limpia al cargar el sistema los inputs se limpian
+        LimpiarCampos()
     End Sub
     Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
         If e.RowIndex >= 0 Then
@@ -76,8 +79,16 @@ Public Class NumContactoTrabajador
 
             btnModificar.Enabled = True
             btnEliminar.Enabled = True
+            btnLimpiar.Enabled = True
             btnAgregar.Enabled = False
         End If
+    End Sub
+    ' Funcion que sirve para Limpiar los campos de entrada
+    Private Sub LimpiarCampos()
+        ComboBox1.Text = ""
+        ComboBox2.Text = ""
+        TextBox2.Clear()
+        TextBox1.Clear()
     End Sub
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
         id_cel = 1
@@ -97,6 +108,8 @@ Public Class NumContactoTrabajador
             dbContext.SaveChanges()
             cajademensaje.Creacionderegistro()
             cargarDataTelefono()
+            ' Al agregar un nuevo registro se limpia los inputs
+            LimpiarCampos()
         Catch ex As Exception
             cajademensaje.errorglobal()
         End Try
@@ -118,6 +131,8 @@ Public Class NumContactoTrabajador
                 dbContext.SaveChanges()
                 cajademensaje.Actualizacionderegistro()
                 cargarDataTelefono()
+                ' Al agregar un nuevo registro se limpia los inputs
+                LimpiarCampos()
             Else
                 cajademensaje.Actualizacionderegistro2()
             End If
@@ -135,6 +150,7 @@ Public Class NumContactoTrabajador
         btnAgregar.Enabled = True
         btnModificar.Enabled = False
         btnEliminar.Enabled = False
+        btnLimpiar.Enabled = False
     End Sub
 
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
@@ -147,6 +163,8 @@ Public Class NumContactoTrabajador
                 dbContext.SaveChanges()
                 cajademensaje.Eliminarregistro()
                 cargarDataTelefono()
+                ' Al agregar un nuevo registro se limpia los inputs
+                LimpiarCampos()
             Else
                 cajademensaje.Eliminarregistro2()
             End If

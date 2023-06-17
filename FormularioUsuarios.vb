@@ -74,6 +74,8 @@ Public Class FormularioUsuarios
         btnEliminar.Enabled = False
         TextBox3.Enabled = False
 
+        'Limpia al cargar el sistema los inputs se limpian
+        LimpiarCampos()
     End Sub
 
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
@@ -90,6 +92,14 @@ Public Class FormularioUsuarios
             Me.btnEliminar.Enabled = True
             Me.btnLimpiar.Enabled = True
         End If
+    End Sub
+    ' Funcion que sirve para Limpiar los campos de entrada
+    Private Sub LimpiarCampos()
+        TextBox1.Clear()
+        TextBox2.Clear()
+        TextBox3.Clear()
+        ComboBox1.Text = ""
+        ComboBox2.Text = ""
     End Sub
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
         idUsuario = 1
@@ -111,8 +121,8 @@ Public Class FormularioUsuarios
             dbContext.SaveChanges()
             cajademensaje.Creacionderegistro()
             cargarDataUsuario()
-
-
+            ' Al agregar un nuevo registro se limpia los inputs
+            LimpiarCampos()
         Catch ex As Exception
             cajademensaje.errorglobal()
         End Try
@@ -136,6 +146,8 @@ Public Class FormularioUsuarios
                 dbContext.SaveChanges()
                 cajademensaje.Actualizacionderegistro()
                 cargarDataUsuario()
+                ' Al agregar un nuevo registro se limpia los inputs
+                LimpiarCampos()
             Else
                 cajademensaje.Actualizacionderegistro2()
             End If
@@ -154,6 +166,7 @@ Public Class FormularioUsuarios
         btnAgregar.Enabled = True
         btnModificar.Enabled = False
         btnEliminar.Enabled = False
+        btnLimpiar.Enabled = False
     End Sub
 
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
@@ -166,6 +179,8 @@ Public Class FormularioUsuarios
                 dbContext.SaveChanges()
                 cajademensaje.Eliminarregistro()
                 cargarDataUsuario()
+                ' Al agregar un nuevo registro se limpia los inputs
+                LimpiarCampos()
             Else
                 cajademensaje.Eliminarregistro2()
             End If

@@ -22,9 +22,9 @@ Partial Class FormularioPersonaNatural
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Label1 = New Label()
         TextBox1 = New TextBox()
         Label2 = New Label()
@@ -40,8 +40,8 @@ Partial Class FormularioPersonaNatural
         ComboBox2 = New ComboBox()
         btnAgregar = New FontAwesome.Sharp.IconButton()
         btnModificar = New FontAwesome.Sharp.IconButton()
-        btnLimpiar = New FontAwesome.Sharp.IconButton()
         btnEliminar = New FontAwesome.Sharp.IconButton()
+        btnLimpiar = New FontAwesome.Sharp.IconButton()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -152,36 +152,36 @@ Partial Class FormularioPersonaNatural
         DataGridView1.BorderStyle = BorderStyle.None
         DataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal
         DataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = Color.FromArgb(CByte(73), CByte(81), CByte(101))
-        DataGridViewCellStyle1.Font = New Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
-        DataGridViewCellStyle1.ForeColor = Color.White
-        DataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(CByte(87), CByte(103), CByte(241))
-        DataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = DataGridViewTriState.True
-        DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle10.BackColor = Color.FromArgb(CByte(73), CByte(81), CByte(101))
+        DataGridViewCellStyle10.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point)
+        DataGridViewCellStyle10.ForeColor = Color.White
+        DataGridViewCellStyle10.SelectionBackColor = Color.FromArgb(CByte(87), CByte(103), CByte(241))
+        DataGridViewCellStyle10.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle10.WrapMode = DataGridViewTriState.True
+        DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle10
         DataGridView1.ColumnHeadersHeight = 43
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         DataGridView1.EnableHeadersVisualStyles = False
         DataGridView1.GridColor = Color.FromArgb(CByte(55), CByte(66), CByte(89))
         DataGridView1.Location = New Point(302, 38)
         DataGridView1.Name = "DataGridView1"
-        DataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = SystemColors.Control
-        DataGridViewCellStyle2.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point)
-        DataGridViewCellStyle2.ForeColor = SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = DataGridViewTriState.True
-        DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle11.BackColor = SystemColors.Control
+        DataGridViewCellStyle11.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point)
+        DataGridViewCellStyle11.ForeColor = SystemColors.WindowText
+        DataGridViewCellStyle11.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle11.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle11.WrapMode = DataGridViewTriState.True
+        DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle11
         DataGridView1.RowHeadersVisible = False
-        DataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.BackColor = Color.FromArgb(CByte(221), CByte(230), CByte(237))
-        DataGridViewCellStyle3.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point)
-        DataGridViewCellStyle3.ForeColor = Color.FromArgb(CByte(43), CByte(39), CByte(48))
-        DataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(CByte(25), CByte(167), CByte(206))
-        DataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(CByte(43), CByte(39), CByte(48))
-        DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle12.BackColor = Color.FromArgb(CByte(221), CByte(230), CByte(237))
+        DataGridViewCellStyle12.Font = New Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
+        DataGridViewCellStyle12.ForeColor = Color.FromArgb(CByte(43), CByte(39), CByte(48))
+        DataGridViewCellStyle12.SelectionBackColor = Color.FromArgb(CByte(25), CByte(167), CByte(206))
+        DataGridViewCellStyle12.SelectionForeColor = Color.FromArgb(CByte(43), CByte(39), CByte(48))
+        DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle12
         DataGridView1.RowTemplate.Height = 25
         DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect
         DataGridView1.Size = New Size(558, 386)
@@ -215,7 +215,7 @@ Partial Class FormularioPersonaNatural
         btnAgregar.IconColor = Color.White
         btnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto
         btnAgregar.IconSize = 32
-        btnAgregar.Location = New Point(38, 304)
+        btnAgregar.Location = New Point(33, 312)
         btnAgregar.Name = "btnAgregar"
         btnAgregar.Size = New Size(47, 47)
         btnAgregar.TabIndex = 21
@@ -231,27 +231,11 @@ Partial Class FormularioPersonaNatural
         btnModificar.IconColor = Color.FromArgb(CByte(51), CByte(59), CByte(82))
         btnModificar.IconFont = FontAwesome.Sharp.IconFont.Auto
         btnModificar.IconSize = 32
-        btnModificar.Location = New Point(99, 304)
+        btnModificar.Location = New Point(94, 312)
         btnModificar.Name = "btnModificar"
         btnModificar.Size = New Size(47, 47)
         btnModificar.TabIndex = 22
         btnModificar.UseVisualStyleBackColor = False
-        ' 
-        ' btnLimpiar
-        ' 
-        btnLimpiar.BackColor = Color.FromArgb(CByte(3), CByte(139), CByte(197))
-        btnLimpiar.Cursor = Cursors.Hand
-        btnLimpiar.FlatAppearance.BorderSize = 0
-        btnLimpiar.FlatStyle = FlatStyle.Flat
-        btnLimpiar.IconChar = FontAwesome.Sharp.IconChar.Broom
-        btnLimpiar.IconColor = Color.White
-        btnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto
-        btnLimpiar.IconSize = 32
-        btnLimpiar.Location = New Point(160, 304)
-        btnLimpiar.Name = "btnLimpiar"
-        btnLimpiar.Size = New Size(47, 47)
-        btnLimpiar.TabIndex = 23
-        btnLimpiar.UseVisualStyleBackColor = False
         ' 
         ' btnEliminar
         ' 
@@ -263,11 +247,27 @@ Partial Class FormularioPersonaNatural
         btnEliminar.IconColor = Color.White
         btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto
         btnEliminar.IconSize = 32
-        btnEliminar.Location = New Point(221, 304)
+        btnEliminar.Location = New Point(216, 312)
         btnEliminar.Name = "btnEliminar"
         btnEliminar.Size = New Size(47, 47)
         btnEliminar.TabIndex = 24
         btnEliminar.UseVisualStyleBackColor = False
+        ' 
+        ' btnLimpiar
+        ' 
+        btnLimpiar.BackColor = Color.FromArgb(CByte(3), CByte(139), CByte(197))
+        btnLimpiar.Cursor = Cursors.Hand
+        btnLimpiar.FlatAppearance.BorderSize = 0
+        btnLimpiar.FlatStyle = FlatStyle.Flat
+        btnLimpiar.IconChar = FontAwesome.Sharp.IconChar.Broom
+        btnLimpiar.IconColor = Color.White
+        btnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto
+        btnLimpiar.IconSize = 32
+        btnLimpiar.Location = New Point(155, 312)
+        btnLimpiar.Name = "btnLimpiar"
+        btnLimpiar.Size = New Size(47, 47)
+        btnLimpiar.TabIndex = 28
+        btnLimpiar.UseVisualStyleBackColor = False
         ' 
         ' FormularioPersonaNatural
         ' 
@@ -275,8 +275,8 @@ Partial Class FormularioPersonaNatural
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(241), CByte(246), CByte(255))
         ClientSize = New Size(886, 463)
-        Controls.Add(btnEliminar)
         Controls.Add(btnLimpiar)
+        Controls.Add(btnEliminar)
         Controls.Add(btnModificar)
         Controls.Add(btnAgregar)
         Controls.Add(ComboBox2)
@@ -314,6 +314,6 @@ Partial Class FormularioPersonaNatural
     Friend WithEvents ComboBox2 As ComboBox
     Friend WithEvents btnAgregar As FontAwesome.Sharp.IconButton
     Friend WithEvents btnModificar As FontAwesome.Sharp.IconButton
-    Friend WithEvents btnLimpiar As FontAwesome.Sharp.IconButton
     Friend WithEvents btnEliminar As FontAwesome.Sharp.IconButton
+    Friend WithEvents btnLimpiar As FontAwesome.Sharp.IconButton
 End Class

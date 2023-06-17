@@ -1,4 +1,5 @@
 ﻿Imports System.Numerics
+Imports System.Windows.Controls
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 Imports Microsoft.EntityFrameworkCore
 
@@ -45,6 +46,9 @@ Public Class FormularioProveedor
 
         btnEliminar.Enabled = False
         btnLimpiar.Enabled = False
+
+        'Limpia al cargar el sistema los inputs se limpian
+        LimpiarCampos()
     End Sub
 
     Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
@@ -53,11 +57,16 @@ Public Class FormularioProveedor
             TextBox1.Text = row.Cells("idProveedor").Value.ToString()
             ComboBox2.Text = row.Cells("idActor").Value.ToString()
 
-            Me.btnEliminar.Enabled = True
-            Me.btnAgregar.Enabled = False
+            btnEliminar.Enabled = True
+            btnAgregar.Enabled = False
             btnLimpiar.Enabled = True
-            Me.TextBox1.Enabled = False
+            TextBox1.Enabled = False
         End If
+    End Sub
+    ' Funcion que sirve para Limpiar los campos de entrada
+    Private Sub LimpiarCampos()
+        TextBox1.Clear()
+        ComboBox2.Text = ""
     End Sub
     'Botones
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
@@ -73,6 +82,8 @@ Public Class FormularioProveedor
             dbContext.SaveChanges()
             cajademensaje.Creacionderegistro()
             cargarDataProveedor()
+            ' Al agregar un nuevo registro se limpia los inputs
+            LimpiarCampos()
         Catch ex As Exception
             cajademensaje.errorglobal()
         End Try
@@ -84,6 +95,7 @@ Public Class FormularioProveedor
 
         btnAgregar.Enabled = True
         btnEliminar.Enabled = False
+        btnLimpiar.Enabled = False
     End Sub
 
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
@@ -97,6 +109,8 @@ Public Class FormularioProveedor
                     dbContext.SaveChanges()
                     cajademensaje.Eliminarregistro()
                     cargarDataProveedor()
+                    ' Al agregar un nuevo registro se limpia los inputs
+                    LimpiarCampos()
                 Else
                     cajademensaje.Eliminarregistro2()
                 End If
