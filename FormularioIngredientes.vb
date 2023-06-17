@@ -11,7 +11,7 @@ Public Class FormularioIngredientes1
     Dim Id As Integer
     Dim excelPackage As ExcelPackage
 
-    Private Sub cargarData(DATO As Integer)
+    Private Sub CargarData(DATO As Integer)
         Try
             Dim dbContext As New MiDbContext()
             Dim query = From A In dbContext.Almacen
@@ -62,7 +62,7 @@ Public Class FormularioIngredientes1
         End If
     End Sub
 
-    Private Sub cargarData2()
+    Private Sub CargarData2()
         Try
             Dim dbContext As New MiDbContext()
             Dim query = From A In dbContext.Almacen
@@ -82,7 +82,7 @@ Public Class FormularioIngredientes1
     End Sub
 
     Private Sub FormularioIngredientes1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        cargarData2()
+        CargarData2()
         CargarDataComboBox()
         ComboBox1.Text = ""
         ComboBox1.Enabled = False
@@ -92,13 +92,13 @@ Public Class FormularioIngredientes1
 
         Label1.Text = "VERDURAS"
         Dim dato As Integer = 1
-        cargarData(dato)
+        CargarData(dato)
     End Sub
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
 
         Label1.Text = "CEREALES"
         Dim dato As Integer = 2
-        cargarData(dato)
+        CargarData(dato)
 
     End Sub
 
@@ -106,33 +106,33 @@ Public Class FormularioIngredientes1
 
         Label1.Text = "LEGUMBRES"
         Dim dato As Integer = 3
-        cargarData(dato)
+        CargarData(dato)
 
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
         Label1.Text = "FRUTAS"
         Dim dato As Integer = 5
-        cargarData(dato)
+        CargarData(dato)
     End Sub
 
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
         Label1.Text = "LÁCTEOS"
         Dim dato As Integer = 6
-        cargarData(dato)
+        CargarData(dato)
     End Sub
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
         Label1.Text = "GRASAS"
         Dim dato As Integer = 7
-        cargarData(dato)
+        CargarData(dato)
     End Sub
 
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         Label1.Text = "CARNES"
         Dim dato As Integer = 4
-        cargarData(dato)
+        CargarData(dato)
     End Sub
 
     Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
@@ -156,7 +156,7 @@ Public Class FormularioIngredientes1
                     Almacen.Cantidad = nuevaCantidad
                     dbContext.SaveChanges()
                     cajademensaje.Actualizacionderegistro()
-                    cargarData2()
+                    CargarData2()
                 Else
                     cajademensaje.Actualizacionderegistro2()
                 End If
@@ -177,7 +177,7 @@ Public Class FormularioIngredientes1
                     Almacen.Cantidad = nuevaCantidad
                     dbContext.SaveChanges()
                     cajademensaje.Actualizacionderegistro()
-                    cargarData2()
+                    CargarData2()
                 Else
                     cajademensaje.Actualizacionderegistro2()
                 End If

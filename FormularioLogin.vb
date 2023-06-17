@@ -2,6 +2,7 @@
 Imports System.Runtime.InteropServices
 Imports System.Threading
 Imports System.Timers
+Imports System.Windows.Controls
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 Public Class FormularioLogin
 
@@ -12,7 +13,11 @@ Public Class FormularioLogin
     Private Sub TextBox2_TextChanged(sender As Object, e As EventArgs) Handles TextBox2.TextChanged
         TextBox2.PasswordChar = "*"
     End Sub
-
+    ' Funcion que sirve para Limpiar los campos de entrada
+    Private Sub LimpiarCampos()
+        TextBox1.Clear()
+        TextBox2.Clear()
+    End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
 
         user = TextBox1.Text
@@ -36,6 +41,8 @@ Public Class FormularioLogin
                 Me.Hide()
                 FormularioIngredientes1.Show()
             End If
+            ' funcion que limpia los campos cuando ingresamos al programa
+            LimpiarCampos()
         Else
 
             intentosFallidos += 1
@@ -95,6 +102,8 @@ Public Class FormularioLogin
                     Me.Hide()
                     FormularioIngredientes1.Show()
                 End If
+                ' funcion que limpia los campos cuando ingresamos al programa
+                LimpiarCampos()
             Else
 
                 intentosFallidos += 1
