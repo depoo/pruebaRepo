@@ -36,15 +36,18 @@ Partial Class DashboardIngredientes
         btnVerduras = New FontAwesome.Sharp.IconButton()
         btnIngredientes = New FontAwesome.Sharp.IconButton()
         PanelLogo = New Panel()
-        PictureBox1 = New PictureBox()
+        imgHome = New PictureBox()
         Panel1 = New Panel()
         lblFromTitle = New Label()
         PanelDesktop = New Panel()
+        PictureBox2 = New PictureBox()
         PanelMenuLateral.SuspendLayout()
         PanelSubMenuIngredientes.SuspendLayout()
         PanelLogo.SuspendLayout()
-        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
+        CType(imgHome, ComponentModel.ISupportInitialize).BeginInit()
         Panel1.SuspendLayout()
+        PanelDesktop.SuspendLayout()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' PanelMenuLateral
@@ -267,23 +270,23 @@ Partial Class DashboardIngredientes
         ' 
         ' PanelLogo
         ' 
-        PanelLogo.Controls.Add(PictureBox1)
+        PanelLogo.Controls.Add(imgHome)
         PanelLogo.Dock = DockStyle.Top
         PanelLogo.Location = New Point(0, 0)
         PanelLogo.Name = "PanelLogo"
         PanelLogo.Size = New Size(182, 90)
         PanelLogo.TabIndex = 1
         ' 
-        ' PictureBox1
+        ' imgHome
         ' 
-        PictureBox1.Dock = DockStyle.Fill
-        PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
-        PictureBox1.Location = New Point(0, 0)
-        PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(182, 90)
-        PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox1.TabIndex = 1
-        PictureBox1.TabStop = False
+        imgHome.Dock = DockStyle.Fill
+        imgHome.Image = CType(resources.GetObject("imgHome.Image"), Image)
+        imgHome.Location = New Point(0, 0)
+        imgHome.Name = "imgHome"
+        imgHome.Size = New Size(182, 90)
+        imgHome.SizeMode = PictureBoxSizeMode.Zoom
+        imgHome.TabIndex = 1
+        imgHome.TabStop = False
         ' 
         ' Panel1
         ' 
@@ -298,7 +301,7 @@ Partial Class DashboardIngredientes
         ' 
         lblFromTitle.AutoSize = True
         lblFromTitle.Font = New Font("Century Gothic", 12.75F, FontStyle.Bold, GraphicsUnit.Point)
-        lblFromTitle.Location = New Point(19, 22)
+        lblFromTitle.Location = New Point(19, 20)
         lblFromTitle.Name = "lblFromTitle"
         lblFromTitle.Size = New Size(79, 19)
         lblFromTitle.TabIndex = 0
@@ -306,11 +309,22 @@ Partial Class DashboardIngredientes
         ' 
         ' PanelDesktop
         ' 
+        PanelDesktop.Controls.Add(PictureBox2)
         PanelDesktop.Dock = DockStyle.Fill
         PanelDesktop.Location = New Point(182, 59)
         PanelDesktop.Name = "PanelDesktop"
         PanelDesktop.Size = New Size(902, 502)
         PanelDesktop.TabIndex = 2
+        ' 
+        ' PictureBox2
+        ' 
+        PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
+        PictureBox2.Location = New Point(266, 131)
+        PictureBox2.Name = "PictureBox2"
+        PictureBox2.Size = New Size(370, 240)
+        PictureBox2.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox2.TabIndex = 0
+        PictureBox2.TabStop = False
         ' 
         ' DashboardIngredientes
         ' 
@@ -327,9 +341,11 @@ Partial Class DashboardIngredientes
         PanelMenuLateral.ResumeLayout(False)
         PanelSubMenuIngredientes.ResumeLayout(False)
         PanelLogo.ResumeLayout(False)
-        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
+        CType(imgHome, ComponentModel.ISupportInitialize).EndInit()
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
+        PanelDesktop.ResumeLayout(False)
+        CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
@@ -344,10 +360,11 @@ Partial Class DashboardIngredientes
     Friend WithEvents btnCarnes As FontAwesome.Sharp.IconButton
     Friend WithEvents btnLegumbres As FontAwesome.Sharp.IconButton
     Friend WithEvents btnCereales As FontAwesome.Sharp.IconButton
-    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents imgHome As PictureBox
     Friend WithEvents btnNuevoProductos As FontAwesome.Sharp.IconButton
     Friend WithEvents btnSalir As FontAwesome.Sharp.IconButton
     Friend WithEvents Panel1 As Panel
     Friend WithEvents lblFromTitle As Label
     Friend WithEvents PanelDesktop As Panel
+    Friend WithEvents PictureBox2 As PictureBox
 End Class

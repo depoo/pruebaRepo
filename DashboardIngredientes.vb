@@ -1,4 +1,8 @@
-﻿Public Class DashboardIngredientes
+﻿Imports FontAwesome.Sharp
+Public Class DashboardIngredientes
+    Private currentBtn As IconButton
+    Private leftBorderBtn As Panel
+    Private currentChildForm As Form
     Private Sub DashboardIngredientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         HideSubMenu()
     End Sub
@@ -57,5 +61,12 @@
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
         Me.Hide()
         FormularioLogin.Show()
+    End Sub
+
+    Private Sub reset()
+
+    End Sub
+    Private Sub imgHome_Click(sender As Object, e As EventArgs) Handles imgHome.Click
+
     End Sub
 End Class
