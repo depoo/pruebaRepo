@@ -27,13 +27,14 @@ Partial Class DashboardIngredientes
         btnSalir = New FontAwesome.Sharp.IconButton()
         btnNuevoProductos = New FontAwesome.Sharp.IconButton()
         PanelSubMenuIngredientes = New Panel()
-        btnGrasas = New FontAwesome.Sharp.IconButton()
-        btnLacteos = New FontAwesome.Sharp.IconButton()
-        btnFrutas = New FontAwesome.Sharp.IconButton()
-        btnCarnes = New FontAwesome.Sharp.IconButton()
-        btnLegumbres = New FontAwesome.Sharp.IconButton()
-        btnCereales = New FontAwesome.Sharp.IconButton()
-        btnVerduras = New FontAwesome.Sharp.IconButton()
+        btnGrasas = New Button()
+        btnLacteos = New Button()
+        btnFrutas = New Button()
+        btnCarnes = New Button()
+        btnLegumbres = New Button()
+        btnCereales = New Button()
+        btnVerduras = New Button()
+        btnGeneral = New Button()
         btnIngredientes = New FontAwesome.Sharp.IconButton()
         PanelLogo = New Panel()
         imgHome = New PictureBox()
@@ -42,14 +43,22 @@ Partial Class DashboardIngredientes
         btnMaximizar = New FontAwesome.Sharp.IconButton()
         lblFromTitle = New Label()
         PanelDesktop = New Panel()
-        PictureBox2 = New PictureBox()
+        ComboBox1 = New ComboBox()
+        lblProducto = New Label()
+        TextBox3 = New TextBox()
+        lblIngresarProducto = New Label()
+        TextBox1 = New TextBox()
+        Label1 = New Label()
+        DataGridView1 = New DataGridView()
+        IconButton1 = New FontAwesome.Sharp.IconButton()
+        IconButton2 = New FontAwesome.Sharp.IconButton()
         PanelMenuLateral.SuspendLayout()
         PanelSubMenuIngredientes.SuspendLayout()
         PanelLogo.SuspendLayout()
         CType(imgHome, ComponentModel.ISupportInitialize).BeginInit()
         PanelTitleBar.SuspendLayout()
         PanelDesktop.SuspendLayout()
-        CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
+        CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' PanelMenuLateral
@@ -63,7 +72,7 @@ Partial Class DashboardIngredientes
         PanelMenuLateral.Dock = DockStyle.Left
         PanelMenuLateral.Location = New Point(0, 0)
         PanelMenuLateral.Name = "PanelMenuLateral"
-        PanelMenuLateral.Size = New Size(182, 561)
+        PanelMenuLateral.Size = New Size(182, 581)
         PanelMenuLateral.TabIndex = 0
         ' 
         ' btnSalir
@@ -78,7 +87,7 @@ Partial Class DashboardIngredientes
         btnSalir.IconFont = FontAwesome.Sharp.IconFont.Auto
         btnSalir.IconSize = 32
         btnSalir.ImageAlign = ContentAlignment.MiddleLeft
-        btnSalir.Location = New Point(0, 511)
+        btnSalir.Location = New Point(0, 531)
         btnSalir.Name = "btnSalir"
         btnSalir.Padding = New Padding(10, 0, 0, 0)
         btnSalir.Size = New Size(182, 50)
@@ -99,7 +108,7 @@ Partial Class DashboardIngredientes
         btnNuevoProductos.IconColor = Color.White
         btnNuevoProductos.IconFont = FontAwesome.Sharp.IconFont.Auto
         btnNuevoProductos.IconSize = 32
-        btnNuevoProductos.Location = New Point(0, 423)
+        btnNuevoProductos.Location = New Point(0, 465)
         btnNuevoProductos.Name = "btnNuevoProductos"
         btnNuevoProductos.Size = New Size(182, 45)
         btnNuevoProductos.TabIndex = 1
@@ -118,22 +127,19 @@ Partial Class DashboardIngredientes
         PanelSubMenuIngredientes.Controls.Add(btnLegumbres)
         PanelSubMenuIngredientes.Controls.Add(btnCereales)
         PanelSubMenuIngredientes.Controls.Add(btnVerduras)
+        PanelSubMenuIngredientes.Controls.Add(btnGeneral)
         PanelSubMenuIngredientes.Dock = DockStyle.Top
         PanelSubMenuIngredientes.Location = New Point(0, 135)
         PanelSubMenuIngredientes.Name = "PanelSubMenuIngredientes"
-        PanelSubMenuIngredientes.Size = New Size(182, 288)
+        PanelSubMenuIngredientes.Size = New Size(182, 330)
         PanelSubMenuIngredientes.TabIndex = 1
         ' 
         ' btnGrasas
         ' 
         btnGrasas.Dock = DockStyle.Top
         btnGrasas.FlatStyle = FlatStyle.Flat
-        btnGrasas.Font = New Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
         btnGrasas.ForeColor = Color.White
-        btnGrasas.IconChar = FontAwesome.Sharp.IconChar.None
-        btnGrasas.IconColor = Color.Black
-        btnGrasas.IconFont = FontAwesome.Sharp.IconFont.Auto
-        btnGrasas.Location = New Point(0, 240)
+        btnGrasas.Location = New Point(0, 280)
         btnGrasas.Name = "btnGrasas"
         btnGrasas.Padding = New Padding(35, 0, 0, 0)
         btnGrasas.Size = New Size(182, 40)
@@ -146,12 +152,8 @@ Partial Class DashboardIngredientes
         ' 
         btnLacteos.Dock = DockStyle.Top
         btnLacteos.FlatStyle = FlatStyle.Flat
-        btnLacteos.Font = New Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
         btnLacteos.ForeColor = Color.White
-        btnLacteos.IconChar = FontAwesome.Sharp.IconChar.None
-        btnLacteos.IconColor = Color.Black
-        btnLacteos.IconFont = FontAwesome.Sharp.IconFont.Auto
-        btnLacteos.Location = New Point(0, 200)
+        btnLacteos.Location = New Point(0, 240)
         btnLacteos.Name = "btnLacteos"
         btnLacteos.Padding = New Padding(35, 0, 0, 0)
         btnLacteos.Size = New Size(182, 40)
@@ -164,12 +166,8 @@ Partial Class DashboardIngredientes
         ' 
         btnFrutas.Dock = DockStyle.Top
         btnFrutas.FlatStyle = FlatStyle.Flat
-        btnFrutas.Font = New Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
         btnFrutas.ForeColor = Color.White
-        btnFrutas.IconChar = FontAwesome.Sharp.IconChar.None
-        btnFrutas.IconColor = Color.Black
-        btnFrutas.IconFont = FontAwesome.Sharp.IconFont.Auto
-        btnFrutas.Location = New Point(0, 160)
+        btnFrutas.Location = New Point(0, 200)
         btnFrutas.Name = "btnFrutas"
         btnFrutas.Padding = New Padding(35, 0, 0, 0)
         btnFrutas.Size = New Size(182, 40)
@@ -182,12 +180,8 @@ Partial Class DashboardIngredientes
         ' 
         btnCarnes.Dock = DockStyle.Top
         btnCarnes.FlatStyle = FlatStyle.Flat
-        btnCarnes.Font = New Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
         btnCarnes.ForeColor = Color.White
-        btnCarnes.IconChar = FontAwesome.Sharp.IconChar.None
-        btnCarnes.IconColor = Color.Black
-        btnCarnes.IconFont = FontAwesome.Sharp.IconFont.Auto
-        btnCarnes.Location = New Point(0, 120)
+        btnCarnes.Location = New Point(0, 160)
         btnCarnes.Name = "btnCarnes"
         btnCarnes.Padding = New Padding(35, 0, 0, 0)
         btnCarnes.Size = New Size(182, 40)
@@ -200,12 +194,8 @@ Partial Class DashboardIngredientes
         ' 
         btnLegumbres.Dock = DockStyle.Top
         btnLegumbres.FlatStyle = FlatStyle.Flat
-        btnLegumbres.Font = New Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
         btnLegumbres.ForeColor = Color.White
-        btnLegumbres.IconChar = FontAwesome.Sharp.IconChar.None
-        btnLegumbres.IconColor = Color.Black
-        btnLegumbres.IconFont = FontAwesome.Sharp.IconFont.Auto
-        btnLegumbres.Location = New Point(0, 80)
+        btnLegumbres.Location = New Point(0, 120)
         btnLegumbres.Name = "btnLegumbres"
         btnLegumbres.Padding = New Padding(35, 0, 0, 0)
         btnLegumbres.Size = New Size(182, 40)
@@ -218,12 +208,8 @@ Partial Class DashboardIngredientes
         ' 
         btnCereales.Dock = DockStyle.Top
         btnCereales.FlatStyle = FlatStyle.Flat
-        btnCereales.Font = New Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
         btnCereales.ForeColor = Color.White
-        btnCereales.IconChar = FontAwesome.Sharp.IconChar.None
-        btnCereales.IconColor = Color.Black
-        btnCereales.IconFont = FontAwesome.Sharp.IconFont.Auto
-        btnCereales.Location = New Point(0, 40)
+        btnCereales.Location = New Point(0, 80)
         btnCereales.Name = "btnCereales"
         btnCereales.Padding = New Padding(35, 0, 0, 0)
         btnCereales.Size = New Size(182, 40)
@@ -236,12 +222,8 @@ Partial Class DashboardIngredientes
         ' 
         btnVerduras.Dock = DockStyle.Top
         btnVerduras.FlatStyle = FlatStyle.Flat
-        btnVerduras.Font = New Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
         btnVerduras.ForeColor = Color.White
-        btnVerduras.IconChar = FontAwesome.Sharp.IconChar.None
-        btnVerduras.IconColor = Color.Black
-        btnVerduras.IconFont = FontAwesome.Sharp.IconFont.Auto
-        btnVerduras.Location = New Point(0, 0)
+        btnVerduras.Location = New Point(0, 40)
         btnVerduras.Name = "btnVerduras"
         btnVerduras.Padding = New Padding(35, 0, 0, 0)
         btnVerduras.Size = New Size(182, 40)
@@ -249,6 +231,20 @@ Partial Class DashboardIngredientes
         btnVerduras.Text = "Verduras"
         btnVerduras.TextAlign = ContentAlignment.MiddleLeft
         btnVerduras.UseVisualStyleBackColor = True
+        ' 
+        ' btnGeneral
+        ' 
+        btnGeneral.Dock = DockStyle.Top
+        btnGeneral.FlatStyle = FlatStyle.Flat
+        btnGeneral.ForeColor = Color.White
+        btnGeneral.Location = New Point(0, 0)
+        btnGeneral.Name = "btnGeneral"
+        btnGeneral.Padding = New Padding(35, 0, 0, 0)
+        btnGeneral.Size = New Size(182, 40)
+        btnGeneral.TabIndex = 0
+        btnGeneral.Text = "General"
+        btnGeneral.TextAlign = ContentAlignment.MiddleLeft
+        btnGeneral.UseVisualStyleBackColor = True
         ' 
         ' btnIngredientes
         ' 
@@ -292,7 +288,7 @@ Partial Class DashboardIngredientes
         ' 
         ' PanelTitleBar
         ' 
-        PanelTitleBar.BackColor = SystemColors.Desktop
+        PanelTitleBar.BackColor = Color.OrangeRed
         PanelTitleBar.Controls.Add(btnMinimizar)
         PanelTitleBar.Controls.Add(btnMaximizar)
         PanelTitleBar.Controls.Add(lblFromTitle)
@@ -346,29 +342,110 @@ Partial Class DashboardIngredientes
         ' 
         ' PanelDesktop
         ' 
-        PanelDesktop.Controls.Add(PictureBox2)
+        PanelDesktop.BackColor = Color.FromArgb(CByte(241), CByte(246), CByte(255))
+        PanelDesktop.Controls.Add(IconButton2)
+        PanelDesktop.Controls.Add(IconButton1)
+        PanelDesktop.Controls.Add(DataGridView1)
+        PanelDesktop.Controls.Add(Label1)
+        PanelDesktop.Controls.Add(TextBox1)
+        PanelDesktop.Controls.Add(lblIngresarProducto)
+        PanelDesktop.Controls.Add(TextBox3)
+        PanelDesktop.Controls.Add(lblProducto)
+        PanelDesktop.Controls.Add(ComboBox1)
         PanelDesktop.Dock = DockStyle.Fill
+        PanelDesktop.Font = New Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
         PanelDesktop.Location = New Point(182, 59)
         PanelDesktop.Name = "PanelDesktop"
-        PanelDesktop.Size = New Size(902, 502)
+        PanelDesktop.Size = New Size(902, 522)
         PanelDesktop.TabIndex = 2
         ' 
-        ' PictureBox2
+        ' ComboBox1
         ' 
-        PictureBox2.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
-        PictureBox2.Location = New Point(151, 103)
-        PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(600, 296)
-        PictureBox2.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox2.TabIndex = 0
-        PictureBox2.TabStop = False
+        ComboBox1.FormattingEnabled = True
+        ComboBox1.Location = New Point(26, 42)
+        ComboBox1.Name = "ComboBox1"
+        ComboBox1.Size = New Size(196, 25)
+        ComboBox1.TabIndex = 4
+        ' 
+        ' lblProducto
+        ' 
+        lblProducto.AutoSize = True
+        lblProducto.Location = New Point(88, 22)
+        lblProducto.Name = "lblProducto"
+        lblProducto.Size = New Size(73, 17)
+        lblProducto.TabIndex = 5
+        lblProducto.Text = "Productos"
+        ' 
+        ' TextBox3
+        ' 
+        TextBox3.Location = New Point(26, 102)
+        TextBox3.Name = "TextBox3"
+        TextBox3.Size = New Size(196, 23)
+        TextBox3.TabIndex = 7
+        ' 
+        ' lblIngresarProducto
+        ' 
+        lblIngresarProducto.AutoSize = True
+        lblIngresarProducto.Location = New Point(29, 79)
+        lblIngresarProducto.Name = "lblIngresarProducto"
+        lblIngresarProducto.Size = New Size(189, 17)
+        lblIngresarProducto.TabIndex = 8
+        lblIngresarProducto.Text = "Ingresar Cantidad Producto"
+        ' 
+        ' TextBox1
+        ' 
+        TextBox1.Location = New Point(26, 155)
+        TextBox1.Name = "TextBox1"
+        TextBox1.Size = New Size(196, 23)
+        TextBox1.TabIndex = 13
+        ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.Location = New Point(38, 135)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(175, 17)
+        Label1.TabIndex = 14
+        Label1.Text = "Sacar Cantidad Producto"
+        ' 
+        ' DataGridView1
+        ' 
+        DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridView1.Location = New Point(259, 22)
+        DataGridView1.Name = "DataGridView1"
+        DataGridView1.RowTemplate.Height = 25
+        DataGridView1.Size = New Size(612, 414)
+        DataGridView1.TabIndex = 15
+        ' 
+        ' IconButton1
+        ' 
+        IconButton1.IconChar = FontAwesome.Sharp.IconChar.None
+        IconButton1.IconColor = Color.Black
+        IconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto
+        IconButton1.Location = New Point(36, 211)
+        IconButton1.Name = "IconButton1"
+        IconButton1.Size = New Size(75, 31)
+        IconButton1.TabIndex = 16
+        IconButton1.Text = "Agregar"
+        IconButton1.UseVisualStyleBackColor = True
+        ' 
+        ' IconButton2
+        ' 
+        IconButton2.IconChar = FontAwesome.Sharp.IconChar.None
+        IconButton2.IconColor = Color.Black
+        IconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto
+        IconButton2.Location = New Point(125, 211)
+        IconButton2.Name = "IconButton2"
+        IconButton2.Size = New Size(75, 31)
+        IconButton2.TabIndex = 17
+        IconButton2.Text = "Sacar"
+        IconButton2.UseVisualStyleBackColor = True
         ' 
         ' DashboardIngredientes
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1084, 561)
+        ClientSize = New Size(1084, 581)
         Controls.Add(PanelDesktop)
         Controls.Add(PanelTitleBar)
         Controls.Add(PanelMenuLateral)
@@ -383,7 +460,8 @@ Partial Class DashboardIngredientes
         PanelTitleBar.ResumeLayout(False)
         PanelTitleBar.PerformLayout()
         PanelDesktop.ResumeLayout(False)
-        CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
+        PanelDesktop.PerformLayout()
+        CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
@@ -391,20 +469,29 @@ Partial Class DashboardIngredientes
     Friend WithEvents PanelLogo As Panel
     Friend WithEvents PanelSubMenuIngredientes As Panel
     Friend WithEvents btnIngredientes As FontAwesome.Sharp.IconButton
-    Friend WithEvents btnVerduras As FontAwesome.Sharp.IconButton
-    Friend WithEvents btnGrasas As FontAwesome.Sharp.IconButton
-    Friend WithEvents btnLacteos As FontAwesome.Sharp.IconButton
-    Friend WithEvents btnFrutas As FontAwesome.Sharp.IconButton
-    Friend WithEvents btnCarnes As FontAwesome.Sharp.IconButton
-    Friend WithEvents btnLegumbres As FontAwesome.Sharp.IconButton
-    Friend WithEvents btnCereales As FontAwesome.Sharp.IconButton
     Friend WithEvents imgHome As PictureBox
     Friend WithEvents btnNuevoProductos As FontAwesome.Sharp.IconButton
     Friend WithEvents btnSalir As FontAwesome.Sharp.IconButton
     Friend WithEvents PanelTitleBar As Panel
     Friend WithEvents lblFromTitle As Label
     Friend WithEvents PanelDesktop As Panel
-    Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents btnMinimizar As FontAwesome.Sharp.IconButton
     Friend WithEvents btnMaximizar As FontAwesome.Sharp.IconButton
+    Friend WithEvents btnCereales As Button
+    Friend WithEvents btnVerduras As Button
+    Friend WithEvents btnGeneral As Button
+    Friend WithEvents btnGrasas As Button
+    Friend WithEvents btnLacteos As Button
+    Friend WithEvents btnFrutas As Button
+    Friend WithEvents btnCarnes As Button
+    Friend WithEvents btnLegumbres As Button
+    Friend WithEvents lblProducto As Label
+    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents lblIngresarProducto As Label
+    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents IconButton2 As FontAwesome.Sharp.IconButton
+    Friend WithEvents IconButton1 As FontAwesome.Sharp.IconButton
 End Class

@@ -71,6 +71,12 @@ Public Class DashboardIngredientes
         End If
     End Sub
 
+    ' Esta funcion hara que los nombres de los botones pasen a label cuando hagamos click
+    Private Sub AsignarNombreBotonAlLabel(sender As Object)
+        Dim boton As Button = DirectCast(sender, Button)
+        lblFromTitle.Text = boton.Text
+    End Sub
+
     Private Sub btnIngredientes_Click(sender As Object, e As EventArgs) Handles btnIngredientes.Click
         ShowSubMenu(PanelSubMenuIngredientes)
         ActivateButton(sender, RGBColors.color7)
@@ -80,33 +86,43 @@ Public Class DashboardIngredientes
         HideSubMenu()
         ActivateButton(sender, RGBColors.color7)
     End Sub
-
+    Private Sub btnGeneral_Click(sender As Object, e As EventArgs) Handles btnGeneral.Click
+        HideSubMenu()
+        AsignarNombreBotonAlLabel(sender)
+    End Sub
     Private Sub btnVerduras_Click(sender As Object, e As EventArgs) Handles btnVerduras.Click
         HideSubMenu()
+        AsignarNombreBotonAlLabel(sender)
     End Sub
 
     Private Sub btnCereales_Click(sender As Object, e As EventArgs) Handles btnCereales.Click
         HideSubMenu()
+        AsignarNombreBotonAlLabel(sender)
     End Sub
 
     Private Sub btnLegumbres_Click(sender As Object, e As EventArgs) Handles btnLegumbres.Click
         HideSubMenu()
+        AsignarNombreBotonAlLabel(sender)
     End Sub
 
     Private Sub btnCarnes_Click(sender As Object, e As EventArgs) Handles btnCarnes.Click
         HideSubMenu()
+        AsignarNombreBotonAlLabel(sender)
     End Sub
 
     Private Sub btnFrutas_Click(sender As Object, e As EventArgs) Handles btnFrutas.Click
         HideSubMenu()
+        AsignarNombreBotonAlLabel(sender)
     End Sub
 
     Private Sub btnLacteos_Click(sender As Object, e As EventArgs) Handles btnLacteos.Click
         HideSubMenu()
+        AsignarNombreBotonAlLabel(sender)
     End Sub
 
     Private Sub btnGrasas_Click(sender As Object, e As EventArgs) Handles btnGrasas.Click
         HideSubMenu()
+        AsignarNombreBotonAlLabel(sender)
     End Sub
     'Al salir este codigo te devuelve al formulario Login
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
