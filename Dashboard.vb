@@ -51,7 +51,7 @@ Public Class Dashboard
             currentBtn.TextImageRelation = TextImageRelation.ImageBeforeText
         End If
     End Sub
-
+    'Funcion que sirve para abrir un formulario dentro del formulario
     Private Sub OpenChildForm(childForm As Form)
         'Abrir un formulario
         If currentChildForm IsNot Nothing Then

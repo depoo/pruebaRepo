@@ -37,7 +37,9 @@ Partial Class DashboardIngredientes
         btnIngredientes = New FontAwesome.Sharp.IconButton()
         PanelLogo = New Panel()
         imgHome = New PictureBox()
-        Panel1 = New Panel()
+        PanelTitleBar = New Panel()
+        btnMinimizar = New FontAwesome.Sharp.IconButton()
+        btnMaximizar = New FontAwesome.Sharp.IconButton()
         lblFromTitle = New Label()
         PanelDesktop = New Panel()
         PictureBox2 = New PictureBox()
@@ -45,7 +47,7 @@ Partial Class DashboardIngredientes
         PanelSubMenuIngredientes.SuspendLayout()
         PanelLogo.SuspendLayout()
         CType(imgHome, ComponentModel.ISupportInitialize).BeginInit()
-        Panel1.SuspendLayout()
+        PanelTitleBar.SuspendLayout()
         PanelDesktop.SuspendLayout()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -288,14 +290,49 @@ Partial Class DashboardIngredientes
         imgHome.TabIndex = 1
         imgHome.TabStop = False
         ' 
-        ' Panel1
+        ' PanelTitleBar
         ' 
-        Panel1.Controls.Add(lblFromTitle)
-        Panel1.Dock = DockStyle.Top
-        Panel1.Location = New Point(182, 0)
-        Panel1.Name = "Panel1"
-        Panel1.Size = New Size(902, 59)
-        Panel1.TabIndex = 1
+        PanelTitleBar.BackColor = SystemColors.Desktop
+        PanelTitleBar.Controls.Add(btnMinimizar)
+        PanelTitleBar.Controls.Add(btnMaximizar)
+        PanelTitleBar.Controls.Add(lblFromTitle)
+        PanelTitleBar.Dock = DockStyle.Top
+        PanelTitleBar.Location = New Point(182, 0)
+        PanelTitleBar.Name = "PanelTitleBar"
+        PanelTitleBar.Size = New Size(902, 59)
+        PanelTitleBar.TabIndex = 1
+        ' 
+        ' btnMinimizar
+        ' 
+        btnMinimizar.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        btnMinimizar.BackColor = Color.Transparent
+        btnMinimizar.FlatAppearance.BorderSize = 0
+        btnMinimizar.FlatStyle = FlatStyle.Flat
+        btnMinimizar.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize
+        btnMinimizar.IconColor = Color.FromArgb(CByte(50), CByte(59), CByte(68))
+        btnMinimizar.IconFont = FontAwesome.Sharp.IconFont.Auto
+        btnMinimizar.IconSize = 22
+        btnMinimizar.Location = New Point(848, 4)
+        btnMinimizar.Name = "btnMinimizar"
+        btnMinimizar.Size = New Size(23, 23)
+        btnMinimizar.TabIndex = 4
+        btnMinimizar.UseVisualStyleBackColor = False
+        ' 
+        ' btnMaximizar
+        ' 
+        btnMaximizar.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        btnMaximizar.BackColor = Color.Transparent
+        btnMaximizar.FlatAppearance.BorderSize = 0
+        btnMaximizar.FlatStyle = FlatStyle.Flat
+        btnMaximizar.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize
+        btnMaximizar.IconColor = Color.FromArgb(CByte(50), CByte(59), CByte(68))
+        btnMaximizar.IconFont = FontAwesome.Sharp.IconFont.Auto
+        btnMaximizar.IconSize = 22
+        btnMaximizar.Location = New Point(873, 4)
+        btnMaximizar.Name = "btnMaximizar"
+        btnMaximizar.Size = New Size(23, 23)
+        btnMaximizar.TabIndex = 3
+        btnMaximizar.UseVisualStyleBackColor = False
         ' 
         ' lblFromTitle
         ' 
@@ -318,21 +355,22 @@ Partial Class DashboardIngredientes
         ' 
         ' PictureBox2
         ' 
+        PictureBox2.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
-        PictureBox2.Location = New Point(266, 131)
+        PictureBox2.Location = New Point(151, 103)
         PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(370, 240)
+        PictureBox2.Size = New Size(600, 296)
         PictureBox2.SizeMode = PictureBoxSizeMode.Zoom
         PictureBox2.TabIndex = 0
         PictureBox2.TabStop = False
         ' 
         ' DashboardIngredientes
         ' 
-        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1084, 561)
         Controls.Add(PanelDesktop)
-        Controls.Add(Panel1)
+        Controls.Add(PanelTitleBar)
         Controls.Add(PanelMenuLateral)
         MinimumSize = New Size(1100, 600)
         Name = "DashboardIngredientes"
@@ -342,8 +380,8 @@ Partial Class DashboardIngredientes
         PanelSubMenuIngredientes.ResumeLayout(False)
         PanelLogo.ResumeLayout(False)
         CType(imgHome, ComponentModel.ISupportInitialize).EndInit()
-        Panel1.ResumeLayout(False)
-        Panel1.PerformLayout()
+        PanelTitleBar.ResumeLayout(False)
+        PanelTitleBar.PerformLayout()
         PanelDesktop.ResumeLayout(False)
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
@@ -363,8 +401,10 @@ Partial Class DashboardIngredientes
     Friend WithEvents imgHome As PictureBox
     Friend WithEvents btnNuevoProductos As FontAwesome.Sharp.IconButton
     Friend WithEvents btnSalir As FontAwesome.Sharp.IconButton
-    Friend WithEvents Panel1 As Panel
+    Friend WithEvents PanelTitleBar As Panel
     Friend WithEvents lblFromTitle As Label
     Friend WithEvents PanelDesktop As Panel
     Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents btnMinimizar As FontAwesome.Sharp.IconButton
+    Friend WithEvents btnMaximizar As FontAwesome.Sharp.IconButton
 End Class
