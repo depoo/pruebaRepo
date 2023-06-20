@@ -45,8 +45,8 @@ Public Class DashboardIngredientes
     Private Sub DisableButton()
         If currentBtn IsNot Nothing Then
             'currentBtn.BackColor = Color.FromArgb(37, 36, 81)
-            currentBtn.ForeColor = Color.Gainsboro
-            currentBtn.IconColor = Color.Gainsboro
+            currentBtn.ForeColor = Color.FromArgb(76, 76, 109)
+            currentBtn.IconColor = Color.FromArgb(76, 76, 109)
             currentBtn.TextAlign = ContentAlignment.MiddleLeft
             currentBtn.ImageAlign = ContentAlignment.MiddleLeft
             currentBtn.TextImageRelation = TextImageRelation.ImageBeforeText
@@ -168,24 +168,26 @@ Public Class DashboardIngredientes
     '----------- Inicio de todos los botones -----------'
     Private Sub btnIngredientes_Click(sender As Object, e As EventArgs) Handles btnIngredientes.Click
         ShowSubMenu(PanelSubMenuIngredientes)
-        ActivateButton(sender, RGBColors.color7)
+        ActivateButton(sender, RGBColors.color8)
+        CloseCurrentChildForm()
+        lblFromTitle.Text = "Principal"
     End Sub
 
     Private Sub btnNuevoProductos_Click(sender As Object, e As EventArgs) Handles btnNuevoProductos.Click
         HideSubMenu()
-        ActivateButton(sender, RGBColors.color7)
+        ActivateButton(sender, RGBColors.color8)
         OpenChildForm(New Nuevo_Producto)
     End Sub
     Private Sub btnGeneral_Click(sender As Object, e As EventArgs) Handles btnGeneral.Click
         HideSubMenu()
         AsignarNombreBotonAlLabel(sender)
         CargarTodoDataAlmacen()
-        CloseCurrentChildForm()
+
     End Sub
     Private Sub btnVerduras_Click(sender As Object, e As EventArgs) Handles btnVerduras.Click
         HideSubMenu()
         AsignarNombreBotonAlLabel(sender)
-        CloseCurrentChildForm()
+
 
         Dim dato As Integer = 1
         CargarData(dato)
@@ -194,7 +196,7 @@ Public Class DashboardIngredientes
     Private Sub btnCereales_Click(sender As Object, e As EventArgs) Handles btnCereales.Click
         HideSubMenu()
         AsignarNombreBotonAlLabel(sender)
-        CloseCurrentChildForm()
+
 
         Dim dato As Integer = 2
         CargarData(dato)
@@ -203,7 +205,7 @@ Public Class DashboardIngredientes
     Private Sub btnLegumbres_Click(sender As Object, e As EventArgs) Handles btnLegumbres.Click
         HideSubMenu()
         AsignarNombreBotonAlLabel(sender)
-        CloseCurrentChildForm()
+
 
         Dim dato As Integer = 3
         CargarData(dato)
@@ -212,7 +214,7 @@ Public Class DashboardIngredientes
     Private Sub btnCarnes_Click(sender As Object, e As EventArgs) Handles btnCarnes.Click
         HideSubMenu()
         AsignarNombreBotonAlLabel(sender)
-        CloseCurrentChildForm()
+
 
         Dim dato As Integer = 4
         CargarData(dato)
@@ -221,7 +223,7 @@ Public Class DashboardIngredientes
     Private Sub btnFrutas_Click(sender As Object, e As EventArgs) Handles btnFrutas.Click
         HideSubMenu()
         AsignarNombreBotonAlLabel(sender)
-        CloseCurrentChildForm()
+
 
         Dim dato As Integer = 5
         CargarData(dato)
@@ -230,7 +232,7 @@ Public Class DashboardIngredientes
     Private Sub btnLacteos_Click(sender As Object, e As EventArgs) Handles btnLacteos.Click
         HideSubMenu()
         AsignarNombreBotonAlLabel(sender)
-        CloseCurrentChildForm()
+
 
         Dim dato As Integer = 6
         CargarData(dato)
@@ -239,7 +241,7 @@ Public Class DashboardIngredientes
     Private Sub btnGrasas_Click(sender As Object, e As EventArgs) Handles btnGrasas.Click
         HideSubMenu()
         AsignarNombreBotonAlLabel(sender)
-        CloseCurrentChildForm()
+
 
         Dim dato As Integer = 7
         CargarData(dato)
