@@ -51,8 +51,8 @@ Public Class Nuevo_Producto
         cargarDatos()
         cargarProveedor()
     End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    'Este boton agrega un nuevo producto
+    Private Sub btnAgregarProductoNuevo_Click(sender As Object, e As EventArgs) Handles btnAgregarProductoNuevo.Click
         idNuevoProducto = 1
         nombreProducto = TextBox1.Text
         idProveedor = ComboBox1.SelectedValue
@@ -72,14 +72,4 @@ Public Class Nuevo_Producto
             cajademensaje.errorglobal()
         End Try
     End Sub
-
-    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
-
-    End Sub
-
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Me.Hide()
-        FormularioIngredientes1.Show()
-    End Sub
-
 End Class

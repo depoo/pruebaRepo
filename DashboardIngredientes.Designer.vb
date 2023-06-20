@@ -23,8 +23,8 @@ Partial Class DashboardIngredientes
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(DashboardIngredientes))
-        Dim DataGridViewCellStyle3 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As DataGridViewCellStyle = New DataGridViewCellStyle()
         PanelMenuLateral = New Panel()
         btnSalir = New FontAwesome.Sharp.IconButton()
         btnNuevoProductos = New FontAwesome.Sharp.IconButton()
@@ -46,8 +46,8 @@ Partial Class DashboardIngredientes
         lblFromTitle = New Label()
         PanelDesktop = New Panel()
         TextProducto = New TextBox()
-        IconButton2 = New FontAwesome.Sharp.IconButton()
-        IconButton1 = New FontAwesome.Sharp.IconButton()
+        BtnSacarProducto = New FontAwesome.Sharp.IconButton()
+        BtnAgregarIngrediente = New FontAwesome.Sharp.IconButton()
         DataGridView1 = New DataGridView()
         Label1 = New Label()
         TextSacarCantidad = New TextBox()
@@ -144,7 +144,7 @@ Partial Class DashboardIngredientes
         btnGrasas.Dock = DockStyle.Top
         btnGrasas.FlatAppearance.BorderSize = 0
         btnGrasas.FlatStyle = FlatStyle.Flat
-        btnGrasas.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        btnGrasas.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold, GraphicsUnit.Point)
         btnGrasas.ForeColor = Color.FromArgb(CByte(76), CByte(76), CByte(109))
         btnGrasas.Location = New Point(0, 280)
         btnGrasas.Name = "btnGrasas"
@@ -160,7 +160,7 @@ Partial Class DashboardIngredientes
         btnLacteos.Dock = DockStyle.Top
         btnLacteos.FlatAppearance.BorderSize = 0
         btnLacteos.FlatStyle = FlatStyle.Flat
-        btnLacteos.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        btnLacteos.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold, GraphicsUnit.Point)
         btnLacteos.ForeColor = Color.FromArgb(CByte(76), CByte(76), CByte(109))
         btnLacteos.Location = New Point(0, 240)
         btnLacteos.Name = "btnLacteos"
@@ -176,7 +176,7 @@ Partial Class DashboardIngredientes
         btnFrutas.Dock = DockStyle.Top
         btnFrutas.FlatAppearance.BorderSize = 0
         btnFrutas.FlatStyle = FlatStyle.Flat
-        btnFrutas.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        btnFrutas.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold, GraphicsUnit.Point)
         btnFrutas.ForeColor = Color.FromArgb(CByte(76), CByte(76), CByte(109))
         btnFrutas.Location = New Point(0, 200)
         btnFrutas.Name = "btnFrutas"
@@ -192,7 +192,7 @@ Partial Class DashboardIngredientes
         btnCarnes.Dock = DockStyle.Top
         btnCarnes.FlatAppearance.BorderSize = 0
         btnCarnes.FlatStyle = FlatStyle.Flat
-        btnCarnes.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        btnCarnes.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold, GraphicsUnit.Point)
         btnCarnes.ForeColor = Color.FromArgb(CByte(76), CByte(76), CByte(109))
         btnCarnes.Location = New Point(0, 160)
         btnCarnes.Name = "btnCarnes"
@@ -208,7 +208,7 @@ Partial Class DashboardIngredientes
         btnLegumbres.Dock = DockStyle.Top
         btnLegumbres.FlatAppearance.BorderSize = 0
         btnLegumbres.FlatStyle = FlatStyle.Flat
-        btnLegumbres.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        btnLegumbres.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold, GraphicsUnit.Point)
         btnLegumbres.ForeColor = Color.FromArgb(CByte(76), CByte(76), CByte(109))
         btnLegumbres.Location = New Point(0, 120)
         btnLegumbres.Name = "btnLegumbres"
@@ -224,7 +224,7 @@ Partial Class DashboardIngredientes
         btnCereales.Dock = DockStyle.Top
         btnCereales.FlatAppearance.BorderSize = 0
         btnCereales.FlatStyle = FlatStyle.Flat
-        btnCereales.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        btnCereales.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold, GraphicsUnit.Point)
         btnCereales.ForeColor = Color.FromArgb(CByte(76), CByte(76), CByte(109))
         btnCereales.Location = New Point(0, 80)
         btnCereales.Name = "btnCereales"
@@ -240,7 +240,7 @@ Partial Class DashboardIngredientes
         btnVerduras.Dock = DockStyle.Top
         btnVerduras.FlatAppearance.BorderSize = 0
         btnVerduras.FlatStyle = FlatStyle.Flat
-        btnVerduras.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        btnVerduras.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold, GraphicsUnit.Point)
         btnVerduras.ForeColor = Color.FromArgb(CByte(76), CByte(76), CByte(109))
         btnVerduras.Location = New Point(0, 40)
         btnVerduras.Name = "btnVerduras"
@@ -256,7 +256,7 @@ Partial Class DashboardIngredientes
         btnGeneral.Dock = DockStyle.Top
         btnGeneral.FlatAppearance.BorderSize = 0
         btnGeneral.FlatStyle = FlatStyle.Flat
-        btnGeneral.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        btnGeneral.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold, GraphicsUnit.Point)
         btnGeneral.ForeColor = Color.FromArgb(CByte(76), CByte(76), CByte(109))
         btnGeneral.Location = New Point(0, 0)
         btnGeneral.Name = "btnGeneral"
@@ -368,8 +368,8 @@ Partial Class DashboardIngredientes
         ' 
         PanelDesktop.BackColor = Color.FromArgb(CByte(232), CByte(246), CByte(239))
         PanelDesktop.Controls.Add(TextProducto)
-        PanelDesktop.Controls.Add(IconButton2)
-        PanelDesktop.Controls.Add(IconButton1)
+        PanelDesktop.Controls.Add(BtnSacarProducto)
+        PanelDesktop.Controls.Add(BtnAgregarIngrediente)
         PanelDesktop.Controls.Add(DataGridView1)
         PanelDesktop.Controls.Add(Label1)
         PanelDesktop.Controls.Add(TextSacarCantidad)
@@ -385,34 +385,43 @@ Partial Class DashboardIngredientes
         ' 
         ' TextProducto
         ' 
+        TextProducto.BorderStyle = BorderStyle.FixedSingle
         TextProducto.Location = New Point(26, 42)
         TextProducto.Name = "TextProducto"
         TextProducto.Size = New Size(196, 23)
         TextProducto.TabIndex = 18
         ' 
-        ' IconButton2
+        ' BtnSacarProducto
         ' 
-        IconButton2.IconChar = FontAwesome.Sharp.IconChar.None
-        IconButton2.IconColor = Color.Black
-        IconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto
-        IconButton2.Location = New Point(125, 211)
-        IconButton2.Name = "IconButton2"
-        IconButton2.Size = New Size(75, 31)
-        IconButton2.TabIndex = 17
-        IconButton2.Text = "Sacar"
-        IconButton2.UseVisualStyleBackColor = True
+        BtnSacarProducto.BackColor = Color.FromArgb(CByte(255), CByte(72), CByte(106))
+        BtnSacarProducto.Cursor = Cursors.Hand
+        BtnSacarProducto.FlatAppearance.BorderSize = 0
+        BtnSacarProducto.FlatStyle = FlatStyle.Flat
+        BtnSacarProducto.IconChar = FontAwesome.Sharp.IconChar.ArrowDown
+        BtnSacarProducto.IconColor = Color.White
+        BtnSacarProducto.IconFont = FontAwesome.Sharp.IconFont.Auto
+        BtnSacarProducto.IconSize = 32
+        BtnSacarProducto.Location = New Point(140, 210)
+        BtnSacarProducto.Name = "BtnSacarProducto"
+        BtnSacarProducto.Size = New Size(47, 47)
+        BtnSacarProducto.TabIndex = 17
+        BtnSacarProducto.UseVisualStyleBackColor = False
         ' 
-        ' IconButton1
+        ' BtnAgregarIngrediente
         ' 
-        IconButton1.IconChar = FontAwesome.Sharp.IconChar.None
-        IconButton1.IconColor = Color.Black
-        IconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto
-        IconButton1.Location = New Point(36, 211)
-        IconButton1.Name = "IconButton1"
-        IconButton1.Size = New Size(75, 31)
-        IconButton1.TabIndex = 16
-        IconButton1.Text = "Agregar"
-        IconButton1.UseVisualStyleBackColor = True
+        BtnAgregarIngrediente.BackColor = Color.FromArgb(CByte(76), CByte(175), CByte(80))
+        BtnAgregarIngrediente.Cursor = Cursors.Hand
+        BtnAgregarIngrediente.FlatAppearance.BorderSize = 0
+        BtnAgregarIngrediente.FlatStyle = FlatStyle.Flat
+        BtnAgregarIngrediente.IconChar = FontAwesome.Sharp.IconChar.ArrowUpFromBracket
+        BtnAgregarIngrediente.IconColor = Color.White
+        BtnAgregarIngrediente.IconFont = FontAwesome.Sharp.IconFont.Auto
+        BtnAgregarIngrediente.IconSize = 32
+        BtnAgregarIngrediente.Location = New Point(51, 210)
+        BtnAgregarIngrediente.Name = "BtnAgregarIngrediente"
+        BtnAgregarIngrediente.Size = New Size(47, 47)
+        BtnAgregarIngrediente.TabIndex = 16
+        BtnAgregarIngrediente.UseVisualStyleBackColor = False
         ' 
         ' DataGridView1
         ' 
@@ -423,14 +432,14 @@ Partial Class DashboardIngredientes
         DataGridView1.BorderStyle = BorderStyle.None
         DataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal
         DataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.BackColor = Color.FromArgb(CByte(73), CByte(81), CByte(101))
-        DataGridViewCellStyle3.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point)
-        DataGridViewCellStyle3.ForeColor = Color.White
-        DataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(CByte(27), CByte(156), CByte(133))
-        DataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = DataGridViewTriState.True
-        DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = Color.FromArgb(CByte(73), CByte(81), CByte(101))
+        DataGridViewCellStyle1.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point)
+        DataGridViewCellStyle1.ForeColor = Color.White
+        DataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(CByte(27), CByte(156), CByte(133))
+        DataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = DataGridViewTriState.True
+        DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         DataGridView1.ColumnHeadersHeight = 43
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         DataGridView1.EnableHeadersVisualStyles = False
@@ -438,13 +447,13 @@ Partial Class DashboardIngredientes
         DataGridView1.Location = New Point(259, 22)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.RowHeadersVisible = False
-        DataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle4.BackColor = Color.FromArgb(CByte(221), CByte(230), CByte(237))
-        DataGridViewCellStyle4.Font = New Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
-        DataGridViewCellStyle4.ForeColor = Color.FromArgb(CByte(43), CByte(39), CByte(48))
-        DataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(CByte(25), CByte(167), CByte(206))
-        DataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(CByte(43), CByte(39), CByte(48))
-        DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = Color.FromArgb(CByte(221), CByte(230), CByte(237))
+        DataGridViewCellStyle2.Font = New Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
+        DataGridViewCellStyle2.ForeColor = Color.FromArgb(CByte(43), CByte(39), CByte(48))
+        DataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(CByte(25), CByte(167), CByte(206))
+        DataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(CByte(43), CByte(39), CByte(48))
+        DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle2
         DataGridView1.RowTemplate.Height = 25
         DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect
         DataGridView1.Size = New Size(612, 414)
@@ -461,6 +470,7 @@ Partial Class DashboardIngredientes
         ' 
         ' TextSacarCantidad
         ' 
+        TextSacarCantidad.BorderStyle = BorderStyle.FixedSingle
         TextSacarCantidad.Location = New Point(26, 155)
         TextSacarCantidad.Name = "TextSacarCantidad"
         TextSacarCantidad.Size = New Size(196, 23)
@@ -477,6 +487,7 @@ Partial Class DashboardIngredientes
         ' 
         ' TextIngresarCantidad
         ' 
+        TextIngresarCantidad.BorderStyle = BorderStyle.FixedSingle
         TextIngresarCantidad.Location = New Point(26, 102)
         TextIngresarCantidad.Name = "TextIngresarCantidad"
         TextIngresarCantidad.Size = New Size(196, 23)
@@ -541,7 +552,7 @@ Partial Class DashboardIngredientes
     Friend WithEvents Label1 As Label
     Friend WithEvents TextSacarCantidad As TextBox
     Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents IconButton2 As FontAwesome.Sharp.IconButton
-    Friend WithEvents IconButton1 As FontAwesome.Sharp.IconButton
+    Friend WithEvents BtnSacarProducto As FontAwesome.Sharp.IconButton
+    Friend WithEvents BtnAgregarIngrediente As FontAwesome.Sharp.IconButton
     Friend WithEvents TextProducto As TextBox
 End Class
