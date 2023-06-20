@@ -52,8 +52,89 @@ Public Class DashboardIngredientes
             currentBtn.TextImageRelation = TextImageRelation.ImageBeforeText
         End If
     End Sub
-    Private Sub DashboardIngredientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        HideSubMenu()
+    ' Esta funcion ayudara que en cualqiuer boton de los ingredientes se muestre tal ingrediente que pertenece a ese producto
+    Private Sub CargarData(DATO As Integer)
+        Try
+            Dim dbContext As New MiDbContext()
+            Dim query = From A In dbContext.Almacen
+                        Join P In dbContext.Productos On A.id_Productos Equals P.id_Producto
+                        Join C In dbContext.Categorias On A.id_Categoria Equals C.id_Categoria
+                        Join U In dbContext.UnidadMedida On A.id_Unidad Equals U.id_Unidad
+                        Where A.id_Categoria = DATO
+                        Select New With {
+                            .ID = A.id_Almacen,
+                            .NOBRE = P.nombre_Producto,
+                            .CANTIDAD = A.Cantidad,
+                            .Unidad = U.unidad
+                            }
+            DataGridView1.DataSource = query.ToList()
+        Catch ex As Exception
+            cajademensaje.Errordeobtencion()
+        End Try
+    End Sub
+
+    'Esta funcion cargara todos los datos de que hay en el almacen
+    Private Sub CargarTodoDataAlmacen()
+        Try
+            Dim dbContext As New MiDbContext()
+            Dim query = From A In dbContext.Almacen
+                        Join P In dbContext.Productos On A.id_Productos Equals P.id_Producto
+                        Join C In dbContext.Categorias On A.id_Categoria Equals C.id_Categoria
+                        Join U In dbContext.UnidadMedida On A.id_Unidad Equals U.id_Unidad
+                        Select New With {
+                            .ID = A.id_Almacen,
+                            .NOBRE = P.nombre_Producto,
+                            .CANTIDAD = A.Cantidad,
+                            .Unidad = U.unidad
+                            }
+            DataGridView1.DataSource = query.ToList()
+        Catch ex As Exception
+            cajademensaje.Errordeobtencion()
+        End Try
+    End Sub
+    Private Sub CargarDataTextBox()
+        Try
+            Using dbContext As New MiDbContext()
+                Dim query = From A In dbContext.Almacen
+                            Join P In dbContext.Productos On A.id_Productos Equals P.id_Producto
+                            Join C In dbContext.Categorias On A.id_Categoria Equals C.id_Categoria
+                            Join U In dbContext.UnidadMedida On A.id_Unidad Equals U.id_Unidad
+                            Select New With {
+                            .ID = A.id_Almacen,
+                            .IDPRODUCTO = A.id_Productos,
+                            .NOMBRE = P.nombre_Producto,
+                            .CANTIDAD = A.Cantidad,
+                            .Unidad = U.unidad
+                        }
+
+                ' Asignar el valor del campo "NOMBRE" al Texto del TextBox1
+                TextProducto.Text = query(0).NOMBRE.ToString()
+
+                ' Asignar el valor del campo "ID" al Tag del TextBox1
+                TextProducto.Tag = query(0).ID.ToString()
+            End Using
+        Catch ex As Exception
+            cajademensaje.Errordeobtencion()
+        End Try
+    End Sub
+
+    'Funcion que sirve para abrir un formulario dentro del formulario
+    Private Sub OpenChildForm(childForm As Form)
+        'Abrir un formulario
+        If currentChildForm IsNot Nothing Then
+            currentChildForm.Close()
+        End If
+        currentChildForm = childForm
+        'fin
+        childForm.TopLevel = False
+        childForm.FormBorderStyle = FormBorderStyle.None
+        childForm.Dock = DockStyle.Fill
+        PanelDesktop.Controls.Add(childForm)
+        PanelDesktop.Tag = childForm
+        childForm.BringToFront()
+        childForm.Show()
+        'Cambiando el titulo del formulario en la cabecera
+        lblFromTitle.Text = childForm.Text
     End Sub
 
     'Metodo Ocultar sub-menu
@@ -76,7 +157,15 @@ Public Class DashboardIngredientes
         Dim boton As Button = DirectCast(sender, Button)
         lblFromTitle.Text = boton.Text
     End Sub
+    'Esta funcion ayudara a cerrar los formularios hijos'
+    Private Sub CloseCurrentChildForm()
+        If currentChildForm IsNot Nothing Then
+            currentChildForm.Close()
+            currentChildForm = Nothing
+        End If
+    End Sub
 
+    '----------- Inicio de todos los botones -----------'
     Private Sub btnIngredientes_Click(sender As Object, e As EventArgs) Handles btnIngredientes.Click
         ShowSubMenu(PanelSubMenuIngredientes)
         ActivateButton(sender, RGBColors.color7)
@@ -85,45 +174,78 @@ Public Class DashboardIngredientes
     Private Sub btnNuevoProductos_Click(sender As Object, e As EventArgs) Handles btnNuevoProductos.Click
         HideSubMenu()
         ActivateButton(sender, RGBColors.color7)
+        OpenChildForm(New Nuevo_Producto)
     End Sub
     Private Sub btnGeneral_Click(sender As Object, e As EventArgs) Handles btnGeneral.Click
         HideSubMenu()
         AsignarNombreBotonAlLabel(sender)
+        CargarTodoDataAlmacen()
+        CloseCurrentChildForm()
     End Sub
     Private Sub btnVerduras_Click(sender As Object, e As EventArgs) Handles btnVerduras.Click
         HideSubMenu()
         AsignarNombreBotonAlLabel(sender)
+        CloseCurrentChildForm()
+
+        Dim dato As Integer = 1
+        CargarData(dato)
     End Sub
 
     Private Sub btnCereales_Click(sender As Object, e As EventArgs) Handles btnCereales.Click
         HideSubMenu()
         AsignarNombreBotonAlLabel(sender)
+        CloseCurrentChildForm()
+
+        Dim dato As Integer = 2
+        CargarData(dato)
     End Sub
 
     Private Sub btnLegumbres_Click(sender As Object, e As EventArgs) Handles btnLegumbres.Click
         HideSubMenu()
         AsignarNombreBotonAlLabel(sender)
+        CloseCurrentChildForm()
+
+        Dim dato As Integer = 3
+        CargarData(dato)
     End Sub
 
     Private Sub btnCarnes_Click(sender As Object, e As EventArgs) Handles btnCarnes.Click
         HideSubMenu()
         AsignarNombreBotonAlLabel(sender)
+        CloseCurrentChildForm()
+
+        Dim dato As Integer = 4
+        CargarData(dato)
     End Sub
 
     Private Sub btnFrutas_Click(sender As Object, e As EventArgs) Handles btnFrutas.Click
         HideSubMenu()
         AsignarNombreBotonAlLabel(sender)
+        CloseCurrentChildForm()
+
+        Dim dato As Integer = 5
+        CargarData(dato)
     End Sub
 
     Private Sub btnLacteos_Click(sender As Object, e As EventArgs) Handles btnLacteos.Click
         HideSubMenu()
         AsignarNombreBotonAlLabel(sender)
+        CloseCurrentChildForm()
+
+        Dim dato As Integer = 6
+        CargarData(dato)
     End Sub
 
     Private Sub btnGrasas_Click(sender As Object, e As EventArgs) Handles btnGrasas.Click
         HideSubMenu()
         AsignarNombreBotonAlLabel(sender)
+        CloseCurrentChildForm()
+
+        Dim dato As Integer = 7
+        CargarData(dato)
     End Sub
+    '----------- Fin de todos los botones -----------'
+
     'Al salir este codigo te devuelve al formulario Login
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
         Me.Hide()
@@ -141,6 +263,7 @@ Public Class DashboardIngredientes
             currentChildForm.Close()
         End If
         reset()
+        CargarTodoDataAlmacen()
     End Sub
     ' Sirve para sujertar con un click la barra y mover la aplicacion por cualquier lado de la pantalla
     <DllImport("user32.DLL", EntryPoint:="ReleaseCapture")>
@@ -174,5 +297,18 @@ Public Class DashboardIngredientes
     'sirve para minimizar la ventana
     Private Sub btnMinimizar_Click(sender As Object, e As EventArgs) Handles btnMinimizar.Click
         WindowState = FormWindowState.Minimized
+    End Sub
+    'Esta funcion carga que el subMenu se oculte y muestra todo los datos del almacen
+    Private Sub DashboardIngredientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        HideSubMenu()
+        CargarTodoDataAlmacen()
+        TextProducto.Text = ""
+        TextProducto.Enabled = False
+    End Sub
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+        If e.RowIndex >= 0 Then
+            Dim row As DataGridViewRow = DataGridView1.Rows(e.RowIndex)
+            TextProducto.Text = row.Cells("NOBRE").Value.ToString()
+        End If
     End Sub
 End Class
