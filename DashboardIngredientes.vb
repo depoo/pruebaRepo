@@ -310,33 +310,7 @@ Public Class DashboardIngredientes
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
         If e.RowIndex >= 0 Then
             Dim row As DataGridViewRow = DataGridView1.Rows(e.RowIndex)
-            TextProducto.Text = row.Cells("ID").Value.ToString()
+            TextProducto.Text = row.Cells("NOBRE").Value.ToString()
         End If
-    End Sub
-
-    Private Sub BtnAgregarIngrediente_Click(sender As Object, e As EventArgs) Handles BtnAgregarIngrediente.Click
-        Dim Id As Integer = TextProducto.Text
-
-        Dim Valor As Integer = Integer.Parse(TextIngresarCantidad.Text)
-        Try
-            Using dbContext As New MiDbContext()
-                Dim Almacen = dbContext.Almacen.Find(Id)
-                If Almacen IsNot Nothing Then
-                    Dim nuevaCantidad As Integer = Almacen.Cantidad + Valor
-                    Almacen.Cantidad = nuevaCantidad
-                    dbContext.SaveChanges()
-                    cajademensaje.Actualizacionderegistro()
-                    CargarTodoDataAlmacen()
-                Else
-                    cajademensaje.Actualizacionderegistro2()
-                End If
-            End Using
-        Catch ex As Exception
-            cajademensaje.errorglobal()
-        End Try
-    End Sub
-
-    Private Sub TextProducto_TextChanged(sender As Object, e As EventArgs) Handles TextProducto.TextChanged
-
     End Sub
 End Class
