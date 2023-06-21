@@ -107,11 +107,14 @@ Public Class DashboardIngredientes
                             .Unidad = U.unidad
                         }
 
-                ' Asignar el valor del campo "NOMBRE" al Texto del TextBox1
-                TextProducto.Text = query(0).NOMBRE.ToString()
+                ' Establece el origen de datos del ComboBox como la lista resultante de la consulta "query"
+                ComboProductos.DataSource = query.ToList()
 
-                ' Asignar el valor del campo "ID" al Tag del TextBox1
-                TextProducto.Tag = query(0).ID.ToString()
+                ' Especifica que la propiedad "NOMBRE" del objeto en la lista se mostrará como texto en el ComboBox
+                ComboProductos.DisplayMember = "NOMBRE"
+
+                ' Define la propiedad "ID" del objeto en la lista como el valor seleccionado en el ComboBox
+                ComboProductos.ValueMember = "ID"
             End Using
         Catch ex As Exception
             cajademensaje.Errordeobtencion()
@@ -304,13 +307,58 @@ Public Class DashboardIngredientes
     Private Sub DashboardIngredientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         HideSubMenu()
         CargarTodoDataAlmacen()
-        TextProducto.Text = ""
-        TextProducto.Enabled = False
+        CargarDataTextBox()
+        ComboProductos.Text = ""
+        'ComboProductos.Enabled = False
     End Sub
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
         If e.RowIndex >= 0 Then
             Dim row As DataGridViewRow = DataGridView1.Rows(e.RowIndex)
-            TextProducto.Text = row.Cells("NOBRE").Value.ToString()
+            ComboProductos.Text = row.Cells("NOBRE").Value.ToString()
         End If
+    End Sub
+
+    Private Sub BtnAgregarIngrediente_Click(sender As Object, e As EventArgs) Handles BtnAgregarIngrediente.Click
+        Dim Id As Integer = ComboProductos.SelectedValue
+        Dim Valor As Integer = Integer.Parse(TextIngresarCantidad.Text)
+        Try
+            Using dbContext As New MiDbContext()
+                Dim Almacen = dbContext.Almacen.Find(Id)
+                If Almacen IsNot Nothing Then
+                    Dim nuevaCantidad As Integer = Almacen.Cantidad + Valor
+                    Almacen.Cantidad = nuevaCantidad
+                    dbContext.SaveChanges()
+                    cajademensaje.Actualizacionderegistro()
+                    CargarDataTextBox()
+                    CargarTodoDataAlmacen()
+                Else
+                    cajademensaje.Actualizacionderegistro2()
+                End If
+            End Using
+        Catch ex As Exception
+            cajademensaje.errorglobal()
+        End Try
+    End Sub
+
+    Private Sub BtnSacarProducto_Click(sender As Object, e As EventArgs) Handles BtnSacarProducto.Click
+        Dim Id As Integer = ComboProductos.SelectedValue
+        Dim Valor As Integer = Integer.Parse(TextSacarCantidad.Text)
+        Try
+            Using dbContext As New MiDbContext()
+                Dim Almacen = dbContext.Almacen.Find(Id)
+                If Almacen IsNot Nothing Then
+                    Dim nuevaCantidad As Integer = Almacen.Cantidad - Valor
+                    Almacen.Cantidad = nuevaCantidad
+                    dbContext.SaveChanges()
+                    cajademensaje.Actualizacionderegistro()
+                    CargarDataTextBox()
+                    CargarTodoDataAlmacen()
+                Else
+                    cajademensaje.Actualizacionderegistro2()
+                End If
+            End Using
+        Catch ex As Exception
+            cajademensaje.errorglobal()
+        End Try
     End Sub
 End Class
