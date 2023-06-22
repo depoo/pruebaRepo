@@ -310,6 +310,10 @@ Public Class DashboardIngredientes
         CargarDataTextBox()
         ComboProductos.Text = ""
         'ComboProductos.Enabled = False
+
+        ' Los botones esta desactivados al cargar el sistema
+        BtnAgregarIngrediente.Enabled = False
+        BtnSacarProducto.Enabled = False
     End Sub
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
         If e.RowIndex >= 0 Then
@@ -331,6 +335,10 @@ Public Class DashboardIngredientes
                     cajademensaje.Actualizacionderegistro()
                     CargarDataTextBox()
                     CargarTodoDataAlmacen()
+
+                    'Limpiando campos del formulario
+                    TextIngresarCantidad.Text = ""
+                    ComboProductos.Text = ""
                 Else
                     cajademensaje.Actualizacionderegistro2()
                 End If
@@ -353,6 +361,10 @@ Public Class DashboardIngredientes
                     cajademensaje.Actualizacionderegistro()
                     CargarDataTextBox()
                     CargarTodoDataAlmacen()
+
+                    'Limpiando campos del formulario
+                    TextSacarCantidad.Text = ""
+                    ComboProductos.Text = ""
                 Else
                     cajademensaje.Actualizacionderegistro2()
                 End If
@@ -360,5 +372,27 @@ Public Class DashboardIngredientes
         Catch ex As Exception
             cajademensaje.errorglobal()
         End Try
+    End Sub
+
+    Private Sub TextIngresarCantidad_TextChanged(sender As Object, e As EventArgs) Handles TextIngresarCantidad.TextChanged
+        ' Verificar si el texto está vacío o nulo
+        If String.IsNullOrEmpty(TextIngresarCantidad.Text) Then
+            ' Si el texto está vacío, desactivar el botón Agregar
+            BtnAgregarIngrediente.Enabled = False
+        Else
+            ' Si hay algo escrito, activar el botón Agregar
+            BtnAgregarIngrediente.Enabled = True
+        End If
+    End Sub
+
+    Private Sub TextSacarCantidad_TextChanged(sender As Object, e As EventArgs) Handles TextSacarCantidad.TextChanged
+        ' Verificar si el texto está vacío o nulo
+        If String.IsNullOrEmpty(TextSacarCantidad.Text) Then
+            ' Si el texto está vacío, desactivar el botón Agregar
+            BtnSacarProducto.Enabled = False
+        Else
+            ' Si hay algo escrito, activar el botón Agregar
+            BtnSacarProducto.Enabled = True
+        End If
     End Sub
 End Class
