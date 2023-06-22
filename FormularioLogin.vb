@@ -39,7 +39,7 @@ Public Class FormularioLogin
                 Dashboard.Show()
             Else
                 Me.Hide()
-                FormularioIngredientes1.Show()
+                DashboardIngredientes.Show()
             End If
             ' funcion que limpia los campos cuando ingresamos al programa
             LimpiarCampos()
@@ -100,7 +100,7 @@ Public Class FormularioLogin
                     Dashboard.Show()
                 Else
                     Me.Hide()
-                    FormularioIngredientes1.Show()
+                    DashboardIngredientes.Show()
                 End If
                 ' funcion que limpia los campos cuando ingresamos al programa
                 LimpiarCampos()

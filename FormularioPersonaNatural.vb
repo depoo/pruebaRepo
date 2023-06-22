@@ -11,13 +11,15 @@ Public Class FormularioPersonaNatural
             Dim query = From A In dbContext.Actores
                         Join D In dbContext.TipoDocumento On A.id_Tipodoc Equals D.id_TipoDoc
                         Join S In dbContext.Sexo On A.id_sexo Equals S.id_Sexo
+                        Where A.Estado = "A"
                         Select New With {
                             .ID = A.id_Actor,
                             .nombre = A.nombre,
                             .apellido = A.apellido,
                             .Nombre_tipoDoc = D.Nombre_tipoDoc,
                             .numeroDocumento = A.numeroDocumento,
-                            .tiposex = S.sexo
+                            .tiposex = S.sexo,
+                            .Estado = A.Estado
                             }
             DataGridView1.DataSource = query.ToList()
         Catch ex As Exception
@@ -73,6 +75,7 @@ Public Class FormularioPersonaNatural
         DataGridView1.Columns(3).HeaderText = "Tipo de documento"
         DataGridView1.Columns(4).HeaderText = "Número de documento"
         DataGridView1.Columns(5).HeaderText = "Genero"
+        DataGridView1.Columns(6).HeaderText = "Estado"
         'Limpia al cargar el sistema los inputs se limpian
         LimpiarCampos()
 
@@ -118,7 +121,8 @@ Public Class FormularioPersonaNatural
                 .id_Tipodoc = TipoDocumento,
                 .numeroDocumento = NDocumento,
                 .id_sexo = TipoSexo,
-                .apellido = apellido
+                .apellido = apellido,
+                .Estado = "A"
             }
             dbContext.Actores.Add(NewPersonaNatural)
             dbContext.SaveChanges()
@@ -149,6 +153,7 @@ Public Class FormularioPersonaNatural
                 personaNatural.numeroDocumento = NDocumento
                 personaNatural.id_sexo = TipoSexo
                 personaNatural.apellido = apellido
+                personaNatural.Estado = "A"
                 dbContext.SaveChanges()
                 cajademensaje.Actualizacionderegistro()
                 Cargardata()
@@ -181,7 +186,8 @@ Public Class FormularioPersonaNatural
             Dim dbContext As New MiDbContext()
             Dim personaNatural = dbContext.Actores.Find(IdAutor)
             If personaNatural IsNot Nothing Then
-                dbContext.Actores.Remove(personaNatural)
+                personaNatural.Estado = "I"
+
                 dbContext.SaveChanges()
                 cajademensaje.Eliminarregistro()
                 Cargardata()
