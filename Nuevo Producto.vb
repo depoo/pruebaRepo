@@ -50,6 +50,13 @@ Public Class Nuevo_Producto
     Private Sub Nuevo_Producto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cargarDatos()
         cargarProveedor()
+
+        ' Configurar el tooltip
+        ToolTip1.AutoPopDelay = 5000 ' Establecer el tiempo en milisegundos que el tooltip se mostrará antes de desaparecer automáticamente
+        ToolTip1.ShowAlways = True ' Mostrar el tooltip aunque el formulario no esté activo
+
+        ' Asignar el tooltip a un control específico
+        ToolTip1.SetToolTip(btnAgregarProductoNuevo, "Agregar Nuevo Producto") ' Asignar el texto del tooltip al botón
     End Sub
     'Este boton agrega un nuevo producto
     Private Sub btnAgregarProductoNuevo_Click(sender As Object, e As EventArgs) Handles btnAgregarProductoNuevo.Click

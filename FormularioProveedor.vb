@@ -49,6 +49,14 @@ Public Class FormularioProveedor
 
         'Limpia al cargar el sistema los inputs se limpian
         LimpiarCampos()
+
+        ToolTip1.AutoPopDelay = 5000 ' Establecer el tiempo en milisegundos que el tooltip se mostrará antes de desaparecer automáticamente
+        ToolTip1.ShowAlways = True ' Mostrar el tooltip aunque el formulario no esté activo
+
+        ' Asignar el tooltip a un control específico
+        ToolTip1.SetToolTip(btnAgregar, "Agregar Registro") ' Asignar el texto del tooltip al botón
+        ToolTip1.SetToolTip(btnEliminar, "Eliminar Registro") ' Asignar el texto del tooltip al botón
+        ToolTip1.SetToolTip(btnLimpiar, "Limpiar Campos") ' Asignar el texto del tooltip al botón
     End Sub
 
     Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
@@ -105,7 +113,7 @@ Public Class FormularioProveedor
             Dim Proveedor = dbContext.Proveedor.Find(idProveedor)
             If MessageBox.Show("ESTAS SEGURO DE ELIMINAR ESTE REGISTRO", "ELIMINAR REGISTRO", MessageBoxButtons.YesNo) = DialogResult.Yes Then
                 If Proveedor IsNot Nothing Then
-                    dbContext.Proveedor.Remove(Proveedor)
+                    'dbContext.Proveedor.Remove(Proveedor)
                     dbContext.SaveChanges()
                     cajademensaje.Eliminarregistro()
                     cargarDataProveedor()

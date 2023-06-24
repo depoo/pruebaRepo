@@ -22,6 +22,7 @@ Partial Class DashboardIngredientes
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        components = New ComponentModel.Container()
         Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(DashboardIngredientes))
         Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As DataGridViewCellStyle = New DataGridViewCellStyle()
@@ -57,6 +58,7 @@ Partial Class DashboardIngredientes
         lblIngresarProducto = New Label()
         TextIngresarCantidad = New TextBox()
         lblProducto = New Label()
+        ToolTip1 = New ToolTip(components)
         PanelMenuLateral.SuspendLayout()
         PanelSubMenuIngredientes.SuspendLayout()
         PanelLogo.SuspendLayout()
@@ -147,7 +149,7 @@ Partial Class DashboardIngredientes
         btnGrasas.Dock = DockStyle.Top
         btnGrasas.FlatAppearance.BorderSize = 0
         btnGrasas.FlatStyle = FlatStyle.Flat
-        btnGrasas.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold, GraphicsUnit.Point)
+        btnGrasas.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         btnGrasas.ForeColor = Color.FromArgb(CByte(76), CByte(76), CByte(109))
         btnGrasas.Location = New Point(0, 280)
         btnGrasas.Name = "btnGrasas"
@@ -163,7 +165,7 @@ Partial Class DashboardIngredientes
         btnLacteos.Dock = DockStyle.Top
         btnLacteos.FlatAppearance.BorderSize = 0
         btnLacteos.FlatStyle = FlatStyle.Flat
-        btnLacteos.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold, GraphicsUnit.Point)
+        btnLacteos.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         btnLacteos.ForeColor = Color.FromArgb(CByte(76), CByte(76), CByte(109))
         btnLacteos.Location = New Point(0, 240)
         btnLacteos.Name = "btnLacteos"
@@ -179,7 +181,7 @@ Partial Class DashboardIngredientes
         btnFrutas.Dock = DockStyle.Top
         btnFrutas.FlatAppearance.BorderSize = 0
         btnFrutas.FlatStyle = FlatStyle.Flat
-        btnFrutas.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold, GraphicsUnit.Point)
+        btnFrutas.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         btnFrutas.ForeColor = Color.FromArgb(CByte(76), CByte(76), CByte(109))
         btnFrutas.Location = New Point(0, 200)
         btnFrutas.Name = "btnFrutas"
@@ -195,7 +197,7 @@ Partial Class DashboardIngredientes
         btnCarnes.Dock = DockStyle.Top
         btnCarnes.FlatAppearance.BorderSize = 0
         btnCarnes.FlatStyle = FlatStyle.Flat
-        btnCarnes.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold, GraphicsUnit.Point)
+        btnCarnes.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         btnCarnes.ForeColor = Color.FromArgb(CByte(76), CByte(76), CByte(109))
         btnCarnes.Location = New Point(0, 160)
         btnCarnes.Name = "btnCarnes"
@@ -211,7 +213,7 @@ Partial Class DashboardIngredientes
         btnLegumbres.Dock = DockStyle.Top
         btnLegumbres.FlatAppearance.BorderSize = 0
         btnLegumbres.FlatStyle = FlatStyle.Flat
-        btnLegumbres.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold, GraphicsUnit.Point)
+        btnLegumbres.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         btnLegumbres.ForeColor = Color.FromArgb(CByte(76), CByte(76), CByte(109))
         btnLegumbres.Location = New Point(0, 120)
         btnLegumbres.Name = "btnLegumbres"
@@ -227,7 +229,7 @@ Partial Class DashboardIngredientes
         btnCereales.Dock = DockStyle.Top
         btnCereales.FlatAppearance.BorderSize = 0
         btnCereales.FlatStyle = FlatStyle.Flat
-        btnCereales.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold, GraphicsUnit.Point)
+        btnCereales.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         btnCereales.ForeColor = Color.FromArgb(CByte(76), CByte(76), CByte(109))
         btnCereales.Location = New Point(0, 80)
         btnCereales.Name = "btnCereales"
@@ -243,7 +245,7 @@ Partial Class DashboardIngredientes
         btnVerduras.Dock = DockStyle.Top
         btnVerduras.FlatAppearance.BorderSize = 0
         btnVerduras.FlatStyle = FlatStyle.Flat
-        btnVerduras.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold, GraphicsUnit.Point)
+        btnVerduras.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         btnVerduras.ForeColor = Color.FromArgb(CByte(76), CByte(76), CByte(109))
         btnVerduras.Location = New Point(0, 40)
         btnVerduras.Name = "btnVerduras"
@@ -259,7 +261,7 @@ Partial Class DashboardIngredientes
         btnGeneral.Dock = DockStyle.Top
         btnGeneral.FlatAppearance.BorderSize = 0
         btnGeneral.FlatStyle = FlatStyle.Flat
-        btnGeneral.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold, GraphicsUnit.Point)
+        btnGeneral.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         btnGeneral.ForeColor = Color.FromArgb(CByte(76), CByte(76), CByte(109))
         btnGeneral.Location = New Point(0, 0)
         btnGeneral.Name = "btnGeneral"
@@ -441,7 +443,7 @@ Partial Class DashboardIngredientes
         DataGridView1.Name = "DataGridView1"
         DataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle2.BackColor = SystemColors.Control
-        DataGridViewCellStyle2.Font = New Font("Segoe UI", 9.0F, FontStyle.Regular, GraphicsUnit.Point)
+        DataGridViewCellStyle2.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point)
         DataGridViewCellStyle2.ForeColor = SystemColors.WindowText
         DataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight
         DataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText
@@ -546,7 +548,7 @@ Partial Class DashboardIngredientes
         ' 
         ' DashboardIngredientes
         ' 
-        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1084, 581)
         Controls.Add(PanelDesktop)
@@ -599,4 +601,5 @@ Partial Class DashboardIngredientes
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents BtnPDF As FontAwesome.Sharp.IconButton
     Friend WithEvents BtnExcel As FontAwesome.Sharp.IconButton
+    Friend WithEvents ToolTip1 As ToolTip
 End Class

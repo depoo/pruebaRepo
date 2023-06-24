@@ -12,6 +12,7 @@ Public Class NumContactoTrabajador
             Dim query = From N In dbContext.NumeroContacto
                         Join A In dbContext.Actores On N.id_Actor Equals A.id_Actor
                         Join O In dbContext.Operadores On N.id_Operador Equals O.id_Operador
+                        Where A.Estado = "A"
                         Select New With {
                             .ID = N.id_Cel,
                             .NOMBRE = A.NombreCompleto,

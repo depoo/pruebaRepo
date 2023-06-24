@@ -320,6 +320,16 @@ Public Class DashboardIngredientes
         ' Los botones esta desactivados al cargar el sistema
         BtnAgregarIngrediente.Enabled = False
         BtnSacarProducto.Enabled = False
+
+        ' Configurar el tooltip
+        ToolTip1.AutoPopDelay = 5000 ' Establecer el tiempo en milisegundos que el tooltip se mostrará antes de desaparecer automáticamente
+        ToolTip1.ShowAlways = True ' Mostrar el tooltip aunque el formulario no esté activo
+
+        ' Asignar el tooltip a un control específico
+        ToolTip1.SetToolTip(BtnAgregarIngrediente, "Agregar Ingrediente") ' Asignar el texto del tooltip al botón
+        ToolTip1.SetToolTip(BtnSacarProducto, "Sacar Ingrediente") ' Asignar el texto del tooltip al botón
+        ToolTip1.SetToolTip(BtnExcel, "Generar Excel") ' Asignar el texto del tooltip al botón
+        ToolTip1.SetToolTip(BtnPDF, "Generar PDF") ' Asignar el texto del tooltip al botón
     End Sub
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
         If e.RowIndex >= 0 Then
@@ -438,7 +448,7 @@ Public Class DashboardIngredientes
     Private Sub BtnExcel_Click(sender As Object, e As EventArgs) Handles BtnExcel.Click
         ExcelPackage.LicenseContext = LicenseContext.NonCommercial
         ' Crear un nuevo archivo de Excel
-        ExcelPackage = New ExcelPackage()
+        excelPackage = New ExcelPackage()
 
         ' Agregar una hoja de trabajo al archivo de Excel
         Dim worksheet As ExcelWorksheet = excelPackage.Workbook.Worksheets.Add("Datos")

@@ -22,6 +22,7 @@ Partial Class Nuevo_Producto
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        components = New ComponentModel.Container()
         Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As DataGridViewCellStyle = New DataGridViewCellStyle()
         ComboBox1 = New ComboBox()
@@ -30,6 +31,7 @@ Partial Class Nuevo_Producto
         TextBox1 = New TextBox()
         DataGridView1 = New DataGridView()
         btnAgregarProductoNuevo = New FontAwesome.Sharp.IconButton()
+        ToolTip1 = New ToolTip(components)
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -123,7 +125,7 @@ Partial Class Nuevo_Producto
         ' 
         ' Nuevo_Producto
         ' 
-        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(232), CByte(246), CByte(239))
         ClientSize = New Size(886, 483)
@@ -146,4 +148,5 @@ Partial Class Nuevo_Producto
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents btnAgregarProductoNuevo As FontAwesome.Sharp.IconButton
+    Friend WithEvents ToolTip1 As ToolTip
 End Class

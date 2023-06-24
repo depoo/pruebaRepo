@@ -22,6 +22,7 @@ Partial Class FormularioProveedor
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        components = New ComponentModel.Container()
         Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Label2 = New Label()
@@ -32,6 +33,7 @@ Partial Class FormularioProveedor
         btnEliminar = New FontAwesome.Sharp.IconButton()
         btnLimpiar = New FontAwesome.Sharp.IconButton()
         btnAgregar = New FontAwesome.Sharp.IconButton()
+        ToolTip1 = New ToolTip(components)
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -185,4 +187,5 @@ Partial Class FormularioProveedor
     Friend WithEvents btnEliminar As FontAwesome.Sharp.IconButton
     Friend WithEvents btnLimpiar As FontAwesome.Sharp.IconButton
     Friend WithEvents btnAgregar As FontAwesome.Sharp.IconButton
+    Friend WithEvents ToolTip1 As ToolTip
 End Class

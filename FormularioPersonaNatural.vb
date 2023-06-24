@@ -79,6 +79,16 @@ Public Class FormularioPersonaNatural
         'Limpia al cargar el sistema los inputs se limpian
         LimpiarCampos()
 
+        ' Configurar el tooltip
+        ToolTip1.AutoPopDelay = 5000 ' Establecer el tiempo en milisegundos que el tooltip se mostrará antes de desaparecer automáticamente
+        ToolTip1.ShowAlways = True ' Mostrar el tooltip aunque el formulario no esté activo
+
+        ' Asignar el tooltip a un control específico
+        ToolTip1.SetToolTip(btnAgregar, "Agregar Registro") ' Asignar el texto del tooltip al botón
+        ToolTip1.SetToolTip(btnEliminar, "Eliminar Registro") ' Asignar el texto del tooltip al botón
+        ToolTip1.SetToolTip(btnLimpiar, "Limpiar Campos") ' Asignar el texto del tooltip al botón
+        ToolTip1.SetToolTip(btnModificar, "Modificar Registro") ' Asignar el texto del tooltip al botón
+
     End Sub
 
     Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
