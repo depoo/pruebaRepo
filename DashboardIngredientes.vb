@@ -320,8 +320,6 @@ Public Class DashboardIngredientes
         ' Los botones esta desactivados al cargar el sistema
         BtnAgregarIngrediente.Enabled = False
         BtnSacarProducto.Enabled = False
-
-
     End Sub
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
         If e.RowIndex >= 0 Then
