@@ -28,7 +28,7 @@ Public Class FormularioUsuarios
     Private Sub cargarData2()
         Try
             Dim dbContext As New MiDbContext()
-            Dim Trabajador = dbContext.Actores.ToList()
+            Dim Trabajador = dbContext.Actores.Where(Function(a) a.Estado = "A").ToList()
 
             ComboBox1.DataSource = Trabajador
             ComboBox1.DisplayMember = "NombreCompleto"

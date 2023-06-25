@@ -12,7 +12,6 @@ Public Class NumContactoTrabajador
             Dim query = From N In dbContext.NumeroContacto
                         Join A In dbContext.Actores On N.id_Actor Equals A.id_Actor
                         Join O In dbContext.Operadores On N.id_Operador Equals O.id_Operador
-                        Where A.Estado = "A"
                         Select New With {
                             .ID = N.id_Cel,
                             .NOMBRE = A.NombreCompleto,
@@ -41,7 +40,7 @@ Public Class NumContactoTrabajador
     Private Sub cargarDatacombobox1()
         Try
             Dim dbContext As New MiDbContext()
-            Dim operadores = dbContext.Actores.ToList()
+            Dim operadores = dbContext.Actores.Where(Function(a) a.Estado = "A").ToList()
             ComboBox1.DataSource = operadores
             ComboBox1.DisplayMember = "NombreCompleto"
             ComboBox1.ValueMember = "id_Actor"
