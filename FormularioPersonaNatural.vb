@@ -75,7 +75,7 @@ Public Class FormularioPersonaNatural
         DataGridView1.Columns(3).HeaderText = "Tipo de documento"
         DataGridView1.Columns(4).HeaderText = "Número de documento"
         DataGridView1.Columns(5).HeaderText = "Genero"
-        DataGridView1.Columns(6).HeaderText = "Estado"
+        'DataGridView1.Columns(6).HeaderText = "Estado"
         'Limpia al cargar el sistema los inputs se limpian
         LimpiarCampos()
 
