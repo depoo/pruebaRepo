@@ -18,8 +18,7 @@ Public Class FormularioPersonaNatural
                             .apellido = A.apellido,
                             .Nombre_tipoDoc = D.Nombre_tipoDoc,
                             .numeroDocumento = A.numeroDocumento,
-                            .tiposex = S.sexo,
-                            .Estado = A.Estado
+                            .tiposex = S.sexo
                             }
             DataGridView1.DataSource = query.ToList()
         Catch ex As Exception
@@ -75,7 +74,6 @@ Public Class FormularioPersonaNatural
         DataGridView1.Columns(3).HeaderText = "Tipo de documento"
         DataGridView1.Columns(4).HeaderText = "Número de documento"
         DataGridView1.Columns(5).HeaderText = "Genero"
-        'DataGridView1.Columns(6).HeaderText = "Estado"
         'Limpia al cargar el sistema los inputs se limpian
         LimpiarCampos()
 

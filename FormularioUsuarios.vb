@@ -1,4 +1,5 @@
-﻿Imports System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar
+﻿Imports System.Windows.Controls
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar
 
 Public Class FormularioUsuarios
 
@@ -74,6 +75,11 @@ Public Class FormularioUsuarios
         btnEliminar.Enabled = False
         TextBox3.Enabled = False
 
+        ' Asignar el tooltip a un control específico
+        ToolTip1.SetToolTip(btnAgregar, "Agregar Registro") ' Asignar el texto del tooltip al botón
+        ToolTip1.SetToolTip(btnEliminar, "Eliminar Registro") ' Asignar el texto del tooltip al botón
+        ToolTip1.SetToolTip(btnLimpiar, "Limpiar Campos") ' Asignar el texto del tooltip al botón
+        ToolTip1.SetToolTip(btnModificar, "Modificar Registro") ' Asignar el texto del tooltip al botón
         'Limpia al cargar el sistema los inputs se limpian
         LimpiarCampos()
     End Sub

@@ -22,11 +22,11 @@ Partial Class NumContactoTrabajador
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        components = New ComponentModel.Container()
         Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As DataGridViewCellStyle = New DataGridViewCellStyle()
         DataGridView1 = New DataGridView()
-        BackgroundWorker1 = New ComponentModel.BackgroundWorker()
         ComboBox1 = New ComboBox()
         TextBox1 = New TextBox()
         Label2 = New Label()
@@ -39,6 +39,7 @@ Partial Class NumContactoTrabajador
         btnLimpiar = New FontAwesome.Sharp.IconButton()
         btnModificar = New FontAwesome.Sharp.IconButton()
         btnAgregar = New FontAwesome.Sharp.IconButton()
+        ToolTip1 = New ToolTip(components)
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -255,7 +256,6 @@ Partial Class NumContactoTrabajador
         PerformLayout()
     End Sub
     Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label2 As Label
@@ -268,4 +268,5 @@ Partial Class NumContactoTrabajador
     Friend WithEvents btnLimpiar As FontAwesome.Sharp.IconButton
     Friend WithEvents btnModificar As FontAwesome.Sharp.IconButton
     Friend WithEvents btnAgregar As FontAwesome.Sharp.IconButton
+    Friend WithEvents ToolTip1 As ToolTip
 End Class
