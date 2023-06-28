@@ -188,6 +188,7 @@ Partial Class FormularioLogin
         Controls.Add(TextBox1)
         Controls.Add(Button1)
         FormBorderStyle = FormBorderStyle.None
+        Icon = CType(resources.GetObject("$this.Icon"), Icon)
         Margin = New Padding(3, 2, 3, 2)
         MaximizeBox = False
         MinimizeBox = False

@@ -305,6 +305,7 @@ Partial Class Dashboard
         Controls.Add(PanelDesktop)
         Controls.Add(PanelTitleBar)
         Controls.Add(PanelMenu)
+        Icon = CType(resources.GetObject("$this.Icon"), Icon)
         MinimumSize = New Size(1100, 600)
         Name = "Dashboard"
         StartPosition = FormStartPosition.CenterScreen

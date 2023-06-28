@@ -556,6 +556,7 @@ Partial Class DashboardIngredientes
         Controls.Add(PanelDesktop)
         Controls.Add(PanelTitleBar)
         Controls.Add(PanelMenuLateral)
+        Icon = CType(resources.GetObject("$this.Icon"), Icon)
         MinimumSize = New Size(1100, 600)
         Name = "DashboardIngredientes"
         StartPosition = FormStartPosition.CenterScreen
