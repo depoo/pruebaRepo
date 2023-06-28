@@ -315,7 +315,7 @@ Public Class DashboardIngredientes
         CargarTodoDataAlmacen()
         CargarDataTextBox()
         ComboProductos.Text = ""
-        'ComboProductos.Enabled = False
+        ComboProductos.Enabled = False
 
         ' Los botones esta desactivados al cargar el sistema
         BtnAgregarIngrediente.Enabled = False

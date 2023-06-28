@@ -392,6 +392,7 @@ Partial Class DashboardIngredientes
         ' 
         ' BtnExcel
         ' 
+        BtnExcel.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         BtnExcel.FlatAppearance.BorderSize = 0
         BtnExcel.FlatStyle = FlatStyle.Flat
         BtnExcel.IconChar = FontAwesome.Sharp.IconChar.FileExcel
@@ -406,6 +407,7 @@ Partial Class DashboardIngredientes
         ' 
         ' BtnPDF
         ' 
+        BtnPDF.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         BtnPDF.FlatAppearance.BorderSize = 0
         BtnPDF.FlatStyle = FlatStyle.Flat
         BtnPDF.IconChar = FontAwesome.Sharp.IconChar.FilePdf
